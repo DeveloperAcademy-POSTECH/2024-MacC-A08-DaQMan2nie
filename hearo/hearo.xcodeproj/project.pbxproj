@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BDE2CAFC75900FB3F70 /* FinishView.swift */; };
+		00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE02CAFC77000FB3F70 /* FinishViewModel.swift */; };
+		00078BE32CAFC77B00FB3F70 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */; };
+		00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE42CAFC79400FB3F70 /* SplashView.swift */; };
+		00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */; };
+		00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */; };
+		00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEA2CAFC7B000FB3F70 /* HomeView.swift */; };
+		00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */; };
 		001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7D2CAFBC6900B03767 /* hearoApp.swift */; };
-		001C6F802CAFBC6900B03767 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7F2CAFBC6900B03767 /* ContentView.swift */; };
-		001C6F822CAFBC6900B03767 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F812CAFBC6900B03767 /* Item.swift */; };
 		001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
-		001C6F912CAFBC6C00B03767 /* hearoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F902CAFBC6C00B03767 /* hearoTests.swift */; };
-		001C6F9B2CAFBC6C00B03767 /* hearoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F9A2CAFBC6C00B03767 /* hearoUITests.swift */; };
-		001C6F9D2CAFBC6C00B03767 /* hearoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F9C2CAFBC6C00B03767 /* hearoUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +38,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00078BDE2CAFC75900FB3F70 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		00078BE02CAFC77000FB3F70 /* FinishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewModel.swift; sourceTree = "<group>"; };
+		00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		00078BE42CAFC79400FB3F70 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		00078BEA2CAFC7B000FB3F70 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		001C6F7A2CAFBC6900B03767 /* hearo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F7D2CAFBC6900B03767 /* hearoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoApp.swift; sourceTree = "<group>"; };
-		001C6F7F2CAFBC6900B03767 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		001C6F812CAFBC6900B03767 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		001C6F832CAFBC6C00B03767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		001C6F902CAFBC6C00B03767 /* hearoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoTests.swift; sourceTree = "<group>"; };
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		001C6F9A2CAFBC6C00B03767 /* hearoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoUITests.swift; sourceTree = "<group>"; };
-		001C6F9C2CAFBC6C00B03767 /* hearoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +79,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00078BD42CAFC6F200FB3F70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00078BD52CAFC6F200FB3F70 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00078BD62CAFC70100FB3F70 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00078BD72CAFC70100FB3F70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00078BE42CAFC79400FB3F70 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00078BD82CAFC70C00FB3F70 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00078BE02CAFC77000FB3F70 /* FinishViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00078BD92CAFC70C00FB3F70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00078BDE2CAFC75900FB3F70 /* FinishView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00078BDA2CAFC71500FB3F70 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		00078BDB2CAFC71500FB3F70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00078BEA2CAFC7B000FB3F70 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		001C6F712CAFBC6900B03767 = {
 			isa = PBXGroup;
 			children = (
 				001C6F7C2CAFBC6900B03767 /* hearo */,
-				001C6F8F2CAFBC6C00B03767 /* hearoTests */,
-				001C6F992CAFBC6C00B03767 /* hearoUITests */,
 				001C6F7B2CAFBC6900B03767 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,10 +164,9 @@
 		001C6F7C2CAFBC6900B03767 /* hearo */ = {
 			isa = PBXGroup;
 			children = (
-				001C6F7D2CAFBC6900B03767 /* hearoApp.swift */,
-				001C6F7F2CAFBC6900B03767 /* ContentView.swift */,
-				001C6F812CAFBC6900B03767 /* Item.swift */,
-				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
+				001C6FA92CAFC3D800B03767 /* Application */,
+				001C6FAA2CAFC3E200B03767 /* Resources */,
+				001C6FAB2CAFC3F900B03767 /* Sources */,
 				001C6F852CAFBC6C00B03767 /* Preview Content */,
 			);
 			path = hearo;
@@ -113,21 +180,115 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		001C6F8F2CAFBC6C00B03767 /* hearoTests */ = {
+		001C6FA92CAFC3D800B03767 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				001C6F902CAFBC6C00B03767 /* hearoTests.swift */,
+				001C6F7D2CAFBC6900B03767 /* hearoApp.swift */,
 			);
-			path = hearoTests;
+			path = Application;
 			sourceTree = "<group>";
 		};
-		001C6F992CAFBC6C00B03767 /* hearoUITests */ = {
+		001C6FAA2CAFC3E200B03767 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				001C6F9A2CAFBC6C00B03767 /* hearoUITests.swift */,
-				001C6F9C2CAFBC6C00B03767 /* hearoUITestsLaunchTests.swift */,
+				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
 			);
-			path = hearoUITests;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		001C6FAB2CAFC3F900B03767 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				001C6FAC2CAFC44900B03767 /* Delegate */,
+				001C6FB12CAFC47000B03767 /* Helper */,
+				001C6FB02CAFC46900B03767 /* Enums */,
+				001C6FAF2CAFC46200B03767 /* Extensions */,
+				001C6FAE2CAFC45900B03767 /* Data */,
+				001C6FAD2CAFC45100B03767 /* Presentations */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		001C6FAC2CAFC44900B03767 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		001C6FAD2CAFC45100B03767 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				001C6FB72CAFC59F00B03767 /* Finish */,
+				001C6FB62CAFC56F00B03767 /* Splash */,
+				001C6FB42CAFC50000B03767 /* OnBoarding */,
+				001C6FB32CAFC4DF00B03767 /* Home */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
+		001C6FAE2CAFC45900B03767 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		001C6FAF2CAFC46200B03767 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		001C6FB02CAFC46900B03767 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		001C6FB12CAFC47000B03767 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		001C6FB32CAFC4DF00B03767 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				00078BDB2CAFC71500FB3F70 /* View */,
+				00078BDA2CAFC71500FB3F70 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		001C6FB42CAFC50000B03767 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				00078BD42CAFC6F200FB3F70 /* View */,
+				00078BD52CAFC6F200FB3F70 /* ViewModel */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		001C6FB62CAFC56F00B03767 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				00078BD72CAFC70100FB3F70 /* View */,
+				00078BD62CAFC70100FB3F70 /* ViewModel */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		001C6FB72CAFC59F00B03767 /* Finish */ = {
+			isa = PBXGroup;
+			children = (
+				00078BD92CAFC70C00FB3F70 /* View */,
+				00078BD82CAFC70C00FB3F70 /* ViewModel */,
+			);
+			path = Finish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +421,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C6F802CAFBC6900B03767 /* ContentView.swift in Sources */,
-				001C6F822CAFBC6900B03767 /* Item.swift in Sources */,
+				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
+				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
+				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
+				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
+				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
+				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
+				00078BE32CAFC77B00FB3F70 /* SplashViewModel.swift in Sources */,
+				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +437,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C6F912CAFBC6C00B03767 /* hearoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +444,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C6F9D2CAFBC6C00B03767 /* hearoUITestsLaunchTests.swift in Sources */,
-				001C6F9B2CAFBC6C00B03767 /* hearoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
