@@ -6,27 +6,52 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct hearoApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelConstainer: \(error)")
-        }
-    }()
+    @StateObject var appRootManager = AppRootManager() // 앱 전역에서 사용되는 상태 관리
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView가 루트로 설정됨
+            ContentView(appRootManager: appRootManager)
         }
-        .modelContainer(sharedModelContainer)
+    }
+}
+
+final class AppRootManager: ObservableObject {
+    @Published var currentRoot: AppRoot = .splash // 기본값: splash
+
+    // 루트 뷰 상태를 나타내는 열거형
+    enum AppRoot {
+        case splash
+        case onboarding
+        case home
+        case working
+        case finish
+    }
+}
+
+struct ContentView: View {
+    @ObservedObject var appRootManager: AppRootManager
+
+    var body: some View {
+        // 현재 루트 상태에 따라 적절한 뷰를 보여줌
+        switch appRootManager.currentRoot {
+        case .splash:
+            SplashView(appRootManager: appRootManager) // Splash 화면
+
+        case .onboarding:
+            OnboardingView(appRootManager: appRootManager) // 온보딩 화면
+
+        case .home:
+            HomeView(appRootManager: appRootManager) // 홈 화면
+
+        case .working:
+            WorkingView(appRootManager: appRootManager) // 워킹 화면
+
+        case .finish:
+            FinishView(appRootManager: appRootManager) // 피니시 화면
+        }
     }
 }

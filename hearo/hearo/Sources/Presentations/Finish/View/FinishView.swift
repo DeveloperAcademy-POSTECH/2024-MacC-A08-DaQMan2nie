@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct FinishView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @ObservedObject var appRootManager: AppRootManager
 
-#Preview {
-    FinishView()
+    var body: some View {
+        VStack {
+            Text("피니시 화면")
+                .font(.largeTitle)
+                .padding()
+
+            // 홈 화면으로 돌아가는 버튼
+            Button("홈 화면으로 돌아가기") {
+                appRootManager.currentRoot = .home // 홈 화면으로 전환
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+    }
 }
