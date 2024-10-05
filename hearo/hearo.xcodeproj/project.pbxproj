@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BDE2CAFC75900FB3F70 /* FinishView.swift */; };
 		00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE02CAFC77000FB3F70 /* FinishViewModel.swift */; };
-		00078BE32CAFC77B00FB3F70 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */; };
 		00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE42CAFC79400FB3F70 /* SplashView.swift */; };
 		00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */; };
 		00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */; };
@@ -18,6 +17,8 @@
 		001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7D2CAFBC6900B03767 /* hearoApp.swift */; };
 		001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
+		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
+		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 /* Begin PBXFileReference section */
 		00078BDE2CAFC75900FB3F70 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		00078BE02CAFC77000FB3F70 /* FinishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewModel.swift; sourceTree = "<group>"; };
-		00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		00078BE42CAFC79400FB3F70 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
+		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,14 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				00078BE82CAFC7A800FB3F70 /* OnboardingViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		00078BD62CAFC70100FB3F70 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				00078BE22CAFC77B00FB3F70 /* SplashViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,10 +213,11 @@
 		001C6FAD2CAFC45100B03767 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
-				001C6FB72CAFC59F00B03767 /* Finish */,
 				001C6FB62CAFC56F00B03767 /* Splash */,
 				001C6FB42CAFC50000B03767 /* OnBoarding */,
 				001C6FB32CAFC4DF00B03767 /* Home */,
+				007BEFCA2CB1598F00C0E9FD /* Working */,
+				001C6FB72CAFC59F00B03767 /* Finish */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -277,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				00078BD72CAFC70100FB3F70 /* View */,
-				00078BD62CAFC70100FB3F70 /* ViewModel */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -289,6 +283,31 @@
 				00078BD82CAFC70C00FB3F70 /* ViewModel */,
 			);
 			path = Finish;
+			sourceTree = "<group>";
+		};
+		007BEFCA2CB1598F00C0E9FD /* Working */ = {
+			isa = PBXGroup;
+			children = (
+				007BEFCC2CB1599B00C0E9FD /* View */,
+				007BEFCB2CB1599500C0E9FD /* ViewModel */,
+			);
+			path = Working;
+			sourceTree = "<group>";
+		};
+		007BEFCB2CB1599500C0E9FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		007BEFCC2CB1599B00C0E9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,8 +446,9 @@
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
+				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
+				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
-				00078BE32CAFC77B00FB3F70 /* SplashViewModel.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
