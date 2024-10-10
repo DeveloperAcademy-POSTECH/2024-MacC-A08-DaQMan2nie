@@ -290,7 +290,7 @@ struct OnboardingView: View {
                 Spacer().frame(height: 51)
                 
                 Button(action: {
-                    currentPage = 3
+                    currentPage = 4
                 }) {
                     ZStack {
                         Rectangle()
@@ -313,19 +313,62 @@ struct OnboardingView: View {
             
             // 다섯 번째 온보딩 페이지(마지막)
             VStack {
-                Text("온보딩 5 번째 페이지")
-                    .font(.title)
-                    .padding()
+                Spacer().frame(height: 59)
                 
-                // 홈 화면으로 이동하는 버튼
-                Button("시작하기") {
-                    print("시작하기 버튼")
-                    appRootManager.currentRoot = .home // 홈 화면으로 전환
+                HStack{
+                    Spacer().frame(width: 19)
+                    
+                    Text("정확한 위치 확인을 위해서\n거치대를 활용해주세요")
+                        .font(
+                            Font.custom("Spoqa Han Sans Neo", size: 25)
+                                .weight(.bold)
+                        )
+                        .foregroundColor(Color("HWhite"))
+                    
+                    Spacer()
                 }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+                
+                Spacer().frame(height: 21)
+
+                HStack{
+                    Spacer().frame(width: 16)
+                    
+                    Text("더 안전하고 정확한 경고 알림을 받기 위해\n스마트폰을 거치대에 고정해 주행해 주세요.")
+                      .font(Font.custom("Spoqa Han Sans Neo", size: 14))
+                      .foregroundColor(Color(red: 0.7, green: 0.7, blue: 0.7))
+                      .frame(width: 345, alignment: .topLeading)
+                    
+                    Spacer()
+                }
+                
+                Spacer().frame(height: 139)
+                
+                Image(systemName: "iphone.gen1.radiowaves.left.and.right")
+                    .resizable()
+                    .frame(width: 135.84792, height: 180)
+                    .foregroundColor(Color("HPrimaryColor"))
+                
+                Spacer().frame(height: 162)
+                
+                Button(action: {
+                    appRootManager.currentRoot = .home
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 361, height: 58)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .opacity(0.28)
+                        
+                        Text("확인")
+                            .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                    }
+                }
+                
+                Spacer()
             }
             .tag(4)
         }
