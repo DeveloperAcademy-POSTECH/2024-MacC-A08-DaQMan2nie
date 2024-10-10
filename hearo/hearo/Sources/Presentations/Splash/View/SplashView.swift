@@ -49,6 +49,6 @@ struct SplashView: View {
         }
         }
         .frame(width: 393, height: 852)
-        .background(Color("HGray3"))
+        .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
     }
 }
