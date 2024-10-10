@@ -19,6 +19,7 @@
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
+		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
+		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
+		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		001C6F7C2CAFBC6900B03767 /* hearo */ = {
 			isa = PBXGroup;
 			children = (
+				00A04EA82CB7CC320031DECC /* Info.plist */,
 				001C6FA92CAFC3D800B03767 /* Application */,
 				001C6FAA2CAFC3E200B03767 /* Resources */,
 				001C6FAB2CAFC3F900B03767 /* Sources */,
@@ -185,6 +189,7 @@
 		001C6FAA2CAFC3E200B03767 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
 				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -193,9 +198,9 @@
 		001C6FAB2CAFC3F900B03767 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				00A04EA32CB7CA510031DECC /* Helper */,
+				00A04EA22CB7CA320031DECC /* Enums */,
 				001C6FAC2CAFC44900B03767 /* Delegate */,
-				001C6FB12CAFC47000B03767 /* Helper */,
-				001C6FB02CAFC46900B03767 /* Enums */,
 				001C6FAF2CAFC46200B03767 /* Extensions */,
 				001C6FAE2CAFC45900B03767 /* Data */,
 				001C6FAD2CAFC45100B03767 /* Presentations */,
@@ -234,20 +239,6 @@
 			children = (
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		001C6FB02CAFC46900B03767 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		001C6FB12CAFC47000B03767 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		001C6FB32CAFC4DF00B03767 /* Home */ = {
@@ -308,6 +299,20 @@
 				007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		00A04EA22CB7CA320031DECC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		00A04EA32CB7CA510031DECC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +421,7 @@
 			files = (
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
 				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
+				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +619,7 @@
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -642,6 +649,7 @@
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

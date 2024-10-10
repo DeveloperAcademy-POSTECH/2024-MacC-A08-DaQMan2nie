@@ -41,6 +41,7 @@ struct OnboardingView: View {
 
                 // 홈 화면으로 이동하는 버튼
                 Button("시작하기") {
+                    print("시작하기 버튼")
                     appRootManager.currentRoot = .home // 홈 화면으로 전환
                 }
                 .padding()

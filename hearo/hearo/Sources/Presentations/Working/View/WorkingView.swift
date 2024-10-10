@@ -17,6 +17,7 @@ struct WorkingView: View {
 
             // 피니시 화면으로 이동하는 버튼
             Button("피니시 화면으로 이동") {
+                print("피니시 화면 버튼")
                 appRootManager.currentRoot = .finish // Finish 화면으로 상태 전환
             }
             .padding()

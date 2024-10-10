@@ -18,6 +18,7 @@ struct HomeView: View {
 
             // 워킹 화면으로 이동하는 버튼
             Button("워킹 화면으로 이동") {
+                print("워킹 화면 버튼")
                 appRootManager.currentRoot = .working // 상태를 변경하여 워킹 화면으로 전환
             }
             .padding()

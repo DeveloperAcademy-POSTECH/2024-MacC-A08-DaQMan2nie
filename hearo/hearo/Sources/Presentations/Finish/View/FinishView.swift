@@ -18,6 +18,7 @@ struct FinishView: View {
 
             // 홈 화면으로 돌아가는 버튼
             Button("홈 화면으로 돌아가기") {
+                print("홈 화면 버튼")
                 appRootManager.currentRoot = .home // 홈 화면으로 전환
             }
             .padding()
