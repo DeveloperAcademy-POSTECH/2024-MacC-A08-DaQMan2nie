@@ -14,15 +14,28 @@ struct WorkingView: View {
             Text("워킹 화면")
                 .font(.largeTitle)
                 .padding()
-
-            // 피니시 화면으로 이동하는 버튼
-            Button("피니시 화면으로 이동") {
-                appRootManager.currentRoot = .finish // Finish 화면으로 상태 전환
+            Button(action: {
+                appRootManager.currentRoot = .finish
+            }) {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 361, height: 58)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .opacity(0.28)
+                    
+                    Text("종료하기")
+                        .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                }
             }
-            .padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(10)
+            
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
+        .edgesIgnoringSafeArea(.all)
     }
 }
