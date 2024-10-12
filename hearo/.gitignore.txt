@@ -1,0 +1,11 @@
+# macOS에서 생성되는 시스템 파일
+.DS_Store
+
+# Xcode 사용자 설정 파일
+*.xcuserstate
+
+# Xcode 빌드 파일
+build/
+
+# 특정 파일 무시
+hearo/.DS_Store
