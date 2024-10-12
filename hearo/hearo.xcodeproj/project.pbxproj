@@ -20,6 +20,7 @@
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
+		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
+				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
