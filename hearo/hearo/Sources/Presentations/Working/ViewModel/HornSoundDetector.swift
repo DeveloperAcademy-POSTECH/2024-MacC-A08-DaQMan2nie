@@ -20,7 +20,7 @@ class HornSoundDetector: NSObject, ObservableObject {
   
   @Published var isRecording = false
   @Published var classificationResult = "녹음 시작 전"
-  @Published var detectedHornSOund = false
+  @Published var detectedHornSound = false
   
   override init() {
     super.init()

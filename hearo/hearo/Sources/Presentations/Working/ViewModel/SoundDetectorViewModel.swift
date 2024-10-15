@@ -13,7 +13,7 @@ class SoundDetectorViewModel: ObservableObject {
     @Published var classificationResult = "녹음 시작 전"
     @Published var detectedHornSound = false
     
-    private let soundDetector = BicycleHornSoundDetector()
+    private let soundDetector = HornSoundDetector()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
