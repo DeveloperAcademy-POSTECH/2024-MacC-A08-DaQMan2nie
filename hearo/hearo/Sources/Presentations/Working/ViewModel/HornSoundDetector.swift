@@ -17,10 +17,12 @@ class HornSoundDetector: NSObject, ObservableObject {
   private var inputNode: AVAudioInputNode!
   private var soundClassifier: HornSoundClassifier?
   private var streamAnalyzer: SNAudioStreamAnalyzer?
-  
+    
   @Published var isRecording = false
   @Published var classificationResult = "녹음 시작 전"
   @Published var detectedHornSound = false
+    @Published var topClassification: SNClassification? // 가장 높은 분류 저장
+
   
   override init() {
     super.init()
@@ -152,42 +154,40 @@ class HornSoundDetector: NSObject, ObservableObject {
 }
 
 extension HornSoundDetector: SNResultsObserving {
-  func request(_ request: SNRequest, didProduce result: SNResult) {
-    guard let result = result as? SNClassificationResult else { return }
-    
-    let topClassifications = result.classifications.prefix(3)
-    
-    DispatchQueue.main.async {
-      for classification in topClassifications {
-        print("소리: \(classification.identifier), 신뢰도: \(classification.confidence)")
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        guard let result = result as? SNClassificationResult else { return }
         
-        // 경적 및 사이렌 소리 감지
-        if classification.confidence > 0.9 {
-          switch classification.identifier {
-          case "BicycleHorn":
-            print("자전거 경적 감지됨!")
-            self.sendNotification(title: "경고", body: "자전거 경적 소리 감지!")
-          case "CarHorn":
-            print("자동차 경적 감지됨!")
-            self.sendNotification(title: "경고", body: "자동차 경적 소리 감지!")
-          case "MotorcycleHorn":
-            print("오토바이 경적 감지됨!")
-            self.sendNotification(title: "경고", body: "오토바이 경적 소리 감지!")
-          case "ScooterHorn":
-            print("킥보드 경적 감지됨!")
-            self.sendNotification(title: "경고", body: "킥보드 경적 소리 감지!")
-          case "Siren":
-            print("사이렌 감지됨!")
-            self.sendNotification(title: "경고", body: "사이렌 소리 감지!")
-          default:
-            print("알 수 없는 소리")
-          }
+        let topClassifications = result.classifications.prefix(3)
+        
+        DispatchQueue.main.async {
+            // 첫 번째 분류를 가장 신뢰도 높은 것으로 설정
+            if let topClassification = topClassifications.first {
+                self.topClassification = topClassification // 가장 높은 분류 저장
+                self.classificationResult = "소리: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)"
+            }
+
+            var detectedHorn = false
+            
+            for classification in topClassifications {
+                print("소리: \(classification.identifier), 신뢰도: \(classification.confidence)")
+                
+                // 경적 및 사이렌 소리 감지
+                if classification.confidence > 0.9 {
+                    switch classification.identifier {
+                    case "BicycleHorn", "CarHorn", "MotorcycleHorn", "ScooterHorn", "Siren":
+                        print("\(classification.identifier) 감지됨!")
+                        detectedHorn = true
+                        self.sendNotification(title: "경고", body: "\(classification.identifier) 소리 감지!")
+                    default:
+                        print("알 수 없는 소리")
+                    }
+                }
+            }
+            
+            // 감지된 경적 소리 여부 업데이트
+            self.detectedHornSound = detectedHorn
         }
-      }
-      
-      if let topClassification = topClassifications.first {
-        self.classificationResult = "소리: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)"
-      }
     }
-  }
 }
+
+
