@@ -29,6 +29,7 @@ final class AppRootManager: ObservableObject {
         case home
         case working
         case finish
+        case warning
     }
 }
 
@@ -37,21 +38,41 @@ struct ContentView: View {
 
     var body: some View {
         // 현재 루트 상태에 따라 적절한 뷰를 보여줌
+        Group {
+            switch appRootManager.currentRoot {
+            case .splash:
+                SplashView(appRootManager: appRootManager) // Splash 화면
+            case .onboarding:
+                OnboardingView(appRootManager: appRootManager) // 온보딩 화면
+            case .home:
+                HomeView(appRootManager: appRootManager) // 홈 화면
+            case .working:
+                WorkingView(appRootManager: appRootManager) // 워킹 화면
+            case .finish:
+                FinishView(appRootManager: appRootManager) // 피니시 화면
+            case .warning:
+                WarningView(appRootManager: appRootManager) // 워닝 뷰
+            }
+        }
+        .onAppear {
+            printCurrentRoot()
+        }
+    }
+
+    private func printCurrentRoot() {
         switch appRootManager.currentRoot {
         case .splash:
-            SplashView(appRootManager: appRootManager) // Splash 화면
-
+            print("현재 화면: SplashView")
         case .onboarding:
-            OnboardingView(appRootManager: appRootManager) // 온보딩 화면
-
+            print("현재 화면: OnboardingView")
         case .home:
-            HomeView(appRootManager: appRootManager) // 홈 화면
-
+            print("현재 화면: HomeView")
         case .working:
-            WorkingView(appRootManager: appRootManager) // 워킹 화면
-
+            print("현재 화면: WorkingView")
         case .finish:
-            FinishView(appRootManager: appRootManager) // 피니시 화면
+            print("현재 화면: FinishView")
+        case .warning:
+            print("현재 화면 : warning")
         }
     }
 }

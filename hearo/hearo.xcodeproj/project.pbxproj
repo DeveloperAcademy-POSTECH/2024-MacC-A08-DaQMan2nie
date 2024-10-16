@@ -17,6 +17,8 @@
 		001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7D2CAFBC6900B03767 /* hearoApp.swift */; };
 		001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
+		0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B72CC0295F009B4261 /* WarningView.swift */; };
+		0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B92CC02969009B4261 /* WarningViewModel.swift */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
@@ -56,6 +58,8 @@
 		001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0045C6B72CC0295F009B4261 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
+		0045C6B92CC02969009B4261 /* WarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewModel.swift; sourceTree = "<group>"; };
 		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				001C6FB42CAFC50000B03767 /* OnBoarding */,
 				001C6FB32CAFC4DF00B03767 /* Home */,
 				007BEFCA2CB1598F00C0E9FD /* Working */,
+				0045C6B42CC02934009B4261 /* Warning */,
 				001C6FB72CAFC59F00B03767 /* Finish */,
 			);
 			path = Presentations;
@@ -280,6 +285,31 @@
 				00078BD82CAFC70C00FB3F70 /* ViewModel */,
 			);
 			path = Finish;
+			sourceTree = "<group>";
+		};
+		0045C6B42CC02934009B4261 /* Warning */ = {
+			isa = PBXGroup;
+			children = (
+				0045C6B52CC0293E009B4261 /* WarningView */,
+				0045C6B62CC02946009B4261 /* WarningViewModel */,
+			);
+			path = Warning;
+			sourceTree = "<group>";
+		};
+		0045C6B52CC0293E009B4261 /* WarningView */ = {
+			isa = PBXGroup;
+			children = (
+				0045C6B72CC0295F009B4261 /* WarningView.swift */,
+			);
+			path = WarningView;
+			sourceTree = "<group>";
+		};
+		0045C6B62CC02946009B4261 /* WarningViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0045C6B92CC02969009B4261 /* WarningViewModel.swift */,
+			);
+			path = WarningViewModel;
 			sourceTree = "<group>";
 		};
 		007BEFCA2CB1598F00C0E9FD /* Working */ = {
@@ -458,6 +488,7 @@
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
+				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
@@ -466,6 +497,7 @@
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				6451A8F72CBE36EF00FE2F8D /* HornSoundClassifier.mlmodel in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
+				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
