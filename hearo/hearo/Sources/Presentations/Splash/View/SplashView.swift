@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SplashView: View {
-    @ObservedObject var appRootManager: AppRootManager
+    var appRootManager: AppRootManager // 인자로 받기
     @State private var isActive = false // 스플래시 화면이 끝났는지 여부를 관리하는 상태
 
     var body: some View {

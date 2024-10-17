@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FinishView: View {
-    @ObservedObject var appRootManager: AppRootManager
+    @ObservedObject var viewModel: FinishViewModel
 
     var body: some View {
         VStack {
             Spacer().frame(height: 84)
             
-            HStack{
+            HStack {
                 Spacer().frame(width: 16)
                 
                 Text("안전 주행 완료!")
@@ -29,7 +29,7 @@ struct FinishView: View {
             
             Spacer().frame(height: 19)
             
-            HStack{
+            HStack {
                 Spacer().frame(width: 16)
                 
                 Text("오늘도 히어로드와 함께 무사히 도착하셨습니다.\n다음에도 안전하게 뵙겠습니다!")
@@ -47,10 +47,10 @@ struct FinishView: View {
                 .frame(width: 160, height: 160)
                 .foregroundColor(Color("HPrimaryColor")) // 아이콘 색상 설정
             
-            
             Spacer().frame(height: 231)
+            
             Button(action: {
-                appRootManager.currentRoot = .home
+                viewModel.goToHome() // 홈으로 돌아가는 동작
             }) {
                 ZStack {
                     Rectangle()
@@ -59,7 +59,7 @@ struct FinishView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         .opacity(0.28)
-                    
+
                     Text("시작하기")
                         .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
                         .multilineTextAlignment(.center)

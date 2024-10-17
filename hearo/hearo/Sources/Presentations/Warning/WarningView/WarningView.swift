@@ -4,12 +4,16 @@
 //
 //  Created by Pil_Gaaang on 10/17/24.
 //
-
 import SwiftUI
 
 struct WarningView: View {
-    @ObservedObject var appRootManager: AppRootManager
+    @StateObject var viewModel: WarningViewModel
 
+        init(appRootManager: AppRootManager) {
+            _viewModel = StateObject(wrappedValue: WarningViewModel(appRootManager: appRootManager))
+        }
+
+    
     var body: some View {
         VStack {
             Text("경고!")
@@ -17,12 +21,13 @@ struct WarningView: View {
                 .foregroundColor(.red)
                 .padding()
 
-            Text("높은 신뢰도의 예기치 못한 소리가 감지되었습니다.")
+            // 감지된 소리 종류 표시
+            Text(viewModel.detectedSoundMessage)
                 .font(.title2)
                 .padding()
 
             Button(action: {
-                appRootManager.currentRoot = .home // 경고 이후 다시 홈으로 돌아가는 예시
+                viewModel.returnToHome() // 홈으로 돌아가기 액션
             }) {
                 Text("홈으로 돌아가기")
                     .font(.title)
@@ -36,10 +41,7 @@ struct WarningView: View {
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            // 3초 후에 자동으로 WorkingView로 전환
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                appRootManager.currentRoot = .working
-            }
+            viewModel.autoTransitionToWorkingView() // 자동으로 WorkingView로 전환
         }
     }
 }
