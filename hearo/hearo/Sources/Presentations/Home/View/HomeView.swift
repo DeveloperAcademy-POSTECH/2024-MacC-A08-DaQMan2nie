@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var appRootManager: AppRootManager
-    @State private var currentDate: String = ""
-    
+    @StateObject var viewModel: HomeViewModel
+
     var body: some View {
         VStack {
             Spacer().frame(height: 89)
@@ -33,7 +32,7 @@ struct HomeView: View {
             HStack{
                 Spacer().frame(width: 16)
                 
-                Text(currentDate)
+                Text(viewModel.currentDate)
                     .font(Font.custom("Spoqa Han Sans Neo", size: 18))
                     .foregroundColor(Color("HGray2"))
                     .frame(width: 295, alignment: .topLeading)
@@ -48,11 +47,10 @@ struct HomeView: View {
                 .frame(width: 189, height: 189)
                 .foregroundColor(Color("HPrimaryColor")) // 아이콘 색상 설정
             
-            
             Spacer().frame(height: 236)
             
             Button(action: {
-                appRootManager.currentRoot = .working
+                viewModel.startWorking() // 뷰 모델에서 앱 상태를 변경
             }) {
                 ZStack {
                     Rectangle()
@@ -75,10 +73,7 @@ struct HomeView: View {
         .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "ko_KR")
-            dateFormatter.dateFormat = "yyyy. MM. dd. EEEE"
-            currentDate = dateFormatter.string(from: Date()) 
+            viewModel.updateCurrentDate() // 뷰가 나타날 때 날짜 업데이트
         }
     }
 }

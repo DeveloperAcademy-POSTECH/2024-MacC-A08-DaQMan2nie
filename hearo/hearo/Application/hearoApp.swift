@@ -21,6 +21,7 @@ struct hearoApp: App {
 
 final class AppRootManager: ObservableObject {
     @Published var currentRoot: AppRoot = .splash // 기본값: splash
+    @Published var detectedSound: String? = nil // 감지된 소리 저장
 
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
@@ -35,44 +36,24 @@ final class AppRootManager: ObservableObject {
 
 struct ContentView: View {
     @ObservedObject var appRootManager: AppRootManager
-
+    
     var body: some View {
-        // 현재 루트 상태에 따라 적절한 뷰를 보여줌
-        Group {
+        VStack {
             switch appRootManager.currentRoot {
             case .splash:
-                SplashView(appRootManager: appRootManager) // Splash 화면
+                SplashView(appRootManager: appRootManager)
             case .onboarding:
-                OnboardingView(appRootManager: appRootManager) // 온보딩 화면
+                OnboardingView(viewModel: OnboardingViewModel(appRootManager: appRootManager))
             case .home:
-                HomeView(appRootManager: appRootManager) // 홈 화면
+                HomeView(viewModel: HomeViewModel(appRootManager: appRootManager))
             case .working:
-                WorkingView(appRootManager: appRootManager) // 워킹 화면
+                WorkingView(viewModel: WorkingViewModel(appRootManager: appRootManager))
             case .finish:
-                FinishView(appRootManager: appRootManager) // 피니시 화면
+                FinishView(viewModel: FinishViewModel(appRootManager: appRootManager))
             case .warning:
-                WarningView(appRootManager: appRootManager) // 워닝 뷰
-            }
+                WarningView(appRootManager: appRootManager)        }
+            
         }
-        .onAppear {
-            printCurrentRoot()
-        }
-    }
-
-    private func printCurrentRoot() {
-        switch appRootManager.currentRoot {
-        case .splash:
-            print("현재 화면: SplashView")
-        case .onboarding:
-            print("현재 화면: OnboardingView")
-        case .home:
-            print("현재 화면: HomeView")
-        case .working:
-            print("현재 화면: WorkingView")
-        case .finish:
-            print("현재 화면: FinishView")
-        case .warning:
-            print("현재 화면 : warning")
-        }
+        
     }
 }

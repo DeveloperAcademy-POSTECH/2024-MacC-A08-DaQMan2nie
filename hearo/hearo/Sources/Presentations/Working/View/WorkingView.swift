@@ -4,33 +4,31 @@
 //
 //  Created by Pil_Gaaang on 10/5/24.
 //
+
 import SwiftUI
-
 struct WorkingView: View {
-    @ObservedObject var appRootManager: AppRootManager
-    @ObservedObject var soundDetectorViewModel: SoundDetectorViewModel
+    @ObservedObject var viewModel: WorkingViewModel
+    
+    init(viewModel: WorkingViewModel) {
+           self.viewModel = viewModel
+       }
 
-    init(appRootManager: AppRootManager) {
-            self.appRootManager = appRootManager
-            self.soundDetectorViewModel = SoundDetectorViewModel(appRootManager: appRootManager)
-        }
 
     var body: some View {
         VStack {
             Text("워킹 화면")
                 .font(.largeTitle)
                 .padding()
-
-            // ML 작동 중인 내용을 보여주는 텍스트
-            Text("분류 결과: \(soundDetectorViewModel.classificationResult)")
-                .font(.title2)
-                .foregroundColor(.white)
-                .padding()
+            
+            ForEach(0..<4, id: \.self) { index in
+                            Text("마이크 \(index + 1): \(viewModel.soundDetectorViewModel.classificationResults[index])")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
 
             Button(action: {
-                appRootManager.currentRoot = .finish
-                print("녹음 중지")
-                soundDetectorViewModel.stopRecording() // 종료 시 녹음 중지
+                viewModel.finishRecording()
             }) {
                 ZStack {
                     Rectangle()
@@ -48,11 +46,10 @@ struct WorkingView: View {
             }
         }
         .onAppear {
-            soundDetectorViewModel.startRecording() // 뷰가 나타날 때 녹음 시작
-            print("녹음 시작")
+            viewModel.startRecording() // 뷰가 나타날 때 녹음 시작
         }
         .onDisappear {
-            soundDetectorViewModel.stopRecording() // 뷰가 사라질 때 녹음 중지
+            viewModel.stopRecording() // 뷰가 사라질 때 녹음 중지
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
