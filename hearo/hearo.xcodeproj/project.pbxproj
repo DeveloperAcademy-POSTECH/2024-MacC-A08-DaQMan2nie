@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
+		6451A9272CC27DC400FE2F8D /* hearoadWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +43,42 @@
 			remoteGlobalIDString = 001C6F792CAFBC6900B03767;
 			remoteInfo = hearo;
 		};
+		6451A9142CC27DC400FE2F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001C6F722CAFBC6900B03767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6451A9032CC27DC200FE2F8D;
+			remoteInfo = "hearoadWatch Watch App";
+		};
+		6451A91E2CC27DC400FE2F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001C6F722CAFBC6900B03767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6451A9032CC27DC200FE2F8D;
+			remoteInfo = "hearoadWatch Watch App";
+		};
+		6451A9252CC27DC400FE2F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001C6F722CAFBC6900B03767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6451A9032CC27DC200FE2F8D;
+			remoteInfo = "hearoadWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6451A92B2CC27DC400FE2F8D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6451A9272CC27DC400FE2F8D /* hearoadWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00078BDE2CAFC75900FB3F70 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
@@ -65,9 +101,35 @@
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
+		6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hearoadWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6451A9132CC27DC400FE2F8D /* hearoadWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearoadWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6451A91D2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearoadWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6451A9382CC280C500FE2F8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"WatchKit Extension/Helper/NotificationManager.swift",
+			);
+			target = 001C6F792CAFBC6900B03767 /* hearo */;
+		};
+		6451A9392CC280C500FE2F8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"WatchKit Extension/Helper/NotificationManager.swift",
+			);
+			target = 6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6451A9052CC27DC200FE2F8D /* hearoadWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6451A9382CC280C500FE2F8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 6451A9392CC280C500FE2F8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "hearoadWatch Watch App"; sourceTree = "<group>"; };
+		6451A9162CC27DC400FE2F8D /* hearoadWatch Watch AppTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "hearoadWatch Watch AppTests"; sourceTree = "<group>"; };
+		6451A9202CC27DC400FE2F8D /* hearoadWatch Watch AppUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "hearoadWatch Watch AppUITests"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		001C6F772CAFBC6900B03767 /* Frameworks */ = {
@@ -85,6 +147,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		001C6F932CAFBC6C00B03767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A9012CC27DC200FE2F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A9102CC27DC400FE2F8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A91A2CC27DC400FE2F8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -154,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				001C6F7C2CAFBC6900B03767 /* hearo */,
+				6451A9052CC27DC200FE2F8D /* hearoadWatch Watch App */,
+				6451A9162CC27DC400FE2F8D /* hearoadWatch Watch AppTests */,
+				6451A9202CC27DC400FE2F8D /* hearoadWatch Watch AppUITests */,
 				001C6F7B2CAFBC6900B03767 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +250,9 @@
 				001C6F7A2CAFBC6900B03767 /* hearo.app */,
 				001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */,
 				001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */,
+				6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */,
+				6451A9132CC27DC400FE2F8D /* hearoadWatch Watch AppTests.xctest */,
+				6451A91D2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -364,10 +453,12 @@
 				001C6F762CAFBC6900B03767 /* Sources */,
 				001C6F772CAFBC6900B03767 /* Frameworks */,
 				001C6F782CAFBC6900B03767 /* Resources */,
+				6451A92B2CC27DC400FE2F8D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6451A9262CC27DC400FE2F8D /* PBXTargetDependency */,
 			);
 			name = hearo;
 			productName = hearo;
@@ -410,6 +501,74 @@
 			productReference = 001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6451A9282CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch App" */;
+			buildPhases = (
+				6451A9002CC27DC200FE2F8D /* Sources */,
+				6451A9012CC27DC200FE2F8D /* Frameworks */,
+				6451A9022CC27DC200FE2F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6451A9052CC27DC200FE2F8D /* hearoadWatch Watch App */,
+			);
+			name = "hearoadWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "hearoadWatch Watch App";
+			productReference = 6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6451A9122CC27DC400FE2F8D /* hearoadWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6451A92C2CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch AppTests" */;
+			buildPhases = (
+				6451A90F2CC27DC400FE2F8D /* Sources */,
+				6451A9102CC27DC400FE2F8D /* Frameworks */,
+				6451A9112CC27DC400FE2F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6451A9152CC27DC400FE2F8D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6451A9162CC27DC400FE2F8D /* hearoadWatch Watch AppTests */,
+			);
+			name = "hearoadWatch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "hearoadWatch Watch AppTests";
+			productReference = 6451A9132CC27DC400FE2F8D /* hearoadWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6451A91C2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6451A92F2CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch AppUITests" */;
+			buildPhases = (
+				6451A9192CC27DC400FE2F8D /* Sources */,
+				6451A91A2CC27DC400FE2F8D /* Frameworks */,
+				6451A91B2CC27DC400FE2F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6451A91F2CC27DC400FE2F8D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6451A9202CC27DC400FE2F8D /* hearoadWatch Watch AppUITests */,
+			);
+			name = "hearoadWatch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "hearoadWatch Watch AppUITests";
+			productReference = 6451A91D2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -417,7 +576,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					001C6F792CAFBC6900B03767 = {
@@ -430,6 +589,17 @@
 					001C6F952CAFBC6C00B03767 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 001C6F792CAFBC6900B03767;
+					};
+					6451A9032CC27DC200FE2F8D = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					6451A9122CC27DC400FE2F8D = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 6451A9032CC27DC200FE2F8D;
+					};
+					6451A91C2CC27DC400FE2F8D = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 6451A9032CC27DC200FE2F8D;
 					};
 				};
 			};
@@ -449,6 +619,9 @@
 				001C6F792CAFBC6900B03767 /* hearo */,
 				001C6F8B2CAFBC6C00B03767 /* hearoTests */,
 				001C6F952CAFBC6C00B03767 /* hearoUITests */,
+				6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */,
+				6451A9122CC27DC400FE2F8D /* hearoadWatch Watch AppTests */,
+				6451A91C2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +645,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		001C6F942CAFBC6C00B03767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A9022CC27DC200FE2F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A9112CC27DC400FE2F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A91B2CC27DC400FE2F8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -517,6 +711,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6451A9002CC27DC200FE2F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A90F2CC27DC400FE2F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6451A9192CC27DC400FE2F8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -529,6 +744,21 @@
 			isa = PBXTargetDependency;
 			target = 001C6F792CAFBC6900B03767 /* hearo */;
 			targetProxy = 001C6F972CAFBC6C00B03767 /* PBXContainerItemProxy */;
+		};
+		6451A9152CC27DC400FE2F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */;
+			targetProxy = 6451A9142CC27DC400FE2F8D /* PBXContainerItemProxy */;
+		};
+		6451A91F2CC27DC400FE2F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */;
+			targetProxy = 6451A91E2CC27DC400FE2F8D /* PBXContainerItemProxy */;
+		};
+		6451A9262CC27DC400FE2F8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6451A9032CC27DC200FE2F8D /* hearoadWatch Watch App */;
+			targetProxy = 6451A9252CC27DC400FE2F8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -788,6 +1018,144 @@
 			};
 			name = Release;
 		};
+		6451A9292CC27DC400FE2F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearoadWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = hearoadWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = pilgaaang.hearo;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		6451A92A2CC27DC400FE2F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearoadWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = hearoadWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = pilgaaang.hearo;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		6451A92D2CC27DC400FE2F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaQMen2nie.hearoadWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearoadWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		6451A92E2CC27DC400FE2F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaQMen2nie.hearoadWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearoadWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		6451A9302CC27DC400FE2F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaQMen2nie.hearoadWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "hearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		6451A9312CC27DC400FE2F8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaQMen2nie.hearoadWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "hearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -823,6 +1191,33 @@
 			buildConfigurations = (
 				001C6FA72CAFBC6C00B03767 /* Debug */,
 				001C6FA82CAFBC6C00B03767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6451A9282CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6451A9292CC27DC400FE2F8D /* Debug */,
+				6451A92A2CC27DC400FE2F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6451A92C2CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6451A92D2CC27DC400FE2F8D /* Debug */,
+				6451A92E2CC27DC400FE2F8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6451A92F2CC27DC400FE2F8D /* Build configuration list for PBXNativeTarget "hearoadWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6451A9302CC27DC400FE2F8D /* Debug */,
+				6451A9312CC27DC400FE2F8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
