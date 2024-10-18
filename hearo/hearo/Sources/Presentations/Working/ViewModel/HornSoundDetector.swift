@@ -12,6 +12,7 @@ import SoundAnalysis
 import UserNotifications
 import UIKit
 import Combine
+import WatchConnectivity
 
 class HornSoundDetector: NSObject, ObservableObject {
     private var audioEngine: AVAudioEngine!
@@ -151,6 +152,29 @@ class HornSoundDetector: NSObject, ObservableObject {
             sendNotification(title: "경고", body: "모든 채널에서 높은 신뢰도로 소리가 감지되었습니다!")
         }
     }
+  
+  // iPhone에서 Watch로 소리 유형을 전송하는 함수
+  func sendHornDetectedMessageToWatch(_ soundType: String) {
+    if WCSession.default.isReachable {
+      WCSession.default.sendMessage(["soundDetected": soundType], replyHandler: nil, errorHandler: { error in
+        print("메시지 전송 실패: \(error.localizedDescription)")
+      })
+    }
+  }
+  
+  // 소리 감지 결과에 따른 전송
+  func handleSoundClassificationResult(_ classification: String) {
+    switch classification {
+    case "BicycleHorn":
+      sendHornDetectedMessageToWatch("BicycleHorn")
+    case "CarHorn":
+      sendHornDetectedMessageToWatch("CarHorn")
+    case "Siren":
+      sendHornDetectedMessageToWatch("Siren")
+    default:
+      break
+    }
+  }
 }
 
 extension HornSoundDetector: SNResultsObserving {
