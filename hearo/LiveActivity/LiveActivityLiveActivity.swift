@@ -22,21 +22,37 @@ struct LiveActivityAttributes: ActivityAttributes {
 struct LiveActivityLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveActivityAttributes.self) { context in
-            // 잠금 화면과 배너 UI (VStack 구성)
-            VStack {
-                Text(context.state.isWarning ? "경고 상태" : "안전주행중")
-                Button(action: {
-                    stopWorking()
-                }) {
-                    Label("정지", systemImage: "stop.fill")
+          
+            HStack {
+                // UI
+                VStack {
+                    Text("안전주행중")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    Button(action: {
+                        stopWorking()
+                    }) {
+                        Label("정지", systemImage: "stop.fill")
+                            .foregroundColor(.red)
+                    }
                 }
+                
+                Spacer()
+                
+               
+                Image(systemName: "car.fill") // 캐릭터로 대체 예정
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.white)
             }
+            .padding()
             .containerBackground(for: .widget) {
-                // 배경 설정: 필요한 색상이나 뷰로 대체
-                Color.blue
+                // 배경 설정: 검정색으로 설정
+                Color.black
             }
-            .activityBackgroundTint(Color.blue)
-            .activitySystemActionForegroundColor(Color.white)
+            .activityBackgroundTint(Color.black)
+                        .activitySystemActionForegroundColor(Color.white)
             
         } dynamicIsland: { context in
             DynamicIsland {
