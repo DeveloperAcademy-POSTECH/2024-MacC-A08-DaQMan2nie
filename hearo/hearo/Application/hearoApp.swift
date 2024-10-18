@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct hearoApp: App {
+    // AppDelegate를 SwiftUI 앱에 연결
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject var appRootManager = AppRootManager() // 앱 전역에서 사용되는 상태 관리
 
     var body: some Scene {
