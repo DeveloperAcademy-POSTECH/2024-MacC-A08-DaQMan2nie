@@ -24,6 +24,7 @@
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
 		6451A9272CC27DC400FE2F8D /* hearoadWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6451A93C2CC2875A00FE2F8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451A93B2CC2875A00FE2F8D /* AppDelegate.swift */; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,7 @@
 		6451A9042CC27DC200FE2F8D /* hearoadWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hearoadWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6451A9132CC27DC400FE2F8D /* hearoadWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearoadWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6451A91D2CC27DC400FE2F8D /* hearoadWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearoadWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6451A93B2CC2875A00FE2F8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				001C6F7D2CAFBC6900B03767 /* hearoApp.swift */,
+				6451A93B2CC2875A00FE2F8D /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
+				6451A93C2CC2875A00FE2F8D /* AppDelegate.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
