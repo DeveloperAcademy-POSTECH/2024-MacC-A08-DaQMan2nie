@@ -16,6 +16,7 @@ class WorkingViewModel: ObservableObject {
         self.appRootManager = appRootManager
         self.soundDetectorViewModel = SoundDetectorViewModel(appRootManager: appRootManager)
         
+        
     }
 
     var classificationResult: String {
@@ -28,17 +29,25 @@ class WorkingViewModel: ObservableObject {
     }
 
     func startRecording() {
+        print("WorkingViewModel: startRecording() 호출됨")
         soundDetectorViewModel.startRecording()
-        print("녹음 시작")
+        print("WorkingViewModel: 녹음 시작 완료")
     }
 
     func stopRecording() {
+        print("WorkingViewModel: stopRecording() 호출됨")
         soundDetectorViewModel.stopRecording()
-        print("녹음 중지")
+        print("녹음 중지 완료")
     }
 
     func finishRecording() {
         appRootManager.currentRoot = .finish
         stopRecording()
+    }
+
+    func stopWorking() async {
+        DispatchQueue.main.async {
+            self.finishRecording()
+        }
     }
 }

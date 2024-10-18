@@ -23,6 +23,14 @@
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
+		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
+		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
+		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
+		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
+		1121777D2CC283BC000A146F /* LiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777C2CC283BC000A146F /* LiveActivity.swift */; };
+		1121777F2CC283BC000A146F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777E2CC283BC000A146F /* AppIntent.swift */; };
+		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
+		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +50,28 @@
 			remoteGlobalIDString = 001C6F792CAFBC6900B03767;
 			remoteInfo = hearo;
 		};
+		112177832CC283BD000A146F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001C6F722CAFBC6900B03767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 112177702CC283BC000A146F;
+			remoteInfo = LiveActivityExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		112177862CC283BD000A146F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00078BDE2CAFC75900FB3F70 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
@@ -65,6 +94,15 @@
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
+		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		112177782CC283BC000A146F /* LiveActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityBundle.swift; sourceTree = "<group>"; };
+		1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
+		1121777C2CC283BC000A146F /* LiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivity.swift; sourceTree = "<group>"; };
+		1121777E2CC283BC000A146F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -88,6 +126,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1121776E2CC283BC000A146F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */,
+				112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				001C6F7C2CAFBC6900B03767 /* hearo */,
+				112177772CC283BC000A146F /* LiveActivity */,
+				112177722CC283BC000A146F /* Frameworks */,
 				001C6F7B2CAFBC6900B03767 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +213,7 @@
 				001C6F7A2CAFBC6900B03767 /* hearo.app */,
 				001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */,
 				001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */,
+				112177712CC283BC000A146F /* LiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +404,28 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		112177722CC283BC000A146F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				112177732CC283BC000A146F /* WidgetKit.framework */,
+				112177752CC283BC000A146F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		112177772CC283BC000A146F /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				112177782CC283BC000A146F /* LiveActivityBundle.swift */,
+				1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */,
+				1121777C2CC283BC000A146F /* LiveActivity.swift */,
+				1121777E2CC283BC000A146F /* AppIntent.swift */,
+				112177802CC283BD000A146F /* Assets.xcassets */,
+				112177822CC283BD000A146F /* Info.plist */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,10 +436,12 @@
 				001C6F762CAFBC6900B03767 /* Sources */,
 				001C6F772CAFBC6900B03767 /* Frameworks */,
 				001C6F782CAFBC6900B03767 /* Resources */,
+				112177862CC283BD000A146F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				112177842CC283BD000A146F /* PBXTargetDependency */,
 			);
 			name = hearo;
 			productName = hearo;
@@ -410,6 +484,23 @@
 			productReference = 001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		112177702CC283BC000A146F /* LiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 112177892CC283BD000A146F /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */;
+			buildPhases = (
+				1121776D2CC283BC000A146F /* Sources */,
+				1121776E2CC283BC000A146F /* Frameworks */,
+				1121776F2CC283BC000A146F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiveActivityExtension;
+			productName = LiveActivityExtension;
+			productReference = 112177712CC283BC000A146F /* LiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -431,6 +522,9 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 001C6F792CAFBC6900B03767;
 					};
+					112177702CC283BC000A146F = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 001C6F752CAFBC6900B03767 /* Build configuration list for PBXProject "hearo" */;
@@ -449,6 +543,7 @@
 				001C6F792CAFBC6900B03767 /* hearo */,
 				001C6F8B2CAFBC6C00B03767 /* hearoTests */,
 				001C6F952CAFBC6C00B03767 /* hearoUITests */,
+				112177702CC283BC000A146F /* LiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -475,6 +570,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1121776F2CC283BC000A146F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112177812CC283BD000A146F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +620,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1121776D2CC283BC000A146F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */,
+				1121777F2CC283BC000A146F /* AppIntent.swift in Sources */,
+				1121777D2CC283BC000A146F /* LiveActivity.swift in Sources */,
+				1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -529,6 +643,11 @@
 			isa = PBXTargetDependency;
 			target = 001C6F792CAFBC6900B03767 /* hearo */;
 			targetProxy = 001C6F972CAFBC6C00B03767 /* PBXContainerItemProxy */;
+		};
+		112177842CC283BD000A146F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 112177702CC283BC000A146F /* LiveActivityExtension */;
+			targetProxy = 112177832CC283BD000A146F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -655,12 +774,13 @@
 		001C6FA12CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -685,12 +805,13 @@
 		001C6FA22CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -788,6 +909,60 @@
 			};
 			name = Release;
 		};
+		112177872CC283BD000A146F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearo.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		112177882CC283BD000A146F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearo.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -823,6 +998,15 @@
 			buildConfigurations = (
 				001C6FA72CAFBC6C00B03767 /* Debug */,
 				001C6FA82CAFBC6C00B03767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		112177892CC283BD000A146F /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112177872CC283BD000A146F /* Debug */,
+				112177882CC283BD000A146F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
