@@ -46,9 +46,11 @@ struct WorkingView: View {
             }
         }
         .onAppear {
+            print("WorkingView: onAppear 호출됨 - 녹음 시작 시도")
             viewModel.startRecording() // 뷰가 나타날 때 녹음 시작
         }
         .onDisappear {
+            print("WorkingView: onDisappear 호출됨 - 녹음 중지 시도")
             viewModel.stopRecording() // 뷰가 사라질 때 녹음 중지
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityKit
 
 @main
 struct hearoApp: App {
@@ -17,6 +18,15 @@ struct hearoApp: App {
             ContentView(appRootManager: appRootManager)
         }
     }
+}
+
+// 라이브 액티비티 속성 정의
+struct LiveActivityAttributes: ActivityAttributes {
+    public struct ContentState: Codable, Hashable {
+        var isWarning: Bool // 경고 상태를 나타냄
+    }
+    
+    var name: String
 }
 
 final class AppRootManager: ObservableObject {
@@ -31,6 +41,49 @@ final class AppRootManager: ObservableObject {
         case working
         case finish
         case warning
+    }
+    
+    // 라이브 액티비티 시작 메서드
+    func startLiveActivity(isWarning: Bool) {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else {
+            print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
+            return
+        }
+
+        let attributes = LiveActivityAttributes(name: "주행")
+        let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+
+        do {
+            let activity = try Activity<LiveActivityAttributes>.request(
+                attributes: attributes,
+                contentState: initialContentState,
+                pushType: nil
+            )
+            print("라이브 액티비티가 시작되었습니다: \(activity.id)")
+        } catch {
+            print("라이브 액티비티 시작 실패: \(error)")
+        }
+    }
+    
+    // 라이브 액티비티 중지 메서드
+    func stopLiveActivity() {
+        Task {
+            for activity in Activity<LiveActivityAttributes>.activities {
+                await activity.end(dismissalPolicy: .immediate)
+                print("라이브 액티비티가 중지되었습니다: \(activity.id)")
+            }
+        }
+    }
+    
+    // 라이브 액티비티 업데이트 메서드
+    func updateLiveActivity(isWarning: Bool) {
+        Task {
+            for activity in Activity<LiveActivityAttributes>.activities {
+                let updatedContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+                await activity.update(using: updatedContentState)
+                print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
+            }
+        }
     }
 }
 
@@ -51,9 +104,8 @@ struct ContentView: View {
             case .finish:
                 FinishView(viewModel: FinishViewModel(appRootManager: appRootManager))
             case .warning:
-                WarningView(appRootManager: appRootManager)        }
-            
+                WarningView(appRootManager: appRootManager)
+            }
         }
-        
     }
 }
