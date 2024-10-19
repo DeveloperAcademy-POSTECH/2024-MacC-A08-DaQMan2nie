@@ -24,6 +24,8 @@ class HomeViewModel: ObservableObject {
     }
 
     func startWorking() {
+        print("HomeViewModel: startWorking() 호출됨")
         appRootManager.currentRoot = .working
+        print("HomeViewModel: appRootManager.currentRoot = \(appRootManager.currentRoot)")
     }
 }
