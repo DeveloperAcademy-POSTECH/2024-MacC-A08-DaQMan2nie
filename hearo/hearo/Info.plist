@@ -13,5 +13,9 @@
 			<string>SpoqaHanSansNeo-Bold.otf</string>
 		</array>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>Audio</string>
+	</array>
 </dict>
 </plist>
