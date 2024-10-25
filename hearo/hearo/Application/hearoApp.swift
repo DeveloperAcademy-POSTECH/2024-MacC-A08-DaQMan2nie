@@ -33,6 +33,12 @@ final class AppRootManager: ObservableObject {
     @Published var currentRoot: AppRoot = .splash // 기본값: splash
     @Published var detectedSound: String? = nil // 감지된 소리 저장
 
+    init() {
+        // UserDefaults에서 온보딩 완료 여부를 확인하고 기본 루트를 결정
+        let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+        self.currentRoot = hasSeenOnboarding ? .home : .splash
+      }
+  
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
         case splash
