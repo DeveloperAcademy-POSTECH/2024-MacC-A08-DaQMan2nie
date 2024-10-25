@@ -47,6 +47,10 @@ struct SplashView: View {
       }
     }
     .frame(width: 393, height: 852)
-    .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
+    .background(Color("HPrimaryColor"))
   }
+}
+
+#Preview {
+  SplashView(appRootManager: AppRootManager())
 }
