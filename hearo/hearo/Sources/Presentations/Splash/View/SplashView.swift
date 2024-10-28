@@ -12,6 +12,10 @@ struct SplashView: View {
   
   var body: some View {
     ZStack {
+      
+      Color("HPrimaryColor")
+        .ignoresSafeArea(.all)
+      
       VStack {
         if isActive {
           Color.clear
@@ -46,8 +50,7 @@ struct SplashView: View {
         }
       }
     }
-    .frame(width: 393, height: 852)
-    .background(Color("HPrimaryColor"))
+    
   }
 }
 
