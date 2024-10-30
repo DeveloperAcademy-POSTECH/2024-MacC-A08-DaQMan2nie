@@ -5,9 +5,10 @@
 //  Created by Pil_Gaaang on 10/5/24.
 //
 import Foundation
+import Combine
+import SwiftUI
 import AVFoundation
-import Combine // Combine 프레임워크 임포트
-import SwiftUI // SwiftUI 프레임워크 임포트
+
 
 
 class WorkingViewModel: ObservableObject {
@@ -49,7 +50,6 @@ class WorkingViewModel: ObservableObject {
         soundDetectorViewModel.startRecording()
         print("WorkingViewModel: 녹음 시작 완료")
 
-        // 라이브 액티비티 시작
         appRootManager.startLiveActivity(isWarning: false)
     }
 
@@ -58,17 +58,11 @@ class WorkingViewModel: ObservableObject {
         soundDetectorViewModel.stopRecording()
         print("녹음 중지 완료")
         
-        // 라이브 액티비티 중지
         appRootManager.stopLiveActivity()
     }
 
     func finishRecording() {
         appRootManager.currentRoot = .finish
         stopRecording()
-    }
-
-    func triggerWarning() {
-        appRootManager.updateLiveActivity(isWarning: true)
-        print("경고 상태 업데이트됨")
     }
 }
