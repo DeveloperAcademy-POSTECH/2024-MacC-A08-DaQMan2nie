@@ -8,7 +8,7 @@ import Foundation
 import WatchKit
 import WatchConnectivity
 
-class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate, WKExtendedRuntimeSessionDelegate {
+class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate{
     func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
         switch reason {
         case .expired:
@@ -22,12 +22,12 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate, WKExte
         }
         
         // 세션 만료 후 백그라운드 세션을 다시 시작
-        startBackgroundSession()
+//        startBackgroundSession()
     }
     static let shared = WatchSessionManager() // 싱글톤 인스턴스 생성
     
     @Published var alertMessage: String = "대기 중"
-    private var backgroundSession: WKExtendedRuntimeSession?
+//    private var backgroundSession: WKExtendedRuntimeSession?
 
     private override init() {
         super.init()
@@ -37,15 +37,15 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate, WKExte
             WCSession.default.activate()
         }
         
-        startBackgroundSession() // 백그라운드 세션 시작
+//        startBackgroundSession() // 백그라운드 세션 시작
     }
 
     // 백그라운드 실행을 위한 세션 시작
-    private func startBackgroundSession() {
-        backgroundSession = WKExtendedRuntimeSession()
-        backgroundSession?.delegate = self
-        backgroundSession?.start()
-    }
+//    private func startBackgroundSession() {
+//        backgroundSession = WKExtendedRuntimeSession()
+//        backgroundSession?.delegate = self
+//        backgroundSession?.start()
+//    }
 
     // iOS에서 경고 메시지를 수신하는 메서드
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
@@ -69,21 +69,21 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate, WKExte
         }
     }
 
-    // WKExtendedRuntimeSessionDelegate - 세션 시작
-    func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-        print("배경 세션 시작됨")
-    }
-    
-    // WKExtendedRuntimeSessionDelegate - 세션 만료 예정
-    func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-        print("배경 세션 만료 예정")
-    }
-
-    // WKExtendedRuntimeSessionDelegate - 세션 만료 후 다시 시작
-    func extendedRuntimeSessionDidInvalidate(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-        print("배경 세션 만료됨")
-        startBackgroundSession() // 세션 만료 시 다시 시작
-    }
+//    // WKExtendedRuntimeSessionDelegate - 세션 시작
+//    func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+//        print("배경 세션 시작됨")
+//    }
+//    
+//    // WKExtendedRuntimeSessionDelegate - 세션 만료 예정
+//    func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+//        print("배경 세션 만료 예정")
+//    }
+//
+//    // WKExtendedRuntimeSessionDelegate - 세션 만료 후 다시 시작
+//    func extendedRuntimeSessionDidInvalidate(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
+//        print("배경 세션 만료됨")
+//        startBackgroundSession() // 세션 만료 시 다시 시작
+//    }
 
     // WCSession 활성화 완료 시 호출되는 메서드
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
