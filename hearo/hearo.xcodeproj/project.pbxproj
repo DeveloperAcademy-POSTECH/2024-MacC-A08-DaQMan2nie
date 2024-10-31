@@ -146,6 +146,7 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
 		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -420,6 +421,7 @@
 		001C9F562CCF7983004EC4D2 /* HearoadWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */,
 				001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */,
 				001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */,
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
