@@ -26,7 +26,7 @@ class WorkingViewModel: ObservableObject {
     func configureAudioSession() {
            do {
                let audioSession = AVAudioSession.sharedInstance()
-               try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
+             try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetoothA2DP, .allowAirPlay])
                try audioSession.setActive(true)
                print("오디오 세션이 성공적으로 설정되었습니다.")
            } catch {
