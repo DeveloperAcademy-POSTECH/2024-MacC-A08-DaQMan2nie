@@ -204,5 +204,5 @@ extension HornSoundDetector: SNResultsObserving {
         }
       }
     }
-  }
-}
+
+

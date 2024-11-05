@@ -31,13 +31,7 @@
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
-		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
-		00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AD2CD361B000F752D0 /* WatchViewManager.swift */; };
-		00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AF2CD362D100F752D0 /* WatchviewManager.swift */; };
-		00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B12CD367B100F752D0 /* WatchHomeView.swift */; };
-		00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */; };
-		00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B52CD367C800F752D0 /* WatchWarningView.swift */; };
-		00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B72CD367D100F752D0 /* WatchFinishView.swift */; };
+		00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */; };
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
@@ -51,7 +45,6 @@
 		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
 		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
 		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
-
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -159,13 +152,7 @@
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
-		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
-		00F319AD2CD361B000F752D0 /* WatchViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewManager.swift; sourceTree = "<group>"; };
-		00F319AF2CD362D100F752D0 /* WatchviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchviewManager.swift; sourceTree = "<group>"; };
-		00F319B12CD367B100F752D0 /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
-		00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWorkingView.swift; sourceTree = "<group>"; };
-		00F319B52CD367C800F752D0 /* WatchWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWarningView.swift; sourceTree = "<group>"; };
-		00F319B72CD367D100F752D0 /* WatchFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchFinishView.swift; sourceTree = "<group>"; };
+		00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HornSoundClassifier_V9.mlmodel; path = ../../../../../../../Downloads/HornSoundClassifier_V9.mlmodel; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -175,13 +162,11 @@
 		1121777E2CC283BC000A146F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
 		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
 		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
 		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -370,20 +355,9 @@
 			isa = PBXGroup;
 			children = (
 				00A04EA32CB7CA510031DECC /* Helper */,
-				00A04EA22CB7CA320031DECC /* Enums */,
-				001C6FAC2CAFC44900B03767 /* Delegate */,
-				001C6FAF2CAFC46200B03767 /* Extensions */,
-				001C6FAE2CAFC45900B03767 /* Data */,
 				001C6FAD2CAFC45100B03767 /* Presentations */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		001C6FAC2CAFC44900B03767 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Delegate;
 			sourceTree = "<group>";
 		};
 		001C6FAD2CAFC45100B03767 /* Presentations */ = {
@@ -397,20 +371,6 @@
 				001C6FB72CAFC59F00B03767 /* Finish */,
 			);
 			path = Presentations;
-			sourceTree = "<group>";
-		};
-		001C6FAE2CAFC45900B03767 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		001C6FAF2CAFC46200B03767 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		001C6FB32CAFC4DF00B03767 /* Home */ = {
@@ -458,11 +418,6 @@
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
 				001C9F592CCF7983004EC4D2 /* ContentView.swift */,
 				001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */,
-				00F319AD2CD361B000F752D0 /* WatchViewManager.swift */,
-				00F319B12CD367B100F752D0 /* WatchHomeView.swift */,
-				00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */,
-				00F319B52CD367C800F752D0 /* WatchWarningView.swift */,
-				00F319B72CD367D100F752D0 /* WatchFinishView.swift */,
 			);
 			path = "HearoadWatch Watch App";
 			sourceTree = "<group>";
@@ -542,21 +497,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		00A04EA22CB7CA320031DECC /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				644F9A842CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel */,
-				00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */,
+				00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
-				00F319AF2CD362D100F752D0 /* WatchviewManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -842,22 +788,20 @@
 				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
 				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
+				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
 				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
-				00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
-				644F9A852CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
 				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
-				00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -881,11 +825,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */,
-				00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */,
-				00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */,
-				00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */,
-				00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */,
-				00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */,
 				001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */,
 				001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */,
 			);
@@ -1083,7 +1022,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1118,7 +1057,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1228,7 +1167,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1259,7 +1198,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1371,7 +1310,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1399,7 +1338,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
