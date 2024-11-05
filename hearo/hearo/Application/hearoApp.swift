@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ActivityKit
+import WatchConnectivity
 
 @main
 struct hearoApp: App {
@@ -30,8 +31,13 @@ struct LiveActivityAttributes: ActivityAttributes {
 }
 
 final class AppRootManager: ObservableObject {
-    @Published var currentRoot: AppRoot = .splash // 기본값: splash
+    @Published var currentRoot: AppRoot = .splash { // 기본값: splash
+        didSet {
+            // updateWatchView() // 주석 처리됨: 뷰 전환 시 Watch에 상태 전송 기능 비활성화
+        }
+    }
     @Published var detectedSound: String? = nil // 감지된 소리 저장
+    // private let viewManager = ViewManager.shared // 주석 처리됨: ViewManager 인스턴스
 
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
@@ -43,6 +49,24 @@ final class AppRootManager: ObservableObject {
         case warning
     }
     
+    // Watch에 뷰 상태 전송 함수 (주석 처리됨)
+    /*
+    private func updateWatchView() {
+        switch currentRoot {
+        case .home:
+            viewManager.sendViewChangeMessage(view: "home")
+        case .working:
+            viewManager.sendViewChangeMessage(view: "working")
+        case .warning:
+            viewManager.sendViewChangeMessage(view: "warning")
+        case .finish:
+            viewManager.sendViewChangeMessage(view: "finish")
+        default:
+            break
+        }
+    }
+    */
+
     // 라이브 액티비티 시작 메서드
     func startLiveActivity(isWarning: Bool) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {

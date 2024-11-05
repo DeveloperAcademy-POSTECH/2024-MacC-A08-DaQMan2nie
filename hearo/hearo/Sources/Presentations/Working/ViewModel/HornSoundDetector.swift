@@ -165,13 +165,11 @@ extension HornSoundDetector: SNResultsObserving {
                 return classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren"
             }) {
                 self.topClassification = topClassification // 가장 높은 분류 저장
-                self.classificationResult = "소리: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)"
+                self.classificationResult = topClassification.identifier // 소리 종류만 저장
             }
 
             for (index, classification) in topClassifications.enumerated() {
                 if classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren" {
-                    print("소리: \(classification.identifier), 신뢰도: \(classification.confidence)")
-                    
                     // 경적 및 사이렌 소리 감지
                     if classification.confidence >= 1.0 {
                         self.mlConfidences[index] = classification.confidence
