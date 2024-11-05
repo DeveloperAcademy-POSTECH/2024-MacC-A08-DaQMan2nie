@@ -31,11 +31,7 @@ struct LiveActivityAttributes: ActivityAttributes {
 }
 
 final class AppRootManager: ObservableObject {
-    @Published var currentRoot: AppRoot = .splash { // 기본값: splash
-        didSet {
-            // updateWatchView() // 주석 처리됨: 뷰 전환 시 Watch에 상태 전송 기능 비활성화
-        }
-    }
+    @Published var currentRoot: AppRoot = .splash // 기본값: splash
     @Published var detectedSound: String? = nil // 감지된 소리 저장
 
     // 루트 뷰 상태를 나타내는 열거형
@@ -48,23 +44,22 @@ final class AppRootManager: ObservableObject {
         case warning
     }
     
-
     // 스플래시 끝났을 때 호출
-  func determineNextRoot() {
-    let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
-    self.currentRoot = hasSeenOnboarding ? .home : .onboarding
-  }
-
+    func determineNextRoot() {
+        let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+        self.currentRoot = hasSeenOnboarding ? .home : .onboarding
+    }
+    
     // 라이브 액티비티 시작 메서드
     func startLiveActivity(isWarning: Bool) {
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
             print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
             return
         }
-
+        
         let attributes = LiveActivityAttributes(name: "주행")
         let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
-
+        
         do {
             let activity = try Activity<LiveActivityAttributes>.request(
                 attributes: attributes,
@@ -76,45 +71,32 @@ final class AppRootManager: ObservableObject {
             print("라이브 액티비티 시작 실패: \(error)")
         }
     }
-
     
-    do {
-      let activity = try Activity<LiveActivityAttributes>.request(
-        attributes: attributes,
-        contentState: initialContentState,
-        pushType: nil
-      )
-      print("라이브 액티비티가 시작되었습니다: \(activity.id)")
-    } catch {
-      print("라이브 액티비티 시작 실패: \(error)")
+    // 라이브 액티비티 중지 메서드
+    func stopLiveActivity() {
+        Task {
+            for activity in Activity<LiveActivityAttributes>.activities {
+                await activity.end(dismissalPolicy: .immediate)
+                print("라이브 액티비티가 중지되었습니다: \(activity.id)")
+            }
+        }
     }
-  }
-  
-  // 라이브 액티비티 중지 메서드
-  func stopLiveActivity() {
-    Task {
-      for activity in Activity<LiveActivityAttributes>.activities {
-        await activity.end(dismissalPolicy: .immediate)
-        print("라이브 액티비티가 중지되었습니다: \(activity.id)")
-      }
-    }
-  }
-  
-  // 라이브 액티비티 업데이트 메서드
-  func updateLiveActivity(isWarning: Bool) {
-    guard let activity = Activity<LiveActivityAttributes>.activities.first else { return }
     
-    Task {
-      // 현재 상태와 새로운 경고 상태가 다를 때만 업데이트
-      if activity.contentState.isWarning != isWarning {
-        let updatedContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
-        await activity.update(using: updatedContentState)
-        print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
-      }
+    // 라이브 액티비티 업데이트 메서드
+    func updateLiveActivity(isWarning: Bool) {
+        guard let activity = Activity<LiveActivityAttributes>.activities.first else { return }
+        
+        Task {
+            if activity.contentState.isWarning != isWarning {
+                let updatedContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+                await activity.update(using: updatedContentState)
+                print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
+            }
+        }
     }
-  }
 }
 
+// ContentView 정의 (AppRootManager 클래스 외부에 위치)
 struct ContentView: View {
     @ObservedObject var appRootManager: AppRootManager
     
