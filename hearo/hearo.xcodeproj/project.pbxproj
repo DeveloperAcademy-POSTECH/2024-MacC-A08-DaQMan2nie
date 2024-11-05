@@ -40,7 +40,12 @@
 		1121777F2CC283BC000A146F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777E2CC283BC000A146F /* AppIntent.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		644F9A852CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 644F9A842CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel */; };
+		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
+		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
+		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
+		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
+		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
+
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -157,7 +162,13 @@
 		1121777E2CC283BC000A146F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		644F9A842CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V9.mlmodel; sourceTree = "<group>"; };
+
+		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
+		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
+		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
+		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
+
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -221,6 +232,11 @@
 			isa = PBXGroup;
 			children = (
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
+				645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */,
+				645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */,
+				645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */,
+				645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */,
+				645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -801,11 +817,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
+				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
+				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
+				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
 				00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
@@ -814,6 +834,7 @@
 				644F9A852CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
+				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,

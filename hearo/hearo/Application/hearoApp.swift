@@ -30,28 +30,47 @@ struct LiveActivityAttributes: ActivityAttributes {
 }
 
 final class AppRootManager: ObservableObject {
-  @Published var currentRoot: AppRoot = .splash // 기본값: splash
-  @Published var detectedSound: String? = nil // 감지된 소리 저장
+    @Published var currentRoot: AppRoot = .splash // 기본값: splash
+    @Published var detectedSound: String? = nil // 감지된 소리 저장
   
-  // 루트 뷰 상태를 나타내는 열거형
-  enum AppRoot {
-    case splash
-    case onboarding
-    case home
-    case working
-    case finish
-    case warning
-  }
-  
-  // 라이브 액티비티 시작 메서드
-  func startLiveActivity(isWarning: Bool) {
-    guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-      print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
-      return
+    // 루트 뷰 상태를 나타내는 열거형
+    enum AppRoot {
+        case splash
+        case onboarding
+        case home
+        case working
+        case finish
+        case warning
     }
     
-    let attributes = LiveActivityAttributes(name: "주행")
-    let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+    // 스플래시 끝났을 때 호출
+  func determineNextRoot() {
+    let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+    self.currentRoot = hasSeenOnboarding ? .home : .onboarding
+  }
+  
+    // 라이브 액티비티 시작 메서드
+    func startLiveActivity(isWarning: Bool) {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else {
+            print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
+            return
+        }
+
+        let attributes = LiveActivityAttributes(name: "주행")
+        let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+
+        do {
+            let activity = try Activity<LiveActivityAttributes>.request(
+                attributes: attributes,
+                contentState: initialContentState,
+                pushType: nil
+            )
+            print("라이브 액티비티가 시작되었습니다: \(activity.id)")
+        } catch {
+            print("라이브 액티비티 시작 실패: \(error)")
+        }
+    }
+
     
     do {
       let activity = try Activity<LiveActivityAttributes>.request(
