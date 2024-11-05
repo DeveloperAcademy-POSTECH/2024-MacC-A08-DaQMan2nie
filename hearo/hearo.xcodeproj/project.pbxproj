@@ -32,6 +32,12 @@
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
+		00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AD2CD361B000F752D0 /* WatchViewManager.swift */; };
+		00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AF2CD362D100F752D0 /* WatchviewManager.swift */; };
+		00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B12CD367B100F752D0 /* WatchHomeView.swift */; };
+		00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */; };
+		00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B52CD367C800F752D0 /* WatchWarningView.swift */; };
+		00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B72CD367D100F752D0 /* WatchFinishView.swift */; };
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
@@ -152,7 +158,14 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
 		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
+		00F319AD2CD361B000F752D0 /* WatchViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewManager.swift; sourceTree = "<group>"; };
+		00F319AF2CD362D100F752D0 /* WatchviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchviewManager.swift; sourceTree = "<group>"; };
+		00F319B12CD367B100F752D0 /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
+		00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWorkingView.swift; sourceTree = "<group>"; };
+		00F319B52CD367C800F752D0 /* WatchWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWarningView.swift; sourceTree = "<group>"; };
+		00F319B72CD367D100F752D0 /* WatchFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchFinishView.swift; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -438,12 +451,18 @@
 		001C9F562CCF7983004EC4D2 /* HearoadWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				001C9F5D2CCF7984004EC4D2 /* Preview Content */,
+				00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */,
 				001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */,
 				001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */,
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
 				001C9F592CCF7983004EC4D2 /* ContentView.swift */,
 				001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */,
-				001C9F5D2CCF7984004EC4D2 /* Preview Content */,
+				00F319AD2CD361B000F752D0 /* WatchViewManager.swift */,
+				00F319B12CD367B100F752D0 /* WatchHomeView.swift */,
+				00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */,
+				00F319B52CD367C800F752D0 /* WatchWarningView.swift */,
+				00F319B72CD367D100F752D0 /* WatchFinishView.swift */,
 			);
 			path = "HearoadWatch Watch App";
 			sourceTree = "<group>";
@@ -537,6 +556,7 @@
 				00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
+				00F319AF2CD362D100F752D0 /* WatchviewManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -837,6 +857,7 @@
 				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
+				00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,6 +881,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */,
+				00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */,
+				00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */,
+				00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */,
+				00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */,
+				00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */,
 				001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */,
 				001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */,
 			);
