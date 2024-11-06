@@ -88,7 +88,7 @@ final class AppRootManager: ObservableObject {
     
     func stopLiveActivity() {
         let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
-        let content = ActivityContent(state: initialContentState, staleDate: nil)
+        _ = ActivityContent(state: initialContentState, staleDate: nil)
         
         guard isActivityActive else {
             print("라이브 액티비티가 이미 중지 상태입니다.")
@@ -121,7 +121,7 @@ final class AppRootManager: ObservableObject {
            }
            
            Task {
-               let updatedContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+               _ = LiveActivityAttributes.ContentState(isWarning: isWarning)
                await activity.update(content) // `using` 레이블 제거
                print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
            }

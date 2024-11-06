@@ -18,7 +18,7 @@ class HornSoundDetector: NSObject, ObservableObject {
   private var inputNode: AVAudioInputNode!
   private var soundClassifier: HornSoundClassifier_V9?
   private var streamAnalyzer: SNAudioStreamAnalyzer?
-  //  private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+  private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
   
   @Published var isRecording = false
   @Published var classificationResult = "녹음 시작 전"
@@ -89,7 +89,10 @@ class HornSoundDetector: NSObject, ObservableObject {
   
   // 각 채널의 녹음 시작
   func startRecording() {
-    guard !isRecording else { return }
+    guard !isRecording else {
+      print("녹음이 이미 시작된 상태입니다.")
+      return
+    }
     
     let format = inputNode.outputFormat(forBus: 0)
     streamAnalyzer = SNAudioStreamAnalyzer(format: format)
@@ -125,7 +128,10 @@ class HornSoundDetector: NSObject, ObservableObject {
   }
   
   func stopRecording() {
-    guard isRecording else { return }
+    guard isRecording else {
+      print("녹음이 이미 중지된 상태입니다.")
+      return
+    }
     
     audioEngine.stop()
     inputNode.removeTap(onBus: 0)
@@ -135,21 +141,19 @@ class HornSoundDetector: NSObject, ObservableObject {
     
     endBackgroundTask()
   }
+  
   private func startBackgroundTask() {
-    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    guard backgroundTask == .invalid else { return }
     backgroundTask = UIApplication.shared.beginBackgroundTask {
-      UIApplication.shared.endBackgroundTask(backgroundTask)
-      backgroundTask = .invalid
+      UIApplication.shared.endBackgroundTask(self.backgroundTask)
+      self.backgroundTask = .invalid
     }
   }
   
   private func endBackgroundTask() {
-    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
-    
-    if backgroundTask != .invalid {
-      UIApplication.shared.endBackgroundTask(backgroundTask)
-      backgroundTask = .invalid
-    }
+    guard backgroundTask != .invalid else { return }
+    UIApplication.shared.endBackgroundTask(backgroundTask)
+    backgroundTask = .invalid
   }
   
   func sendNotification(title: String, body: String) {
@@ -204,5 +208,3 @@ extension HornSoundDetector: SNResultsObserving {
         }
       }
     }
-
-
