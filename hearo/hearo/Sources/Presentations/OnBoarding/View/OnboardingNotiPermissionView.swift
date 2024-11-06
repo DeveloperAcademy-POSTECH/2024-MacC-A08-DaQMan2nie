@@ -28,7 +28,7 @@ struct OnboardingNotiPermissionView: View {
       }
       
       Spacer().frame(height: 19)
-      
+        
       HStack {
         Spacer().frame(width: 16)
         
