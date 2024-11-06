@@ -86,7 +86,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
            highestConfidenceIndex < classificationResults.count {
             
             let highestConfidenceSound = classificationResults[highestConfidenceIndex]
-            
+          print(highestConfidenceSound)
             // **신뢰도 없이 소리 종류만 전송**
             let message = ["alert": highestConfidenceSound]
             

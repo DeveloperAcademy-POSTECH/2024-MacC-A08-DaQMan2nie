@@ -35,18 +35,31 @@ struct SplashView: View {
           
           Spacer()
           
-          Text("Copyright 2024. DaQman2ni in all rights reserved.")
-            .font(Font.custom("Spoqa Han Sans Neo", size: 12))
-            .multilineTextAlignment(.center)
-            .foregroundColor(Color("HWhite"))
+          HStack(spacing: 0) {
+            
+            Text("Copyright 2024.")
+              .font(Font.custom("Spoqa Han Sans Neo", size: 12))
+              .multilineTextAlignment(.center)
+              .foregroundColor(Color("HWhite"))
+            Text(" DaQman2ni")
+              .font(Font.custom("Spoqa Han Sans Neo-Bold", size: 12))
+              .multilineTextAlignment(.center)
+              .foregroundColor(Color("HWhite"))
+            Text(" in all rights reserved.")
+              .font(Font.custom("Spoqa Han Sans Neo", size: 12))
+              .multilineTextAlignment(.center)
+              .foregroundColor(Color("HWhite"))
+            
+          }
+          .padding(.bottom, 44)
           
-          Spacer().frame(height: 44)
-            .onAppear {
-              // 2초 후 isActive 상태를 true로 변경
-              DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.isActive = true
-              }
-            }
+        }
+        
+      }
+      .onAppear {
+        // 2초 후 isActive 상태를 true로 변경
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          self.isActive = true
         }
       }
     }

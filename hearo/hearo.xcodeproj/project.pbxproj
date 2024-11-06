@@ -31,7 +31,6 @@
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
-		00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */; };
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
@@ -45,6 +44,7 @@
 		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
 		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
 		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
+		649FD2C62CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -152,7 +152,6 @@
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
-		00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HornSoundClassifier_V9.mlmodel; path = ../../../../../../../Downloads/HornSoundClassifier_V9.mlmodel; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -167,6 +166,7 @@
 		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
 		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
 		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
+		649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "HornSoundClassifier V9.mlmodel"; sourceTree = "<group>"; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -500,7 +500,7 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */,
+				649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
 			);
@@ -667,7 +667,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					001C6F792CAFBC6900B03767 = {
 						CreatedOnToolsVersion = 15.4;
@@ -788,12 +788,12 @@
 				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
 				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
-				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
 				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
+				649FD2C62CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
@@ -1016,13 +1016,12 @@
 		001C6FA12CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1051,13 +1050,12 @@
 		001C6FA22CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1086,11 +1084,10 @@
 		001C6FA42CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -1106,11 +1103,10 @@
 		001C6FA52CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -1126,10 +1122,9 @@
 		001C6FA72CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearoUITests;
@@ -1144,10 +1139,9 @@
 		001C6FA82CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearoUITests;
@@ -1167,7 +1161,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1198,7 +1192,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1224,11 +1218,10 @@
 		001C9F7C2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
@@ -1245,11 +1238,10 @@
 		001C9F7D2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
@@ -1266,10 +1258,9 @@
 		001C9F7E2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
@@ -1286,10 +1277,9 @@
 		001C9F7F2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
@@ -1310,7 +1300,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1338,7 +1328,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
