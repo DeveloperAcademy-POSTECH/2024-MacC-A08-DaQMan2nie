@@ -8,6 +8,7 @@ import Foundation
 import Combine
 import SwiftUI
 import AVFoundation
+import AudioToolbox
 
 
 
@@ -64,5 +65,8 @@ class WorkingViewModel: ObservableObject {
     func finishRecording() {
         appRootManager.currentRoot = .finish
         stopRecording()
+        
+        triggerErrorHaptic()
     }
 }
+

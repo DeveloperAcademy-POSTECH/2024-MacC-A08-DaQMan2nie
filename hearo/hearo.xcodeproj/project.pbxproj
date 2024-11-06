@@ -26,6 +26,7 @@
 		001C9F752CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */; };
 		001C9F782CCF7984004EC4D2 /* HearoadWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 001C9F552CCF7983004EC4D2 /* HearoadWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */; };
+		001D669B2CDB3E11005746AC /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D669A2CDB3E11005746AC /* Haptic.swift */; };
 		0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B72CC0295F009B4261 /* WarningView.swift */; };
 		0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B92CC02969009B4261 /* WarningViewModel.swift */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
@@ -39,20 +40,22 @@
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 
-		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
-		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
-		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
-		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
-		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
-		
-
 		1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */; };
-
-		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
-		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
-		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
-		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
-		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
+		11D7CAC32CDB8AA500F6B323 /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */; };
+		11D7CAC82CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CAC92CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CACA2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CACB2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CACC2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CACD2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */; };
+		11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */; };
+		11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */; };
+		11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */; };
+		11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */; };
 
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
@@ -154,6 +157,7 @@
 		001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearoadWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HearoadWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		001D669A2CDB3E11005746AC /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		0045C6B72CC0295F009B4261 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		0045C6B92CC02969009B4261 /* WarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewModel.swift; sourceTree = "<group>"; };
 		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
@@ -162,7 +166,9 @@
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 
 
+
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
+
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -171,23 +177,16 @@
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 
-
-		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
-		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
-		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
-		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
-		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-
-
 		1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V11.mlmodel; sourceTree = "<group>"; };
-
-
-		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
-		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
-		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
-		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
-		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-
+		11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesignSystem.swift; sourceTree = "<group>"; };
+		11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
+		11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
+		11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
+		11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
+		11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -251,12 +250,12 @@
 		00078BD42CAFC6F200FB3F70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */,
+				11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */,
+				11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */,
+				11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */,
+				11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */,
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
-				645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */,
-				645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */,
-				645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */,
-				645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */,
-				645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,6 +368,8 @@
 			children = (
 				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
 				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
+				11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */,
+				11D7CAC42CDB8BAF00F6B323 /* Font */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -434,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				001C9F5D2CCF7984004EC4D2 /* Preview Content */,
-				00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */,
 				001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */,
 				001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */,
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
@@ -526,6 +526,7 @@
 
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
+				001D669A2CDB3E11005746AC /* Haptic.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -548,6 +549,16 @@
 				112177822CC283BD000A146F /* Info.plist */,
 			);
 			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		11D7CAC42CDB8BAF00F6B323 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */,
+				11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */,
+				11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -747,6 +758,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
+				11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
 				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
@@ -771,6 +785,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F5F2CCF7984004EC4D2 /* Preview Assets.xcassets in Resources */,
+				11D7CACB2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CACC2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CACD2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 				001C9F5C2CCF7984004EC4D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +811,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				112177812CC283BD000A146F /* Assets.xcassets in Resources */,
+				11D7CAC82CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CAC92CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CACA2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,19 +824,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
-				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
-				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
-				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
-				001D669B2CDB3E11005746AC /* Haptic.swift in Sources */,
 
+				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
+
+				001D669B2CDB3E11005746AC /* Haptic.swift in Sources */,
+				11D7CAC32CDB8AA500F6B323 /* FontDesignSystem.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
-
-				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
 
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				649FD2C62CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel in Sources */,
@@ -825,7 +842,11 @@
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
-				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
+				11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */,
+				11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */,
+				11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */,
+				11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */,
+				11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
@@ -1047,8 +1068,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
 
-
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1084,8 +1104,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
 
-
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1193,8 +1212,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1226,8 +1245,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 
-
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1337,8 +1355,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 
-
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
@@ -1367,9 +1384,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-
-
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;

@@ -46,27 +46,13 @@ struct FinishView: View {
             Spacer().frame(height: 231)
             
             
-            Button(action: {
-                viewModel.goToHome() // 홈으로 돌아가는 동작
-            }) {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 361, height: 58)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .opacity(0.28)
-
-                    Text("시작하기")
-                        .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                }
-            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 1, green: 1, blue: 1, opacity: 1))
         .edgesIgnoringSafeArea(.all)
+        .onDisappear {
+                        triggerSuccessHaptic()
+                    }
     }
 }
