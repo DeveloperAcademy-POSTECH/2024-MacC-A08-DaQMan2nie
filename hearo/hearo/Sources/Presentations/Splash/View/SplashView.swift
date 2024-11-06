@@ -45,7 +45,7 @@ struct SplashView: View {
 
         // 1.5초 후 isActive 상태를 true로 변경
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//          self.isActive = true
+          self.isActive = true
         }
       }
     }
