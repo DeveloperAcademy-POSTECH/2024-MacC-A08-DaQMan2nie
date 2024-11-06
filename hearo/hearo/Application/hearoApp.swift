@@ -35,6 +35,7 @@ final class AppRootManager: ObservableObject {
     @Published var detectedSound: String? = nil // 감지된 소리 저장
     private var isActivityActive = false // 라이브 액티비티 활성 상태 추적 변수
     private var isWarning = false // isWarning 상태 저장
+    private var currentWarningState: Bool = false // 현재 isWarning 상태 저장
 
     
     
@@ -79,6 +80,7 @@ final class AppRootManager: ObservableObject {
             )
             
             isActivityActive = true
+            currentWarningState = isWarning // 현재 상태를 저장
             print("라이브 액티비티가 시작되었습니다: \(activity.id)")
         } catch {
             print("라이브 액티비티 시작 실패: \(error)")
@@ -102,6 +104,7 @@ final class AppRootManager: ObservableObject {
             }
             
             isActivityActive = false
+            currentWarningState = false // 중지되었으므로 상태 리셋
         }
     }
     
@@ -115,6 +118,11 @@ final class AppRootManager: ObservableObject {
                return
            }
            
+           // 같은 경고 상태로는 업데이트하지 않도록 체크
+                  guard isWarning != currentWarningState else {
+                      print("경고 상태가 이미 \(isWarning)로 설정되어 있습니다.")
+                      return
+                  }
            guard let activity = Activity<LiveActivityAttributes>.activities.first else {
                isActivityActive = false
                return
