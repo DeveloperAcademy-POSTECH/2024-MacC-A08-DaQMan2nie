@@ -63,10 +63,9 @@ class WorkingViewModel: ObservableObject {
     }
 
     func finishRecording() {
+        triggerErrorHaptic()
         appRootManager.currentRoot = .finish
         stopRecording()
-        
-        triggerErrorHaptic()
     }
 }
 
