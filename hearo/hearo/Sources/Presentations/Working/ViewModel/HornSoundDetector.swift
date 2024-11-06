@@ -16,7 +16,7 @@ import Combine
 class HornSoundDetector: NSObject, ObservableObject {
   private var audioEngine: AVAudioEngine!
   private var inputNode: AVAudioInputNode!
-  private var soundClassifier: HornSoundClassifier_V9?
+  private var soundClassifier: HornSoundClassifier_V11?
   private var streamAnalyzer: SNAudioStreamAnalyzer?
   //  private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
   
@@ -55,7 +55,7 @@ class HornSoundDetector: NSObject, ObservableObject {
     do {
       let config = MLModelConfiguration()
       config.computeUnits = .cpuOnly
-      soundClassifier = try HornSoundClassifier_V9(configuration: config)
+      soundClassifier = try HornSoundClassifier_V11(configuration: config)
       print("CPU 전용 설정으로 소리 분류기 생성 성공")
     } catch {
       print("소리 분류기 생성 실패: \(error)")
