@@ -32,20 +32,24 @@
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 
 =======
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
 		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
 		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
 		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
@@ -56,13 +60,14 @@
 		1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */; };
 
 =======
+=======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
 		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
 		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
 		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
 		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
-		649FD2C62CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */; };
->>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
+
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -169,8 +174,8 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
 
@@ -179,6 +184,10 @@
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -186,7 +195,7 @@
 		1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
+
 
 		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
@@ -197,14 +206,14 @@
 
 		1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V11.mlmodel; sourceTree = "<group>"; };
 
-=======
+
 		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
 		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
 		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
 		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-		649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "HornSoundClassifier V9.mlmodel"; sourceTree = "<group>"; };
->>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
+
+
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -538,13 +547,8 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-
 				1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */,
 
-=======
-				649FD2C52CDA2EE2007DE7C0 /* HornSoundClassifier V9.mlmodel */,
->>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
 			);
@@ -831,6 +835,7 @@
 				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
@@ -838,6 +843,13 @@
 =======
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
+				001D669B2CDB3E11005746AC /* Haptic.swift in Sources */,
+
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
@@ -1073,16 +1085,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1117,16 +1133,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1233,16 +1253,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1274,16 +1298,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1392,16 +1420,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1430,16 +1462,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 =======
 <<<<<<< HEAD
-
-				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 =======
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
+
 				DEVELOPMENT_TEAM = 2H928F4Z7L;
+<<<<<<< HEAD
 >>>>>>> 92a5628 ([feat] SplashView, onDisappear 수정)
 >>>>>>> f8ee93d (fix UI)
+=======
+
+>>>>>>> 235faf8 (Resolve merge conflict by incorporating both suggestions)
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
