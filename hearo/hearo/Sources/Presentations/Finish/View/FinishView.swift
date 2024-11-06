@@ -12,42 +12,39 @@ struct FinishView: View {
 
     var body: some View {
         VStack {
-            Spacer().frame(height: 84)
+            Spacer().frame(height: 195)
             
-            HStack {
-                Spacer().frame(width: 16)
-                
+         
                 Text("안전 주행 완료!")
                     .font(
-                        Font.custom("Spoqa Han Sans Neo", size: 25)
+                        Font.custom("Spoqa Han Sans Neo", size: 24)
                             .weight(.bold)
                     )
-                    .foregroundColor(Color("HWhite"))
+                    .foregroundColor(Color.black)
                 
-                Spacer()
-            }
             
-            Spacer().frame(height: 19)
-            
-            HStack {
-                Spacer().frame(width: 16)
+            Spacer().frame(height: 10)
+    
+            Text("오늘도 함께 무사히 도착했습니다.\n다음에도 안전하게 뵙겠습니다.")
+                .font(Font.custom("Spoqa Han Sans Neo", size: 15))
+                .foregroundColor(Color("HGray2"))
+                .font(Font.custom("Pretendard", size: 15))
+                .foregroundColor(Color(red: 0.24, green: 0.26, blue: 0.31))
+                .frame(width: 345, alignment: .center) // 가로 중앙 정렬
+                .multilineTextAlignment(.center)       // 텍스트 줄바꿈 시 가운데 정렬
                 
-                Text("오늘도 히어로드와 함께 무사히 도착하셨습니다.\n다음에도 안전하게 뵙겠습니다!")
-                    .font(Font.custom("Spoqa Han Sans Neo", size: 16))
-                    .foregroundColor(Color("HGray2"))
-                    .frame(width: 295, alignment: .topLeading)
-                
-                Spacer()
-            }
+               
+          
             
-            Spacer().frame(height: 104)
+            Spacer().frame(height: 72)
             
             Image(systemName: "checkmark.circle.fill") // SF Symbols에서 원형 아이콘 사용
                 .resizable()
-                .frame(width: 160, height: 160)
+                .frame(width: 121, height: 121)
                 .foregroundColor(Color("HPrimaryColor")) // 아이콘 색상 설정
             
             Spacer().frame(height: 231)
+            
             
             Button(action: {
                 viewModel.goToHome() // 홈으로 돌아가는 동작
@@ -69,7 +66,7 @@ struct FinishView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
+        .background(Color(red: 1, green: 1, blue: 1, opacity: 1))
         .edgesIgnoringSafeArea(.all)
     }
 }
