@@ -14,6 +14,7 @@ import UIKit
 import Combine
 
 class HornSoundDetector: NSObject, ObservableObject {
+
     private var audioEngine: AVAudioEngine!
     private var inputNode: AVAudioInputNode!
     private var soundClassifier: HornSoundClassifier_V9?

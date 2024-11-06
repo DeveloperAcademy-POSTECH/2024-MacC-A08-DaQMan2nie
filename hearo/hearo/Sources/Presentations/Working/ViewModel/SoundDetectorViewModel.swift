@@ -103,7 +103,9 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             return
         }
         
+
         if let highestConfidenceSound = getHighestConfidenceSound() {
+
             let message = ["alert": highestConfidenceSound]
             
             WCSession.default.sendMessage(message, replyHandler: nil) { error in
