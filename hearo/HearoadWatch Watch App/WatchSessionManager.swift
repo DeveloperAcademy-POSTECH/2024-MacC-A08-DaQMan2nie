@@ -49,8 +49,8 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     // 긴급 상황을 위한 강한 진동 패턴
     func playUrgentHapticPattern() {
         // 반복 횟수 및 간격 설정
-        let repeatCount = 5 // 진동 반복 횟수
-        let interval: TimeInterval = 0.1 // 반복 간격 (0.1초)
+        let repeatCount = 30 // 진동 반복 횟수
+        let interval: TimeInterval = 0.05 // 반복 간격 (0.1초)
 
         // 반복적으로 강한 진동을 재생하는 패턴
         for i in 0..<repeatCount {
@@ -71,6 +71,15 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
         print("애플워치 - WCSession 활성화 완료. 상태: \(activationState.rawValue)")
         if let error = error {
             print("애플워치 - 활성화 오류: \(error.localizedDescription)")
+        }
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        if let highestConfidenceSound = applicationContext["highestConfidenceSound"] as? String {
+            DispatchQueue.main.async {
+                self.showAlert(with: highestConfidenceSound) // 수신한 소리를 알림으로 표시
+                print("애플워치 - applicationContext 데이터 수신: \(highestConfidenceSound)")
+            }
         }
     }
 }

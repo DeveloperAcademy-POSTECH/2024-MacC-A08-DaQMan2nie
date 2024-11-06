@@ -17,6 +17,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     private var mlConfidences: [Double] = Array(repeating: 0.0, count: 4)
     private var cancellables = Set<AnyCancellable>()
     private var appRootManager: AppRootManager
+    private var isActivityActive = false
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
@@ -71,7 +72,28 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             DispatchQueue.main.async {
                 self.appRootManager.currentRoot = .warning
                 self.sendWarningToWatch() // 애플워치에 경고 전송
+                self.updateApplicationContext() // 애플워치에 데이터 전송
             }
+        }
+    }
+    
+    private func getHighestConfidenceSound() -> String? {
+        if let highestConfidenceIndex = mlConfidences.enumerated().max(by: { $0.element < $1.element })?.offset,
+           highestConfidenceIndex < classificationResults.count {
+            return classificationResults[highestConfidenceIndex]
+        }
+        return nil
+    }
+    
+    private func updateApplicationContext() {
+        do {
+            if let highestConfidenceSound = getHighestConfidenceSound() {
+                let context = ["highestConfidenceSound": highestConfidenceSound]
+                try WCSession.default.updateApplicationContext(context)
+                print("applicationContext 데이터 전송 성공: \(context)")
+            }
+        } catch {
+            print("applicationContext 데이터 전송 실패: \(error.localizedDescription)")
         }
     }
     
@@ -81,13 +103,9 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             return
         }
         
-        // 신뢰도가 가장 높은 소리를 찾아 메시지에 포함
-        if let highestConfidenceIndex = mlConfidences.enumerated().max(by: { $0.element < $1.element })?.offset,
-           highestConfidenceIndex < classificationResults.count {
-            
-            let highestConfidenceSound = classificationResults[highestConfidenceIndex]
-          print(highestConfidenceSound)
-            // **신뢰도 없이 소리 종류만 전송**
+
+        if let highestConfidenceSound = getHighestConfidenceSound() {
+
             let message = ["alert": highestConfidenceSound]
             
             WCSession.default.sendMessage(message, replyHandler: nil) { error in
@@ -98,16 +116,22 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
-    func startRecording() {
+    func toggleRecording(start: Bool) {
         for detector in soundDetectors {
-            detector.startRecording()
+            if start {
+                detector.startRecording()
+            } else {
+                detector.stopRecording()
+            }
         }
     }
     
+    func startRecording() {
+        toggleRecording(start: true)
+    }
+    
     func stopRecording() {
-        for detector in soundDetectors {
-            detector.stopRecording()
-        }
+        toggleRecording(start: false)
     }
     
     // 필수 WCSessionDelegate 메서드 구현
