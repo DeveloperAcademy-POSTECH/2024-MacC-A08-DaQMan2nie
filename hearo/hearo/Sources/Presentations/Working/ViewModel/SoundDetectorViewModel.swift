@@ -17,6 +17,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     private var mlConfidences: [Double] = Array(repeating: 0.0, count: 4)
     private var cancellables = Set<AnyCancellable>()
     private var appRootManager: AppRootManager
+    private var isActivityActive = false
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
