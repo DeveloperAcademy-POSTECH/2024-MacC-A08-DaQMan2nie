@@ -86,7 +86,9 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
            highestConfidenceIndex < classificationResults.count {
             
             let highestConfidenceSound = classificationResults[highestConfidenceIndex]
-            let message = ["alert": "경고: \(highestConfidenceSound) 소리 감지됨"]
+            
+            // **신뢰도 없이 소리 종류만 전송**
+            let message = ["alert": highestConfidenceSound]
             
             WCSession.default.sendMessage(message, replyHandler: nil) { error in
                 print("애플워치로 경고 메시지 전송 오류: \(error.localizedDescription)")
@@ -110,15 +112,15 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     
     // 필수 WCSessionDelegate 메서드 구현
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("WCSession 활성화 완료. 상태: \(activationState)")
+        print("MLWCSession 활성화 완료. 상태: \(activationState)")
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
-        print("WCSession 비활성화됨")
+        print("MLWCSession 비활성화됨")
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        print("WCSession 비활성화됨. 다시 활성화")
+        print("MLWCSession 비활성화됨. 다시 활성화")
         WCSession.default.activate()
     }
 }

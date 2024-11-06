@@ -6,15 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 class FinishViewModel: ObservableObject {
     @Published var appRootManager: AppRootManager
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
+        goToHomeWithDelay()
     }
 
-    func goToHome() {
-        appRootManager.currentRoot = .home
+    private func goToHomeWithDelay() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.appRootManager.currentRoot = .home
+        }
     }
 }
