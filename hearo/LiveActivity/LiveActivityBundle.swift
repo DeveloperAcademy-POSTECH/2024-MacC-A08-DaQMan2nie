@@ -11,8 +11,6 @@ import SwiftUI
 @main
 struct LiveActivityBundle: WidgetBundle {
     var body: some Widget {
-        // 라이브 액티비티 위젯 추가
-        LiveActivity()
-        LiveActivityLiveActivity() // 다이내믹 아일랜드와 연결된 라이브 액티비티 추가
+        LiveActivityLiveActivity() // 다이내믹 아일랜드와 연결된 라이브 액티비티만 추가
     }
 }
