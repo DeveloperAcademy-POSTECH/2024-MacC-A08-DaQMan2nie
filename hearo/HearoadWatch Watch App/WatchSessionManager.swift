@@ -36,11 +36,27 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     func showAlert(with message: String) {
         alertMessage = message
         isAlerting = true
-        WKInterfaceDevice.current().play(.notification) // 진동 알림 발생
+        
+        // 강한 진동 알림 발생
+        playUrgentHapticPattern()
         
         // 3초 후에 기본 상태로 복구
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.resetAlert()
+        }
+    }
+
+    // 긴급 상황을 위한 강한 진동 패턴
+    func playUrgentHapticPattern() {
+        // 반복 횟수 및 간격 설정
+        let repeatCount = 5 // 진동 반복 횟수
+        let interval: TimeInterval = 0.1 // 반복 간격 (0.1초)
+
+        // 반복적으로 강한 진동을 재생하는 패턴
+        for i in 0..<repeatCount {
+            DispatchQueue.main.asyncAfter(deadline: .now() + (interval * Double(i))) {
+                WKInterfaceDevice.current().play(.failure) // 강한 피드백을 주는 진동
+            }
         }
     }
     

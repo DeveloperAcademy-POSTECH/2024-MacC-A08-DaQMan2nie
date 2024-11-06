@@ -26,6 +26,7 @@
 		001C9F752CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */; };
 		001C9F782CCF7984004EC4D2 /* HearoadWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 001C9F552CCF7983004EC4D2 /* HearoadWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */; };
+		001D669B2CDB3E11005746AC /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D669A2CDB3E11005746AC /* Haptic.swift */; };
 		0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B72CC0295F009B4261 /* WarningView.swift */; };
 		0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B92CC02969009B4261 /* WarningViewModel.swift */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
@@ -145,6 +146,7 @@
 		001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearoadWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HearoadWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		001D669A2CDB3E11005746AC /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		0045C6B72CC0295F009B4261 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		0045C6B92CC02969009B4261 /* WarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewModel.swift; sourceTree = "<group>"; };
 		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				00FC15152CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
+				001D669A2CDB3E11005746AC /* Haptic.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
 				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
+				001D669B2CDB3E11005746AC /* Haptic.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
