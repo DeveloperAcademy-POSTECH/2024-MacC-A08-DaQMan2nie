@@ -14,33 +14,26 @@ import SwiftUI
 // 라이브 액티비티 속성 정의
 struct LiveActivityAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
-        var isWarning: Bool // 경고 상태를 나타냄
+        // 현재 상태를 나타내는 속성을 정의 (예: 경고 여부)
+        // 하지만 필요 없다면 이 속성을 추가적으로 활용할 수 있습니다.
     }
-    var name: String
-}
 
+    var name: String // 이름 속성만 유지
+}
 struct LiveActivityLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LiveActivityAttributes.self) { context in
-          
+            // UI 구성
             HStack {
-                // UI
                 VStack {
-                    Text("안전주행중")
+                    Text("소리 수집이 중지되었습니다.") // 변경된 메시지
                         .font(.headline)
                         .foregroundColor(.white)
-                    Button(action: {
-                        stopWorking()
-                    }) {
-                        Label("정지", systemImage: "stop.fill")
-                            .foregroundColor(.red)
-                    }
                 }
                 
                 Spacer()
                 
-               
-                Image(systemName: "car.fill") // 캐릭터로 대체 예정
+                Image(systemName: "exclamationmark.triangle") // 경고 아이콘
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
@@ -48,40 +41,28 @@ struct LiveActivityLiveActivity: Widget {
             }
             .padding()
             .containerBackground(for: .widget) {
-                // 배경 설정: 검정색으로 설정
-                Color.black
+                Color.black // 배경 색상
             }
             .activityBackgroundTint(Color.black)
-                        .activitySystemActionForegroundColor(Color.white)
-            
+            .activitySystemActionForegroundColor(Color.white)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Image(systemName: context.state.isWarning ? "exclamationmark.triangle" : "figure.walk")
+                    Image(systemName: "exclamationmark.triangle")
                 }
                 DynamicIslandExpandedRegion(.center) {
-                    Text(context.state.isWarning ? "경고 상태" : "주행중")
+                    Text("소리 수집이 중지되었습니다.") // 동일한 메시지
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Button(action: {
-                        stopWorking()
-                    }) {
-                        Image(systemName: "stop.fill")
-                    }
+                    // 추가 아이콘이나 요소가 필요하다면 여기에 추가
                 }
             } compactLeading: {
-                Image(systemName: context.state.isWarning ? "exclamationmark.triangle" : "figure.walk")
+                Image(systemName: "exclamationmark.triangle")
             } compactTrailing: {
-                Text("주행중")
+                Text("수집 중지")
             } minimal: {
-                Image(systemName: context.state.isWarning ? "exclamationmark.triangle" : "figure.walk")
+                Image(systemName: "exclamationmark.triangle")
             }
         }
     }
-}
-
-// 정지 함수 예시
-func stopWorking() {
-    // WorkingViewModel의 주행 종료 기능과 연동해야 합니다.
-    NotificationCenter.default.post(name: NSNotification.Name("StopWorkingNotification"), object: nil)
 }
