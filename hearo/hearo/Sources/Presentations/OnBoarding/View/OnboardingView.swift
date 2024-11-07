@@ -150,20 +150,6 @@ struct OnboardingView: View {
       }
     }
     
-//    var spacerHeight: CGFloat {
-//      switch self {
-//      case .warning:
-//        return 10
-//      case .notification:
-//        return 17
-//      case .privacy:
-//        return 6
-//      case .stand:
-//        return 12
-//      case .watch:
-//        return 14
-//      }
-//    }
   }
 }
   
