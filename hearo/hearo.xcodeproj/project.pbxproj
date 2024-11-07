@@ -46,17 +46,12 @@
 		11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
 		11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
 
-
-		11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */; };
-		11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */; };
-		11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */; };
-		11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */; };
-		11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */; };
 		11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CADD2CDBEC6100F6B323 /* LottieView.swift */; };
 		11D7CAE12CDBEDC800F6B323 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11D7CAE02CDBEDC800F6B323 /* Lottie */; };
 
 		64CB84032CDC86C70069A547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CB84022CDC86C70069A547 /* Assets.xcassets */; };
 		64CB84052CDC9CAD0069A547 /* StartOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB84042CDC9CAD0069A547 /* StartOnboardingView.swift */; };
+
 
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
@@ -158,16 +153,11 @@
 		11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 
-		11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
-		11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
-		11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-		11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
-		11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
-
-		11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+			11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 
 		64CB84022CDC86C70069A547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64CB84042CDC9CAD0069A547 /* StartOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOnboardingView.swift; sourceTree = "<group>"; };
+
 
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -337,6 +327,7 @@
 				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
 
 				11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */,
+				11D7CADD2CDBEC6100F6B323 /* LottieView.swift */,
 
 				11D7CAC42CDB8BAF00F6B323 /* Font */,
 			);
@@ -476,6 +467,7 @@
 			children = (
 
 				11D7CADD2CDBEC6100F6B323 /* LottieView.swift */,
+
 
 				1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
@@ -932,7 +924,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 
 				ENABLE_PREVIEWS = YES;
@@ -970,7 +961,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
 
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1078,7 +1068,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1111,7 +1100,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
 
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1223,7 +1211,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
-
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1252,9 +1239,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 
-
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
-
 
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;

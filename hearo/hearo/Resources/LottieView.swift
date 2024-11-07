@@ -11,7 +11,10 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     var animationName: String
     var animationScale: CGFloat // 애니메이션 크기 배율
+<<<<<<< HEAD
+=======
     var loopMode: LottieLoopMode = .loop // loopMode 추가, 기본값을 .loop로 설정
+>>>>>>> develop
     
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView(frame: .zero)
@@ -19,7 +22,11 @@ struct LottieView: UIViewRepresentable {
         // Lottie 애니메이션 뷰 생성
         let animationView = LottieAnimationView(name: animationName)
         animationView.contentMode = .scaleAspectFit
+<<<<<<< HEAD
+        animationView.loopMode = .loop
+=======
         animationView.loopMode = loopMode
+>>>>>>> develop
         animationView.play()
         
         // 애니메이션 크기 조절 (배율 적용)

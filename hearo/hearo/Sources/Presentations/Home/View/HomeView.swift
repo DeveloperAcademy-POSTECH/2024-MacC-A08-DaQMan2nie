@@ -34,10 +34,14 @@ struct HomeView: View {
                         Spacer().frame(width: 16)
                         
 <<<<<<< HEAD
+                        Text("안녕하세요!\n오늘도 안전한 주행 함께해요!")
+=======
+<<<<<<< HEAD
                         Text("안녕하세요!\n오늘도 안전한 주행 되세요.")
 =======
                         Text("안녕하세요!\n오늘도 안전한 주행 함께해요!")
 >>>>>>> 22d33b3 (WorkingView 수정)
+>>>>>>> develop
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)
@@ -76,6 +80,10 @@ struct HomeView: View {
                                         startLottieAnimation = true
                                         
                                         // 1.5초 후에 흰 배경 서서히 나타나기 시작
+<<<<<<< HEAD
+                                        showTip = false
+=======
+>>>>>>> develop
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                             withAnimation(.easeIn(duration: 2.0)) {
                                                 backgroundOpacity = 1.0
@@ -92,7 +100,11 @@ struct HomeView: View {
                                         }
                                     }
                                     withAnimation(.easeIn(duration: 0.3)) {
+<<<<<<< HEAD
+                                        showTip = false
+=======
                                         showTip = true
+>>>>>>> develop
                                         showArrowAndText = false
                                     }
                                 }
@@ -140,7 +152,11 @@ struct HomeView: View {
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+<<<<<<< HEAD
+                        .offset(y: targetOffset - UIScreen.main.bounds.height / 57)
+=======
                         .offset(y: targetOffset - UIScreen.main.bounds.height / 30)
+>>>>>>> develop
                         .edgesIgnoringSafeArea(.all)
                 }
                 

@@ -5,6 +5,17 @@
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
+<<<<<<< HEAD
+<<<<<<<< HEAD:hearo/hearo/Resources/Assets.xcassets/MainFontColor.colorset/Contents.json
+          "blue" : "44",
+          "green" : "44",
+          "red" : "44"
+========
+          "blue" : "79",
+          "green" : "79",
+          "red" : "79"
+>>>>>>>> develop:hearo/hearo/Assets.xcassets/Color/SubFontColor.colorset/Contents.json
+=======
 <<<<<<<< HEAD:hearo/HearoadWatch Watch App/Assets.xcassets/HPrimaryColor.colorset/Contents.json
           "blue" : "60",
           "green" : "213",
@@ -14,6 +25,7 @@
           "green" : "44",
           "red" : "44"
 >>>>>>>> 22d33b3 (WorkingView 수정):hearo/hearo/Resources/Assets.xcassets/MainFontColor.colorset/Contents.json
+>>>>>>> develop
         }
       },
       "idiom" : "universal"
@@ -29,6 +41,17 @@
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
+<<<<<<< HEAD
+<<<<<<<< HEAD:hearo/hearo/Resources/Assets.xcassets/MainFontColor.colorset/Contents.json
+          "blue" : "44",
+          "green" : "44",
+          "red" : "44"
+========
+          "blue" : "79",
+          "green" : "79",
+          "red" : "79"
+>>>>>>>> develop:hearo/hearo/Assets.xcassets/Color/SubFontColor.colorset/Contents.json
+=======
 <<<<<<<< HEAD:hearo/HearoadWatch Watch App/Assets.xcassets/HPrimaryColor.colorset/Contents.json
           "blue" : "60",
           "green" : "213",
@@ -38,6 +61,7 @@
           "green" : "44",
           "red" : "44"
 >>>>>>>> 22d33b3 (WorkingView 수정):hearo/hearo/Resources/Assets.xcassets/MainFontColor.colorset/Contents.json
+>>>>>>> develop
         }
       },
       "idiom" : "universal"

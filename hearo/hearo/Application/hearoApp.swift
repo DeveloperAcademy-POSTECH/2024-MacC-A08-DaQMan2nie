@@ -17,7 +17,11 @@ struct hearoApp: App {
         WindowGroup {
             // ContentView가 루트로 설정됨
           ZStack{
+<<<<<<< HEAD
+            Color("BackgroundColor")
+=======
             Color("Background")
+>>>>>>> develop
               .ignoresSafeArea(.all)
               ContentView(appRootManager: appRootManager)
             }

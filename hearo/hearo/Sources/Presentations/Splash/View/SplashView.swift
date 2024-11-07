@@ -26,10 +26,14 @@ struct SplashView: View {
           Spacer().frame(height: 217)
           
 <<<<<<< HEAD
+          Image("Hearoad_Main")
+=======
+<<<<<<< HEAD
           Image("HearoadLetters")
 =======
           Image("Hearoad_Main")
 >>>>>>> 22d33b3 (WorkingView 수정)
+>>>>>>> develop
             .resizable()
             .frame(width: 139.55, height: 25.68,alignment: .center)
           
