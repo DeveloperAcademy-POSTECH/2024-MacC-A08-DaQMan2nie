@@ -33,7 +33,11 @@ struct HomeView: View {
                     HStack {
                         Spacer().frame(width: 16)
                         
+<<<<<<< HEAD
                         Text("안녕하세요!\n오늘도 안전한 주행 되세요.")
+=======
+                        Text("안녕하세요!\n오늘도 안전한 주행 함께해요!")
+>>>>>>> 22d33b3 (WorkingView 수정)
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)

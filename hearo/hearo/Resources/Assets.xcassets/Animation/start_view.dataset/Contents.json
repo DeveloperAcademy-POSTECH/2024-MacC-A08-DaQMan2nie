@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "start_view.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
