@@ -11,7 +11,7 @@ import WatchConnectivity
 class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     static let shared = WatchSessionManager() // 싱글톤 인스턴스 생성
     
-    @Published var alertMessage: String = "인식중" // 기본 메시지
+    @Published var alertMessage: String = " " // 기본 메시지
     @Published var isAlerting: Bool = false // 알림 상태 확인
     
     private override init() {
@@ -32,6 +32,20 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
+    // 이미지 이름을 반환하는 메서드
+    func alertImageName() -> String {
+        switch alertMessage {
+        case "Carhorn":
+            return "Car" // carhorn 이미지 이름
+        case "Siren":
+            return "Siren" // siren 이미지 이름
+        case "Bicyclebell":
+            return "Bicycle" // bicycle 이미지 이름
+        default:
+            return "exclamationmark.triangle.fill" // 기본 알림 아이콘
+        }
+    }
+
     // 3초 동안 알림 표시 후 기본 상태로 복구
     func showAlert(with message: String) {
         alertMessage = message

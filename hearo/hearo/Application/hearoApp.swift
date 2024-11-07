@@ -17,7 +17,11 @@ struct hearoApp: App {
         WindowGroup {
             // ContentView가 루트로 설정됨
           ZStack{
+<<<<<<< HEAD
             Color("BackgroundColor")
+=======
+            Color("Background")
+>>>>>>> develop
               .ignoresSafeArea(.all)
               ContentView(appRootManager: appRootManager)
             }
@@ -46,6 +50,7 @@ final class AppRootManager: ObservableObject {
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
         case splash
+        case startOnboarding
         case onboarding
         case home
         case working
@@ -56,7 +61,7 @@ final class AppRootManager: ObservableObject {
     // 스플래시 끝났을 때 호출
     func determineNextRoot() {
         let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
-        self.currentRoot = hasSeenOnboarding ? .home : .onboarding
+        self.currentRoot = hasSeenOnboarding ? .home : .startOnboarding
     }
     
     // 라이브 액티비티 시작 메서드
@@ -165,6 +170,8 @@ struct ContentView: View {
             switch appRootManager.currentRoot {
             case .splash:
                 SplashView(appRootManager: appRootManager)
+            case .startOnboarding:
+              StartOnboardingView(appRootManager: appRootManager)
             case .onboarding:
                 OnboardingView(viewModel: OnboardingViewModel(appRootManager: appRootManager))
             case .home:

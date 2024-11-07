@@ -1,7 +1,11 @@
 {
   "data" : [
     {
+<<<<<<< HEAD
       "filename" : "sound_collection.json",
+=======
+      "filename" : "sound collection.json",
+>>>>>>> develop
       "idiom" : "universal"
     }
   ],
