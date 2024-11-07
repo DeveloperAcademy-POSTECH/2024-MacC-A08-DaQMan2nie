@@ -17,126 +17,150 @@ struct HomeView: View {
     @State private var circleOffset: CGFloat = 0
     @State private var showTip: Bool = true // 주행 팁 텍스트 표시 여부
     @State private var showArrowAndText: Bool = false // 새로운 텍스트 및 애니메이션 표시 여부
+    @State private var startLottieAnimation: Bool = false // Lottie 애니메이션 시작 여부
+    @State private var backgroundOpacity: Double = 0.0 // 흰 배경 불투명도
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
     
     var body: some View {
-        ZStack{
-            Color.white // 다크 모드에서도 흰색으로 고정
-                .ignoresSafeArea()
-            VStack {
-                Spacer().frame(height: 89)
+            ZStack {
+                Color.white // 다크 모드에서도 흰색으로 고정
+                    .ignoresSafeArea()
                 
-                HStack {
-                    Spacer().frame(width: 16)
+                VStack {
+                    Spacer().frame(height: 89)
                     
-                    Text("안녕하세요!\n오늘도 안전한 주행 되세요.")
-                        .font(.mainTitle)
-                        .foregroundColor(Color("MainFontColor"))
-                        .frame(height: 70)
-                    Spacer()
-                }
-                
-                Spacer().frame(height: 149)
-                // 원형 버튼을 드래그 가능하도록 설정
-                Image("StartCircle")
-                    .offset(y: circleOffset)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                // 원형 버튼을 누르는 순간 주행 팁 텍스트를 서서히 사라지게 설정
-                                withAnimation(.easeOut(duration: 0.3)) {
-                                    showTip = false
-                                    showArrowAndText = false
-                                }
-                                let newOffset = value.translation.height
-                                
-                                if newOffset < 0 {
-                                    circleOffset = 0
-                                } else if newOffset > targetOffset {
-                                    circleOffset = targetOffset
-                                } else {
-                                    circleOffset = newOffset
-                                }
-                            }
-                            .onEnded { value in
-                                if circleOffset >= minimumOffset {
-                                    // 애니메이션을 사용하여 목표 오프셋으로 부드럽게 이동
+                    HStack {
+                        Spacer().frame(width: 16)
+                        
+                        Text("안녕하세요!\n오늘도 안전한 주행 되세요.")
+                            .font(.mainTitle)
+                            .foregroundColor(Color("MainFontColor"))
+                            .frame(height: 70)
+                        Spacer()
+                    }
+                    
+                    Spacer().frame(height: 149)
+                    
+                    // 원형 버튼을 드래그 가능하도록 설정
+                    Image("StartCircle")
+                        .offset(y: circleOffset)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
                                     withAnimation(.easeOut(duration: 0.3)) {
-                                        circleOffset = targetOffset
+                                        showTip = false
+                                        showArrowAndText = false
                                     }
-                                    viewModel.startWorking()
-                                } else {
-                                    withAnimation(.easeOut(duration: 0.3)) {
+                                    let newOffset = value.translation.height
+                                    
+                                    if newOffset < 0 {
                                         circleOffset = 0
+                                    } else if newOffset > targetOffset {
+                                        circleOffset = targetOffset
+                                    } else {
+                                        circleOffset = newOffset
                                     }
                                 }
-                                // 드래그가 끝났을 때 주행 팁 다시 표시
-                                withAnimation(.easeIn(duration: 0.3)) {
-                                    showTip = true
-                                    showArrowAndText = false
+                                .onEnded { value in
+                                    if circleOffset >= minimumOffset {
+                                        withAnimation(.easeOut(duration: 0.3)) {
+                                            circleOffset = targetOffset
+                                        }
+                                        
+                                        // Lottie 애니메이션 시작
+                                        startLottieAnimation = true
+                                        
+                                        // 1.5초 후에 흰 배경 서서히 나타나기 시작
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                            withAnimation(.easeIn(duration: 2.0)) {
+                                                backgroundOpacity = 1.0
+                                            }
+                                            
+                                            // 흰 배경이 다 덮인 후 WorkingView로 전환
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                                viewModel.startWorking()
+                                            }
+                                        }
+                                    } else {
+                                        withAnimation(.easeOut(duration: 0.3)) {
+                                            circleOffset = 0
+                                        }
+                                    }
+                                    withAnimation(.easeIn(duration: 0.3)) {
+                                        showTip = true
+                                        showArrowAndText = false
+                                    }
                                 }
+                        )
+                    
+                    ZStack {
+                        if showArrowAndText {
+                            VStack {
+                                LottieView(animationName: "arrow_GR", animationScale: 1)
+                                    .frame(height: 150, alignment: .top)
+                                    .offset(y: -90)
+                                    .padding()
+                                Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
+                                    .font(.light)
+                                    .foregroundColor(Color("SubFontColor"))
                             }
-                    )
-                ZStack{
-                    if showArrowAndText {
+                            .transition(.opacity)
+                        }
+                    }
+                    
+                    Spacer().frame(height: 52)
+                    
+                    if showTip {
                         VStack {
-                            LottieView(animationName: "arrow GR", animationScale: 1)
-                                .frame(height: 150 ,alignment: .top)
-                                .offset(y: -90)
-                                .padding()
-                            Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
-                            .font(.light)
+                            Text("주행 Tip!")
+                                .font(.medium)
                                 .foregroundColor(Color("SubFontColor"))
                             
+                            Text(randomTip)
+                                .font(.light)
+                                .foregroundColor(Color("SubFontColor"))
+                                .multilineTextAlignment(.center)
+                                .frame(height: 50)
+                                .padding(.horizontal, 20)
                         }
-                        .transition(.opacity)
-                        // 서서히 나타나는 애니메이션
+                        .opacity(showTip ? 1 : 0)
                     }
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+                
+                // "start_view" Lottie 애니메이션
+                if startLottieAnimation {
+                    LottieView(animationName: "start_view", animationScale: 1)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .offset(y: targetOffset - UIScreen.main.bounds.height / 30)
+                        .edgesIgnoringSafeArea(.all)
                 }
                 
-                Spacer().frame(height: 52)
-                
-                
-                if showTip {
-                    VStack {
-                        Text("주행 Tip!")
-                        .font(.medium)
-                            .foregroundColor(Color("SubFontColor"))
-                        
-                        Text(randomTip)
-                        .font(.light)
-                            .foregroundColor(Color("SubFontColor"))
-                            .multilineTextAlignment(.center)
-                            .frame(height: 50)
-                            .padding(.horizontal, 20)
-                    }
-                    .opacity(showTip ? 1 : 0)
+                // 흰색 배경 오버레이
+                Color.white
+                    .opacity(backgroundOpacity)
+                    .ignoresSafeArea()
+            }
+            .contentShape(Rectangle())
+            .onLongPressGesture(minimumDuration: 0.1) { // 꾹 눌렀을 때 화살표와 텍스트 표시
+                withAnimation(.easeOut(duration: 0.3)) {
+                    showTip = false
+                    showArrowAndText = true
                 }
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all)
-            .onAppear {
-                viewModel.updateCurrentDate()
-            }
-        }
-        .contentShape(Rectangle()) // 전체 화면을 터치 가능한 영역으로 설정
-        .onLongPressGesture(minimumDuration: 0.1) { // 꾹 눌렀을 때 화살표와 텍스트 표시
-            withAnimation(.easeOut(duration: 0.3)) {
-                showTip = false
-                showArrowAndText = true // 화면을 누를 때 화살표와 텍스트 표시
-            }
-        } onPressingChanged: { isPressing in
-            if !isPressing {
-                withAnimation(.easeIn(duration: 0.3)) {
-                    showTip = true
-                    showArrowAndText = false // 손가락을 떼면 화살표와 텍스트 숨김
+            } onPressingChanged: { isPressing in
+                if !isPressing {
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        showTip = true
+                        showArrowAndText = false
+                    }
                 }
             }
         }
     }
-}
 
 //랜덤문구 정의
 enum TipMessage: String, CaseIterable {
