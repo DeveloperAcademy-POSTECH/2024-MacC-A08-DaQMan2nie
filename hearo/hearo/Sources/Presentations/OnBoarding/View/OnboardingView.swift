@@ -43,34 +43,23 @@ struct OnboardingView: View {
       VStack(spacing: 7) {
         // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
         TabView(selection: $currentPage) {
-          Image(systemName: "exclamationmark.triangle.fill")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color.yellow)
+          LottieView(animationName: "warning", animationScale: 1, loopMode: .playOnce)
             .tag(OnboardingPage.warning)
           
-          Image(systemName: "bell.fill")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color.green)
-            .tag(OnboardingPage.notification)
+//          Image(systemName: "bell.fill")
+//            .resizable()
+//            .frame(width: 100, height: 100)
+//            .foregroundColor(Color.green)
+//            .tag(OnboardingPage.notification)
           
-          Image(systemName: "lock.fill")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color.green)
+          
+          LottieView(animationName: "privacy", animationScale: 1, loopMode: .playOnce)
             .tag(OnboardingPage.privacy)
           
-          Image(systemName: "iphone.homebutton")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color.green)
+          LottieView(animationName: "stand", animationScale: 1, loopMode: .playOnce)
             .tag(OnboardingPage.stand)
           
-          Image(systemName: "applewatch")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color.green)
+          LottieView(animationName: "watch", animationScale: 1, loopMode: .playOnce)
             .tag(OnboardingPage.watch)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -115,7 +104,7 @@ struct OnboardingView: View {
   
   enum OnboardingPage: Int, CaseIterable {
     case warning
-    case notification
+//    case notification
     case privacy
     case stand
     case watch
@@ -124,8 +113,8 @@ struct OnboardingView: View {
       switch self {
       case .warning:
         return "우리의 경고 알림은\n\"보조 수단\"이에요."
-      case .notification:
-        return "경적 소리 감지 시\n안전을 위해 알림을 허용해 주세요."
+//      case .notification:
+//        return "경적 소리 감지 시\n안전을 위해 알림을 허용해 주세요."
       case .privacy:
         return "저희는 오직 주행을 위한\n오디오를 써요."
       case .stand:
@@ -139,8 +128,8 @@ struct OnboardingView: View {
       switch self {
       case .warning:
         return "저는 당신의 곁에서 위험을 감지해 드리지만, 무엇보다\n중요한 건 자신의 안전이에요. 함께 신중히 주행해요."
-      case .notification:
-        return "안전한 주행을 위해, 주행 중 경적 사이렌 소리 등\n중요한 경고 신호를 놓치지 않도록 알림을 허용해 주세요."
+//      case .notification:
+//        return "안전한 주행을 위해, 주행 중 경적 사이렌 소리 등\n중요한 경고 신호를 놓치지 않도록 알림을 허용해 주세요."
       case .privacy:
         return "• 마이크로 인식된 소리는 오직 위험 신호를 감지하기 위한\n목적으로만 사용됩니다.\n• 인식되는 소리는 실시간 분석 후 저장하지 않습니다."
       case .stand:
