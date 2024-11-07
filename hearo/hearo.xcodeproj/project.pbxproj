@@ -15,7 +15,6 @@
 		00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEA2CAFC7B000FB3F70 /* HomeView.swift */; };
 		00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */; };
 		001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7D2CAFBC6900B03767 /* hearoApp.swift */; };
-		001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
 		001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */; };
 		001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F592CCF7983004EC4D2 /* ContentView.swift */; };
@@ -46,6 +45,7 @@
 		11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
 		11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
 		11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+
 		11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */; };
 		11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */; };
 		11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */; };
@@ -124,7 +124,6 @@
 		00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		001C6F7A2CAFBC6900B03767 /* hearo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F7D2CAFBC6900B03767 /* hearoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoApp.swift; sourceTree = "<group>"; };
-		001C6F832CAFBC6C00B03767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +153,7 @@
 		11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+
 		11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
 		11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
 		11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
@@ -161,6 +161,7 @@
 		11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
 		11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWatchView.swift; sourceTree = "<group>"; };
+
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -210,13 +211,7 @@
 		00078BD42CAFC6F200FB3F70 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */,
-				11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */,
-				11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */,
-				11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */,
-				11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */,
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
-				64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				00A04EA82CB7CC320031DECC /* Info.plist */,
+				64CB84022CDC86C70069A547 /* Assets.xcassets */,
 				001C6FA92CAFC3D800B03767 /* Application */,
 				001C6FAA2CAFC3E200B03767 /* Resources */,
 				001C6FAB2CAFC3F900B03767 /* Sources */,
@@ -324,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
-				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
 				11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */,
 				11D7CAC42CDB8BAF00F6B323 /* Font */,
 			);
@@ -657,8 +652,8 @@
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
 				11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
 				11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				64CB84032CDC86C70069A547 /* Assets.xcassets in Resources */,
 				11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
-				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
 				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,12 +715,6 @@
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
-				11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */,
-				11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */,
-				64CB83FA2CDBF7D20069A547 /* OnboardingWatchView.swift in Sources */,
-				11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */,
-				11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */,
-				11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */,
@@ -920,7 +909,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -954,7 +945,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1060,7 +1053,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1091,7 +1086,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1121,7 +1118,9 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1149,7 +1148,9 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;

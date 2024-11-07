@@ -25,7 +25,7 @@ struct SplashView: View {
         } else {
           Spacer().frame(height: 217)
           
-          Image("Hearoad_Main")
+          Image("HearoadLetters")
             .resizable()
             .frame(width: 139.55, height: 25.68,alignment: .center)
           
