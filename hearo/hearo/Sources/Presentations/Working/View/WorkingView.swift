@@ -59,3 +59,6 @@ struct WorkingView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+#Preview {
+    WorkingView(viewModel: WorkingViewModel(appRootManager: AppRootManager()))
+}
