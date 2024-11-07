@@ -9,25 +9,34 @@ import SwiftUI
 
 struct OnboardingStandRecommendView: View {
   @StateObject var viewModel: OnboardingViewModel
+  @Binding var currentPage: Int
   var body: some View {
-    VStack {
-      Text("정확한 위치 확인을 위해서\n거치대를 확인해주세요")
-        .font(
-          Font.custom("Spoqa Han Sans Neo", size: 25)
-            .weight(.bold)
-        )
-        .frame(width: 393, alignment: .leading)
-        .padding()
-      
-      
-      
-      Text("더 안전하고 정확한 경고 알림을 받기 위해\n스마트폰을 거치대에 고정해 주행해 주세요.")
-        .font(Font.custom("Spoqa Han Sans Neo", size: 14))
-        .foregroundStyle(Color("HGray2"))
-        .frame(width: 345, alignment: .topLeading)
-      
-      
-      Spacer().frame(height: 139)
+    ZStack {
+      VStack {
+        Spacer().frame(height: 45)
+        HStack(spacing: 0){
+          
+          Spacer().frame(width: 16)
+          
+          VStack(alignment: .leading, spacing: 0){
+            Text("정확한 감지를 위해\n주행 중 거치대를 사용해 주세요. ")
+              .font(.mainTitle)
+              .foregroundStyle(Color("MainFontColor"))
+            
+            Spacer().frame(height: 12)
+            
+            Text("안전한 주행을 위한 작은 준비가 큰 차이를 만듭니다.")
+              .font(.regular)
+              .foregroundStyle(Color("SubFontColor"))
+
+            
+          }
+          
+          Spacer()
+          
+        }
+        Spacer()
+      }
       
       Image(systemName: "iphone.gen1.radiowaves.left.and.right")
         .resizable()
@@ -36,27 +45,27 @@ struct OnboardingStandRecommendView: View {
       
       Spacer().frame(height: 162)
       
-      Button(action: {
-        viewModel.moveToHome() // 홈 화면으로 전환
-      }) {
-        ZStack {
-          Rectangle()
-          //                            .foregroundColor(.clear)
-            .frame(width: 361, height: 58)
-            .background(Color.white)
-            .cornerRadius(10)
-            .opacity(0.28)
-          
-          Text("확인")
-            .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
-            .multilineTextAlignment(.center)
-            .foregroundColor(.white)
-        }
-      }
+//      Button(action: {
+//        viewModel.moveToHome() // 홈 화면으로 전환
+//      }) {
+//        ZStack {
+//          Rectangle()
+//          //                            .foregroundColor(.clear)
+//            .frame(width: 361, height: 58)
+//            .background(Color.white)
+//            .cornerRadius(10)
+//            .opacity(0.28)
+//          
+//          Text("확인")
+//            .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
+//            .multilineTextAlignment(.center)
+//            .foregroundColor(.white)
+//        }
+//      }
     }
   }
 }
 
 #Preview {
-  OnboardingStandRecommendView(viewModel: OnboardingViewModel(appRootManager: AppRootManager()))
+  OnboardingStandRecommendView(viewModel: OnboardingViewModel(appRootManager: AppRootManager()), currentPage: .constant(3))
 }

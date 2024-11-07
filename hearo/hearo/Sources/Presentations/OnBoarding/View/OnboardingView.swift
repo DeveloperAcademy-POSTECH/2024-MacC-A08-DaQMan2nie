@@ -9,28 +9,57 @@ import SwiftUI
 
 struct OnboardingView: View {
     @StateObject var viewModel: OnboardingViewModel
+    @State private var currentPage = 0
 
     var body: some View {
-        TabView(selection: $viewModel.currentPage) {
-            // 첫 번째 온보딩 페이지
-          OnboardingNotiPermissionView(viewModel: viewModel)
-            .tag(0)
+        
+      ZStack {
+        TabView(selection: $currentPage) {
+              
+            OnboardingWarningView(viewModel:viewModel, currentPage: $currentPage)
+              .tag(0)
             
-            // 두 번째 온보딩 페이지
-          OnboardingPrivacyView(viewModel:viewModel)
-            .tag(1)
-            
-          
-          OnboardingWarningView(viewModel:viewModel)
+            OnboardingNotiPermissionView(viewModel: viewModel, currentPage: $currentPage)
+              .tag(1)
+              
+              
+            OnboardingPrivacyView(viewModel:viewModel, currentPage: $currentPage)
               .tag(2)
+              
+            OnboardingStandRecommendView(viewModel: viewModel, currentPage: $currentPage)
+              .tag(3)
             
-            // 마지막 온보딩 페이지
-              OnboardingStandRecommendView(viewModel: viewModel)
-            .tag(3)
+            OnboardingWatchView(viewModel: viewModel, currentPage: $currentPage)
+              .tag(4)
+            
+          }
+          .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+          .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+          .frame(maxWidth: .infinity, maxHeight: .infinity)
+          .edgesIgnoringSafeArea(.all)
+        
+        if currentPage == 4 {
+          VStack {
+            Spacer()
+            
+            Button(action: {
+              viewModel.moveToHome()
+            }) {
+              ZStack {
+                Rectangle()
+                  .frame(width: 361, height: 58)
+                  .foregroundStyle(Color("HPrimaryColor"))
+                  .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                Image("시작하기")
+              }
+            }
+            
+            Spacer().frame(height: 63)
+          }
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
+      }
+      
     }
 }
 

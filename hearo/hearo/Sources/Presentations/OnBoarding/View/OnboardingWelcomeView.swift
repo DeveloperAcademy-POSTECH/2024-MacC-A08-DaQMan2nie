@@ -8,48 +8,90 @@
 import SwiftUI
 
 struct OnboardingWelcomeView: View {
-    var body: some View {
-        VStack {
-            Spacer().frame(height: 59)
-
-            HStack {
-                Spacer().frame(width: 16)
-                
-                Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영합니다!")
-                    .font(
-                        Font.custom("Spoqa Han Sans Neo", size: 25)
-                            .weight(.bold)
-                    )
-                
-                Spacer()
-            }
-            
-            Spacer().frame(height: 19)
-            
-            HStack {
-                Spacer().frame(width: 16)
-                
-                Text("히어로드는 주행 중 위험 신호를 실시간으로 감지해\n시각과 진동으로 알려드립니다.")
-                    .font(Font.custom("Spoqa Han Sans Neo", size: 13))
-                    .foregroundColor(Color("HGray2"))
-                    .frame(width: 295, alignment: .topLeading)
-                
-                Spacer()
-            }
-            
-            Spacer().frame(height: 102)
-            
-          VStack(alignment: .leading) {
-            Text("서비스 이용 약관에 동의합니다.")
-            Text("히어로 이용 약관에 동의하시면 '앱 시작하기'를 눌러주세요.")
-          }
-            
-            Spacer().frame(height: 120)
+  
+  @State private var showTitle = false
+  @State private var showSubtitle = false
+  @ObservedObject var appRootManager: AppRootManager
+  
+  var body: some View {
+    
+    
+    ZStack(alignment: .top) {
+      
+      Color("BackgroundColor")
+        .ignoresSafeArea(.all)
+      
+      //      VStack {
+      //        Spacer().frame(height: 230.67)
+      Image("MainCircle")
+        .offset(y: 225.67)
+        .clipped()
+      
+      
+      //      }
+      
+      // 글씨
+      //      HStack {
+      //        Spacer().frame(width: 16)
+      
+      VStack(alignment: .leading,spacing: 0) {
+        Spacer().frame(height: 52)
+        
+        Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영합니다!")
+          .font(.mainTitle)
+          .foregroundStyle(Color("MainFontColor"))
+          .frame(height: 61)
+          .opacity(showTitle ? 1 : 0)
+          .animation(.easeIn(duration: 0.5), value: showTitle) // 타이핑 애니메이션 효과
+          .padding(.bottom, 10)
+        
+        
+        
+        Text("히어로드는 주행 중 경적과 사이렌 소리를 감지해 주행자의 안전을 돕는 앱입니다.")
+          .font(.regular)
+          .foregroundStyle(Color("SubFontColor"))
+          .frame(maxWidth: 323, minHeight: 42, alignment: .leading)
+          .opacity(showSubtitle ? 1 : 0)
+          .animation(.easeIn(duration: 0.5).delay(0.5), value: showSubtitle) // 타이핑 애니메이션 효과
+        //            .border(.black)
+        
+        
+        //          Spacer()
+        
+      }
+      
+      
+      
+      //        .border(.red)
+      //        .ignoresSafeArea()
+      //              .padding(.top, 45)
+      
+      //        Spacer()
+      //      }
+      .padding(.leading, 16)
+      //      .border(.red)
+      
+      .onAppear {
+        // 애니메이션 트리거
+        showTitle = true
+        showSubtitle = true
+        
+        // 3초 후 TabView로 전환
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+          appRootManager.currentRoot = .onboarding
         }
+      }
+      
+      
     }
+    //    .ignoresSafeArea()
+    
+    
+    
+  }
 }
 
 
 #Preview {
-  OnboardingWelcomeView()
+  OnboardingWelcomeView(appRootManager: AppRootManager())
 }

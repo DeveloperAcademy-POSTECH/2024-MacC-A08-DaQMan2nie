@@ -16,7 +16,11 @@ struct hearoApp: App {
     var body: some Scene {
         WindowGroup {
             // ContentView가 루트로 설정됨
-            ContentView(appRootManager: appRootManager)
+          ZStack{
+            Color("BackgroundColor")
+              .ignoresSafeArea(.all)
+              ContentView(appRootManager: appRootManager)
+            }
         }
     }
 }
