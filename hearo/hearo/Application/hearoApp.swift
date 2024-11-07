@@ -16,7 +16,11 @@ struct hearoApp: App {
     var body: some Scene {
         WindowGroup {
             // ContentView가 루트로 설정됨
-            ContentView(appRootManager: appRootManager)
+          ZStack{
+            Color("BackgroundColor")
+              .ignoresSafeArea(.all)
+              ContentView(appRootManager: appRootManager)
+            }
         }
     }
 }
@@ -33,7 +37,12 @@ struct LiveActivityAttributes: ActivityAttributes {
 final class AppRootManager: ObservableObject {
     @Published var currentRoot: AppRoot = .splash // 기본값: splash
     @Published var detectedSound: String? = nil // 감지된 소리 저장
+    private var isActivityActive = false // 라이브 액티비티 활성 상태 추적 변수
+    private var isWarning = false // isWarning 상태 저장
+    private var currentWarningState: Bool = false // 현재 isWarning 상태 저장
 
+    
+    
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
         case splash
@@ -52,48 +61,99 @@ final class AppRootManager: ObservableObject {
     
     // 라이브 액티비티 시작 메서드
     func startLiveActivity(isWarning: Bool) {
+        guard !isActivityActive else {
+            print("라이브 액티비티가 이미 활성화되어 있습니다.")
+            return
+        }
+        
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
             print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
             return
         }
         
+        // attributes와 initialContentState를 선언
         let attributes = LiveActivityAttributes(name: "주행")
         let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+        let content = ActivityContent(state: initialContentState, staleDate: nil)
         
         do {
+            // attributes와 content를 사용하여 라이브 액티비티 요청
             let activity = try Activity<LiveActivityAttributes>.request(
                 attributes: attributes,
-                contentState: initialContentState,
-                pushType: nil
+                content: content
             )
+            
+            isActivityActive = true
+            currentWarningState = isWarning // 현재 상태를 저장
             print("라이브 액티비티가 시작되었습니다: \(activity.id)")
         } catch {
             print("라이브 액티비티 시작 실패: \(error)")
         }
     }
     
-    // 라이브 액티비티 중지 메서드
+    
     func stopLiveActivity() {
+        let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+        _ = ActivityContent(state: initialContentState, staleDate: nil)
+        
+        guard isActivityActive else {
+            print("라이브 액티비티가 이미 중지 상태입니다.")
+            return
+        }
+
         Task {
             for activity in Activity<LiveActivityAttributes>.activities {
-                await activity.end(dismissalPolicy: .immediate)
+                await activity.end(nil , dismissalPolicy: .immediate)
                 print("라이브 액티비티가 중지되었습니다: \(activity.id)")
             }
+            
+            isActivityActive = false
+            currentWarningState = false // 중지되었으므로 상태 리셋
         }
     }
     
     // 라이브 액티비티 업데이트 메서드
-    func updateLiveActivity(isWarning: Bool) {
-        guard let activity = Activity<LiveActivityAttributes>.activities.first else { return }
-        
-        Task {
-            if activity.contentState.isWarning != isWarning {
-                let updatedContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
-                await activity.update(using: updatedContentState)
-                print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
-            }
-        }
-    }
+       func updateLiveActivity(isWarning: Bool) {
+           let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+           let content = ActivityContent(state: initialContentState, staleDate: nil)
+
+           guard isActivityActive else {
+               print("활성화된 라이브 액티비티가 없어 업데이트할 수 없습니다.")
+               return
+           }
+           
+           // 같은 경고 상태로는 업데이트하지 않도록 체크
+                  guard isWarning != currentWarningState else {
+                      print("경고 상태가 이미 \(isWarning)로 설정되어 있습니다.")
+                      return
+                  }
+           guard let activity = Activity<LiveActivityAttributes>.activities.first else {
+               isActivityActive = false
+               return
+           }
+           
+           Task {
+               _ = LiveActivityAttributes.ContentState(isWarning: isWarning)
+               await activity.update(content) // `using` 레이블 제거
+               print("라이브 액티비티 상태 업데이트: \(isWarning ? "경고" : "주행 중")")
+           }
+       }
+//    func updateLiveActivity(iconName: String) {
+//        guard let activity = activity else {
+//            print("라이브 액티비티가 실행 중이지 않습니다.")
+//            startLiveActivity(iconName: iconName)
+//            return
+//        }
+//        
+//        print("라이브 액티비티 업데이트 시도")
+//        let state = DynamicAttributes.ContentState(remainingTime: remainingTime, iconName: iconName)
+//        let content = ActivityContent(state: state, staleDate: Date().addingTimeInterval(3600))
+//        
+//        Task {
+//            await activity.update(content)
+//            print("라이브 액티비티 업데이트됨")
+//        }
+//    }
 }
 
 // ContentView 정의 (AppRootManager 클래스 외부에 위치)

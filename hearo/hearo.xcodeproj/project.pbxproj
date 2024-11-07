@@ -32,15 +32,33 @@
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
 		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
-
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
 		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-
 		1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */; };
+		11D7CAC32CDB8AA500F6B323 /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */; };
+		11D7CAC82CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CAC92CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CACA2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CACB2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CACC2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CACD2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */; };
+		11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
+		11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
+		11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */; };
+		11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */; };
+		11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */; };
+		11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */; };
+		11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */; };
+
+		11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CADD2CDBEC6100F6B323 /* LottieView.swift */; };
+		11D7CAE12CDBEDC800F6B323 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11D7CAE02CDBEDC800F6B323 /* Lottie */; };
+
+		64CB83FA2CDBF7D20069A547 /* OnboardingWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */; };
 
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
@@ -149,7 +167,6 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -157,8 +174,20 @@
 		1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V11.mlmodel; sourceTree = "<group>"; };
+		11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesignSystem.swift; sourceTree = "<group>"; };
+		11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
+		11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
+		11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
+		11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
+		11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+
+		11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+
+		64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWatchView.swift; sourceTree = "<group>"; };
 
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -169,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D7CAE12CDBEDC800F6B323 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +252,13 @@
 		00078BD42CAFC6F200FB3F70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */,
+				11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */,
+				11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */,
+				11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */,
+				11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */,
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
-				645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */,
-				645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */,
-				645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */,
-				645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */,
-				645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */,
+				64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +371,9 @@
 			children = (
 				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
 				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
+				11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */,
+				11D7CADD2CDBEC6100F6B323 /* LottieView.swift */,
+				11D7CAC42CDB8BAF00F6B323 /* Font */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -405,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				001C9F5D2CCF7984004EC4D2 /* Preview Content */,
-				00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */,
 				001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */,
 				001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */,
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
@@ -493,9 +526,7 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-
 				1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */,
-
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
 				001D669A2CDB3E11005746AC /* Haptic.swift */,
@@ -521,6 +552,16 @@
 				112177822CC283BD000A146F /* Info.plist */,
 			);
 			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		11D7CAC42CDB8BAF00F6B323 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */,
+				11D7CAC62CDB8C1B00F6B323 /* Pretendard-Medium.otf */,
+				11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,7 +702,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					001C6F792CAFBC6900B03767 = {
 						CreatedOnToolsVersion = 15.4;
@@ -699,6 +740,9 @@
 				Base,
 			);
 			mainGroup = 001C6F712CAFBC6900B03767;
+			packageReferences = (
+				11D7CADF2CDBED3600F6B323 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 001C6F7B2CAFBC6900B03767 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -720,6 +764,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
+				11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
 				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
@@ -744,6 +791,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F5F2CCF7984004EC4D2 /* Preview Assets.xcassets in Resources */,
+				11D7CACB2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CACC2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CACD2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 				001C9F5C2CCF7984004EC4D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,6 +817,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				112177812CC283BD000A146F /* Assets.xcassets in Resources */,
+				11D7CAC82CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
+				11D7CAC92CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
+				11D7CACA2CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,26 +830,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
-				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
-				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
-				00FC15162CDA10B700FBCE0C /* HornSoundClassifier_V9.mlmodel in Sources */,
 				001D669B2CDB3E11005746AC /* Haptic.swift in Sources */,
+				11D7CAC32CDB8AA500F6B323 /* FontDesignSystem.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
-
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
-				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
+				11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */,
+				11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */,
+				64CB83FA2CDBF7D20069A547 /* OnboardingWatchView.swift in Sources */,
+				11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */,
+				11D7CAD92CDB8C6900F6B323 /* OnboardingWelcomeView.swift in Sources */,
+				11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */,
+				11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
@@ -1010,7 +1065,6 @@
 		001C6FA12CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1047,7 +1101,6 @@
 		001C6FA22CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1084,11 +1137,10 @@
 		001C6FA42CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -1104,11 +1156,10 @@
 		001C6FA52CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -1124,10 +1175,9 @@
 		001C6FA72CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearoUITests;
@@ -1142,10 +1192,9 @@
 		001C6FA82CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pilgaaang.hearoUITests;
@@ -1226,11 +1275,10 @@
 		001C9F7C2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
@@ -1247,11 +1295,10 @@
 		001C9F7D2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
@@ -1268,10 +1315,9 @@
 		001C9F7E2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
@@ -1288,10 +1334,9 @@
 		001C9F7F2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
@@ -1344,7 +1389,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 
 				DEVELOPMENT_TEAM = GT56H2MYWV;
-
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1441,6 +1485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11D7CADF2CDBED3600F6B323 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11D7CAE02CDBEDC800F6B323 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11D7CADF2CDBED3600F6B323 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 001C6F722CAFBC6900B03767 /* Project object */;
 }
