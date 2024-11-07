@@ -86,7 +86,7 @@ struct HomeView: View {
                                 .offset(y: -90)
                                 .padding()
                             Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
-                                .font(.title1)
+                            .font(.light)
                                 .foregroundColor(Color("SubFontColor"))
                             
                         }
@@ -101,11 +101,11 @@ struct HomeView: View {
                 if showTip {
                     VStack {
                         Text("주행 Tip!")
-                            .font(.title0)
+                        .font(.medium)
                             .foregroundColor(Color("SubFontColor"))
                         
                         Text(randomTip)
-                            .font(.title1)
+                        .font(.light)
                             .foregroundColor(Color("SubFontColor"))
                             .multilineTextAlignment(.center)
                             .frame(height: 50)
