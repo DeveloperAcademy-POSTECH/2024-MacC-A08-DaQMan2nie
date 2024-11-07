@@ -40,42 +40,54 @@ struct OnboardingView: View {
       }
       
       
-      // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
-      TabView(selection: $currentPage) {
-        Image(systemName: "exclamationmark.triangle.fill")
-          .resizable()
-          .frame(width: 100, height: 100)
-          .foregroundColor(Color.yellow)
-          .tag(OnboardingPage.warning)
+      VStack(spacing: 7) {
+        // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
+        TabView(selection: $currentPage) {
+          Image(systemName: "exclamationmark.triangle.fill")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color.yellow)
+            .tag(OnboardingPage.warning)
+          
+          Image(systemName: "bell.fill")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color.green)
+            .tag(OnboardingPage.notification)
+          
+          Image(systemName: "lock.fill")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color.green)
+            .tag(OnboardingPage.privacy)
+          
+          Image(systemName: "iphone.homebutton")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color.green)
+            .tag(OnboardingPage.stand)
+          
+          Image(systemName: "applewatch")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color.green)
+            .tag(OnboardingPage.watch)
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .frame(maxHeight: 374)
+        .padding(.vertical, 20)
         
-        Image(systemName: "bell.fill")
-          .resizable()
-          .frame(width: 100, height: 100)
-          .foregroundColor(Color.green)
-          .tag(OnboardingPage.notification)
-        
-        Image(systemName: "lock.fill")
-          .resizable()
-          .frame(width: 100, height: 100)
-          .foregroundColor(Color.green)
-          .tag(OnboardingPage.privacy)
-        
-        Image(systemName: "iphone.homebutton")
-          .resizable()
-          .frame(width: 100, height: 100)
-          .foregroundColor(Color.green)
-          .tag(OnboardingPage.stand)
-        
-        Image(systemName: "applewatch")
-          .resizable()
-          .frame(width: 100, height: 100)
-          .foregroundColor(Color.green)
-          .tag(OnboardingPage.watch)
+        // 커스텀 페이지 인디케이터
+        HStack(spacing: 8) {
+          ForEach(OnboardingPage.allCases, id: \.self) { page in
+            Circle()
+              .fill(currentPage == page ? Color(red: 113/255, green: 113/255, blue: 113/255) : Color(red: 36/255, green: 36/255, blue: 36/255).opacity(0.3))
+              .frame(width: 8, height: 8)
+          }
+        }
+        .padding(.bottom, 16)
       }
-      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-      .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-      .frame(maxHeight: 374)
-      .padding(.vertical, 20)
       
       if currentPage == .watch {
         VStack {
