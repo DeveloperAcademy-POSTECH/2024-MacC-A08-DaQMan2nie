@@ -72,6 +72,7 @@ struct HomeView: View {
                                         startLottieAnimation = true
                                         
                                         // 1.5초 후에 흰 배경 서서히 나타나기 시작
+                                        showTip = false
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                             withAnimation(.easeIn(duration: 2.0)) {
                                                 backgroundOpacity = 1.0
@@ -88,7 +89,7 @@ struct HomeView: View {
                                         }
                                     }
                                     withAnimation(.easeIn(duration: 0.3)) {
-                                        showTip = true
+                                        showTip = false
                                         showArrowAndText = false
                                     }
                                 }
@@ -136,7 +137,7 @@ struct HomeView: View {
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .offset(y: targetOffset - UIScreen.main.bounds.height / 30)
+                        .offset(y: targetOffset - UIScreen.main.bounds.height / 57)
                         .edgesIgnoringSafeArea(.all)
                 }
                 

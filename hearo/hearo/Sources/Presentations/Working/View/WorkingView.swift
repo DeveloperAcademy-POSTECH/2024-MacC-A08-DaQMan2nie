@@ -28,7 +28,7 @@ struct WorkingView: View {
                LottieView(animationName: "sound_collection", animationScale: 1)
                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 //                   .offset(y: targetOffset - UIScreen.main.bounds.height / 4)
-                   .offset(x: -6,y: 60)
+                   .offset(x: -3,y: 60)
                    .edgesIgnoringSafeArea(.all)
                  
                
