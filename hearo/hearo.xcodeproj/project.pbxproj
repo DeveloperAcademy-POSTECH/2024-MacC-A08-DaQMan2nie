@@ -54,7 +54,10 @@
 		11D7CADA2CDB8C6900F6B323 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */; };
 		11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CADD2CDBEC6100F6B323 /* LottieView.swift */; };
 		11D7CAE12CDBEDC800F6B323 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 11D7CAE02CDBEDC800F6B323 /* Lottie */; };
-		64CB83FA2CDBF7D20069A547 /* OnboardingWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */; };
+
+		64CB84032CDC86C70069A547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64CB84022CDC86C70069A547 /* Assets.xcassets */; };
+		64CB84052CDC9CAD0069A547 /* StartOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB84042CDC9CAD0069A547 /* StartOnboardingView.swift */; };
+
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -163,7 +166,8 @@
 
 		11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 
-		64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWatchView.swift; sourceTree = "<group>"; };
+		64CB84022CDC86C70069A547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64CB84042CDC9CAD0069A547 /* StartOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOnboardingView.swift; sourceTree = "<group>"; };
 
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -220,6 +224,8 @@
 				11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */,
 				11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */,
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
+
+				64CB84042CDC9CAD0069A547 /* StartOnboardingView.swift */,
 
 			);
 			path = View;
@@ -735,6 +741,7 @@
 				1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
+				64CB84052CDC9CAD0069A547 /* StartOnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
