@@ -46,6 +46,7 @@
 		11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC72CDB8C1B00F6B323 /* Pretendard-Regular.otf */; };
 		11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7CAC52CDB8C1B00F6B323 /* Pretendard-Light.otf */; };
 
+
 		11D7CAD62CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */; };
 		11D7CAD72CDB8C6900F6B323 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */; };
 		11D7CAD82CDB8C6900F6B323 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */; };
@@ -159,7 +160,9 @@
 		11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
 		11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
 		11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
+
 		11D7CADD2CDBEC6100F6B323 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+
 		64CB83F92CDBF7D20069A547 /* OnboardingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWatchView.swift; sourceTree = "<group>"; };
 
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
@@ -211,7 +214,13 @@
 		00078BD42CAFC6F200FB3F70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11D7CAD12CDB8C6900F6B323 /* OnboardingNotiPermissionView.swift */,
+				11D7CAD22CDB8C6900F6B323 /* OnboardingPrivacyView.swift */,
+				11D7CAD32CDB8C6900F6B323 /* OnboardingStandRecommendView.swift */,
+				11D7CAD42CDB8C6900F6B323 /* OnboardingWarningView.swift */,
+				11D7CAD52CDB8C6900F6B323 /* OnboardingWelcomeView.swift */,
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,7 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
+
 				11D7CAC22CDB8A9F00F6B323 /* FontDesignSystem.swift */,
+
 				11D7CAC42CDB8BAF00F6B323 /* Font */,
 			);
 			path = Resources;
@@ -457,7 +468,9 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+
 				11D7CADD2CDBEC6100F6B323 /* LottieView.swift */,
+
 				1159334B2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
@@ -652,8 +665,10 @@
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
 				11D7CACE2CDB8C1B00F6B323 /* Pretendard-Medium.otf in Resources */,
 				11D7CACF2CDB8C1B00F6B323 /* Pretendard-Regular.otf in Resources */,
-				64CB84032CDC86C70069A547 /* Assets.xcassets in Resources */,
+
 				11D7CAD02CDB8C1B00F6B323 /* Pretendard-Light.otf in Resources */,
+				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
+
 				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,6 +730,7 @@
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
+
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				1159334C2CDB2A7C005902F2 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				11D7CADE2CDBEC6B00F6B323 /* LottieView.swift in Sources */,
@@ -1111,6 +1127,86 @@
 			};
 			name = Release;
 		};
+
+		001C9F7C2CCF7984004EC4D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HearoadWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		001C9F7D2CCF7984004EC4D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HearoadWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		001C9F7E2CCF7984004EC4D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		001C9F7F2CCF7984004EC4D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pilgaaang.HearoadWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "HearoadWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+
 		112177872CC283BD000A146F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1149,7 +1245,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 
+
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+
 
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
