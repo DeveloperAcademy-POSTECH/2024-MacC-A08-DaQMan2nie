@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import CoreML
 import SoundAnalysis
-import UserNotifications
+//import UserNotifications
 import UIKit
 import Combine
 
@@ -32,9 +32,9 @@ class HornSoundDetector: NSObject, ObservableObject {
         setupAudioSession()
         setupAudioEngine()
         setupSoundClassifier()
-        checkNotificationPermission()
+//        checkNotificationPermission()
         
-        // 앱이 백그라운드로 전환될 때 녹음을 중지하도록 옵저버 설정
+//         앱이 백그라운드로 전환될 때 녹음을 중지하도록 옵저버 설정
         NotificationCenter.default.addObserver(self, selector: #selector(stopRecording), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
@@ -43,50 +43,55 @@ class HornSoundDetector: NSObject, ObservableObject {
         do {
             try audioSession.setCategory(.playAndRecord, mode: .default)
             try audioSession.setActive(true)
+//            print("오디오 세션 설정 성공")
         } catch {
             print("오디오 세션 설정 실패: \(error)")
         }
     }
+  
     private func setupAudioEngine() {
         audioEngine = AVAudioEngine()
         inputNode = audioEngine.inputNode
+        print("오디오 엔진 설정")
     }
     
     private func setupSoundClassifier() {
         do {
             let config = MLModelConfiguration()
-            config.computeUnits = .cpuOnly
+//            config.computeUnits = .cpuOnly
+            config.computeUnits = .all
             soundClassifier = try HornSoundClassifier_V11(configuration: config)
-            print("CPU 전용 설정으로 소리 분류기 생성 성공")
+//            print("CPU 전용 설정으로 소리 분류기 생성 성공")
+            print("모든 하드웨어 설정으로 소리 분류기 생성 성공")
         } catch {
             print("소리 분류기 생성 실패: \(error)")
         }
     }
     
-    private func checkNotificationPermission() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            switch settings.authorizationStatus {
-            case .notDetermined:
-                self.requestNotificationPermission()
-            case .denied:
-                print("알림 권한이 거부되었습니다. 설정에서 권한을 변경해주세요.")
-            case .authorized, .provisional, .ephemeral:
-                print("알림 권한이 허용되었습니다.")
-            @unknown default:
-                break
-            }
-        }
-    }
+//    private func checkNotificationPermission() {
+//        UNUserNotificationCenter.current().getNotificationSettings { settings in
+//            switch settings.authorizationStatus {
+//            case .notDetermined:
+//                self.requestNotificationPermission()
+//            case .denied:
+//                print("알림 권한이 거부되었습니다. 설정에서 권한을 변경해주세요.")
+//            case .authorized, .provisional, .ephemeral:
+//                print("알림 권한이 허용되었습니다.")
+//            @unknown default:
+//                break
+//            }
+//        }
+//    }
     
-    private func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
-            if granted {
-                print("알림 권한이 허용되었습니다.")
-            } else if let error = error {
-                print("알림 권한 요청 중 오류 발생: \(error.localizedDescription)")
-            }
-        }
-    }
+//    private func requestNotificationPermission() {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+//            if granted {
+//                print("알림 권한이 허용되었습니다.")
+//            } else if let error = error {
+//                print("알림 권한 요청 중 오류 발생: \(error.localizedDescription)")
+//            }
+//        }
+//    }
     
     func startRecording() {
         guard !isRecording else {
@@ -139,22 +144,7 @@ class HornSoundDetector: NSObject, ObservableObject {
         print("오디오 엔진 중지됨")
     }
     
-    func sendNotification(title: String, body: String) {
-        print("알림 발송 시도")
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = UNNotificationSound.default
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("알림 발송 실패: \(error.localizedDescription)")
-            } else {
-                print("알림 발송 성공")
-            }
-        }
-    }
+
 }
 
 extension HornSoundDetector: SNResultsObserving {
@@ -166,7 +156,7 @@ extension HornSoundDetector: SNResultsObserving {
         DispatchQueue.main.async {
             // 첫 번째 분류를 가장 신뢰도 높은 것으로 설정
             if let topClassification = topClassifications.first(where: { classification in
-                return classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren"
+              return classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren" || classification.identifie == "etc"
             }) {
                 self.topClassification = topClassification // 가장 높은 분류 저장
                 self.classificationResult = topClassification.identifier // 소리 종류만 저장
@@ -177,7 +167,7 @@ extension HornSoundDetector: SNResultsObserving {
                     // 경적 및 사이렌 소리 감지
                     if classification.confidence >= 1.0 {
                         self.mlConfidences[index] = classification.confidence
-                        // 원하는 로직을 추가하세요
+                      print("\(classification.identifier) ")
                     }
                 }
             }
