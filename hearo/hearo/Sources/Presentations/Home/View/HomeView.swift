@@ -60,6 +60,7 @@ struct HomeView: View {
                                         circleOffset = targetOffset
                                     } else {
                                         circleOffset = newOffset
+                                        triggerHapticFeedback(for: newOffset, targetOffset: targetOffset) // Haptic 피드백 트리거
                                     }
                                 }
                                 .onEnded { value in
@@ -73,6 +74,9 @@ struct HomeView: View {
                                         startLottieAnimation = true
                                         showTip = false // targetOffset에 도달했을 때 showTip을 false로 설정
                                         
+                                        // 강한 진동과 함께 애니메이션 시작
+                                                                            triggerFinalHaptic()
+                                        
                                         // 1.5초 후에 흰 배경 서서히 나타나기 시작
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                             withAnimation(.easeIn(duration: 2.0)) {
@@ -82,6 +86,7 @@ struct HomeView: View {
                                             // 흰 배경이 다 덮인 후 WorkingView로 전환
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                                 viewModel.startWorking()
+                                                triggerErrorHaptic()
                                             }
                                         }
                                     } else {

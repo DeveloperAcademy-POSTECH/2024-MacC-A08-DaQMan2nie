@@ -39,7 +39,6 @@ class HornSoundDetector: NSObject, ObservableObject {
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.playAndRecord, mode: .default)
-            try audioSession.setPreferredInputNumberOfChannels(1) // 모노 입력으로 설정
             try audioSession.setActive(true)
         } catch {
             print("오디오 세션 설정 실패: \(error)")
@@ -135,7 +134,7 @@ extension HornSoundDetector: SNResultsObserving {
         guard let result = result as? SNClassificationResult else { return }
         
         DispatchQueue.main.async {
-            if let topClassification = result.classifications.first, topClassification.confidence >= 0.99 {
+            if let topClassification = result.classifications.first, topClassification.confidence >= 1.0 {
                 let isRelevantSound = ["Bicyclebell", "Carhorn", "Siren"].contains(topClassification.identifier)
                 if isRelevantSound {
                     self.classificationResult = topClassification.identifier
