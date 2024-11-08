@@ -6,56 +6,112 @@
 //
 
 import SwiftUI
+
 struct WorkingView: View {
     @ObservedObject var viewModel: WorkingViewModel
-    
-    init(viewModel: WorkingViewModel) {
+       @State private var circleOffset: CGFloat = 0
+    @State private var showArrowAndText: Bool = false
+       @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
+       private let targetOffset: CGFloat = 274
+       private let minimumOffset: CGFloat = 197
+
+       init(viewModel: WorkingViewModel) {
            self.viewModel = viewModel
        }
+       
+       var body: some View {
+           ZStack {
+               Color.white // 다크 모드에서도 흰색 배경
+                   .ignoresSafeArea()
+               
+               // Lottie 애니메이션과 원형 버튼
+               LottieView(animationName: "sound_collection", animationScale: 1)
+                   .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                   .offset(y: targetOffset - UIScreen.main.bounds.height / 4)
+                   .offset(x: -3,y: 60)
+                   .edgesIgnoringSafeArea(.all)
+                 
+               
+               Image("StartCircle")
+                   .offset(y: circleOffset)
+                   .gesture(
+                       DragGesture()
+                           .onChanged { value in
+                               withAnimation(.easeOut(duration: 0.3)) {
+                                   showArrowAndText = false
+                               }
+                               let newOffset = value.translation.height
+                               
+                               if newOffset < 0 {
+                                   circleOffset = 0
+                               } else if newOffset > targetOffset {
+                                   circleOffset = targetOffset
+                               } else {
+                                   circleOffset = newOffset
+                               }
+                           }
+                           .onEnded { value in
+                               if circleOffset >= minimumOffset {
+                                   withAnimation(.easeOut(duration: 0.3)) {
+                                       circleOffset = targetOffset
+                                   }
+                                   viewModel.finishRecording() // 녹음 중지 및 FinishView로 전환
+                               } else {
+                                   withAnimation(.easeOut(duration: 0.3)) {
+                                       circleOffset = 0
+                                   }
+                               }
+                               withAnimation(.easeIn(duration: 0.3)) {
+                                   showArrowAndText = false
+                               }
+                           }
+                   )
+               
+               if showArrowAndText {
+                   VStack {
+                       LottieView(animationName: "arrow_WH", animationScale: 1)
+                           .frame(height: 150, alignment: .top)
+                           .offset(y: -120)
+                           .padding()
+                       Text("아이콘을 아래로 내리면 주행이 종료됩니다.")
+                           .font(.light)
+                           .foregroundColor(Color("SubFontColor"))
+                   }
+                   .padding(.top, 400)
+                   .transition(.opacity)
+               }
+               
+               // 흰색 오버레이 (초기 불투명도 1.0에서 0으로 서서히 감소)
+               Color.white
+                   .opacity(overlayOpacity)
+                   .ignoresSafeArea()
+                   .onAppear {
+                       withAnimation(.easeIn(duration: 1.0)) {
+                           overlayOpacity = 0.0 // 1초에 걸쳐 서서히 투명해짐
+                       }
+                   }
+           }
+           .contentShape(Rectangle())
+           .onAppear {
+               viewModel.startRecording()
+           }
+           .onDisappear {
+               viewModel.stopRecording()
+           }
+           .onLongPressGesture(minimumDuration: 0.1) {
+               withAnimation(.easeOut(duration: 0.3)) {
+                   showArrowAndText = true
+               }
+           } onPressingChanged: { isPressing in
+               if !isPressing {
+                   withAnimation(.easeIn(duration: 0.3)) {
+                       showArrowAndText = false
+                   }
+               }
+           }
+       }
+   }
 
-
-    var body: some View {
-        VStack {
-            Text("워킹 화면")
-                .font(.largeTitle)
-                .padding()
-            
-            ForEach(0..<4, id: \.self) { index in
-                            Text("마이크 \(index + 1): \(viewModel.soundDetectorViewModel.classificationResults[index])")
-                                .font(.title2)
-                                .foregroundColor(.white)
-                                .padding()
-                        }
-
-            Button(action: {
-                viewModel.finishRecording()
-            }) {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 361, height: 58)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .opacity(0.28)
-                    
-                    Text("종료하기")
-                        .font(Font.custom("Spoqa Han Sans Neo", size: 18).weight(.medium))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                }
-            }
-        }
-        .onAppear {
-            print("WorkingView: onAppear 호출됨 - 녹음 시작 시도")
-            viewModel.startRecording() // 뷰가 나타날 때 녹음 시작
-        }
-        .onDisappear {
-            print("WorkingView: onDisappear 호출됨 - 녹음 중지 시도")
-            viewModel.stopRecording() // 뷰가 사라질 때 녹음 중지
-        }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 28/255, green: 34/255, blue: 46/255, opacity: 1))
-        .edgesIgnoringSafeArea(.all)
-    }
+#Preview {
+    WorkingView(viewModel: WorkingViewModel(appRootManager: AppRootManager()))
 }

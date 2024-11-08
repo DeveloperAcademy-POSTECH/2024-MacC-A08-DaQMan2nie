@@ -21,37 +21,30 @@
 		001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F592CCF7983004EC4D2 /* ContentView.swift */; };
 		001C9F5C2CCF7984004EC4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */; };
 		001C9F5F2CCF7984004EC4D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C9F5E2CCF7984004EC4D2 /* Preview Assets.xcassets */; };
-		001C9F692CCF7984004EC4D2 /* HearoadWatch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F682CCF7984004EC4D2 /* HearoadWatch_Watch_AppTests.swift */; };
-		001C9F732CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F722CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITests.swift */; };
-		001C9F752CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */; };
 		001C9F782CCF7984004EC4D2 /* HearoadWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 001C9F552CCF7983004EC4D2 /* HearoadWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */; };
 		0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B72CC0295F009B4261 /* WarningView.swift */; };
 		0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B92CC02969009B4261 /* WarningViewModel.swift */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
-		00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */ = {isa = PBXBuildFile; fileRef = 00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */; };
-		00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */; };
-		00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AD2CD361B000F752D0 /* WatchViewManager.swift */; };
-		00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319AF2CD362D100F752D0 /* WatchviewManager.swift */; };
-		00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B12CD367B100F752D0 /* WatchHomeView.swift */; };
-		00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */; };
-		00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B52CD367C800F752D0 /* WatchWarningView.swift */; };
-		00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F319B72CD367D100F752D0 /* WatchFinishView.swift */; };
+		00D1B7582CDDD9E100BA2AF1 /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
+		00D1B75D2CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */; };
+		00D1B75E2CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */; };
+		00D1B75F2CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */; };
+		00D1B7602CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */; };
+		00D1B7612CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */; };
+		00D1B7622CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */; };
+		00D1B7642CDDDAF300BA2AF1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */; };
+		00D1B7662CDDDB3D00BA2AF1 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */; };
+		00D1B7682CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */; };
+		00D1B76A2CDDDBB100BA2AF1 /* StartOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7692CDDDBA900BA2AF1 /* StartOnboardingView.swift */; };
+		00D1B76D2CDDDD9800BA2AF1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D1B76C2CDDDD9800BA2AF1 /* Lottie */; };
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
 		112177762CC283BC000A146F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177752CC283BC000A146F /* SwiftUI.framework */; };
 		112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112177782CC283BC000A146F /* LiveActivityBundle.swift */; };
 		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
-		1121777D2CC283BC000A146F /* LiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777C2CC283BC000A146F /* LiveActivity.swift */; };
-		1121777F2CC283BC000A146F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777E2CC283BC000A146F /* AppIntent.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */; };
-		645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */; };
-		645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */; };
-		645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */; };
-		645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */; };
-
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -146,42 +139,30 @@
 		001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001C9F5E2CCF7984004EC4D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C9F642CCF7984004EC4D2 /* HearoadWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HearoadWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		001C9F682CCF7984004EC4D2 /* HearoadWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearoadWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
 		001C9F6E2CCF7984004EC4D2 /* HearoadWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HearoadWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		001C9F722CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearoadWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearoadWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HearoadWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0045C6B72CC0295F009B4261 /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		0045C6B92CC02969009B4261 /* WarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewModel.swift; sourceTree = "<group>"; };
 		007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingView.swift; sourceTree = "<group>"; };
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
-		00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SpoqaHanSansNeo_OTF_original; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
-		00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier.mlmodel; sourceTree = "<group>"; };
-		00F319AD2CD361B000F752D0 /* WatchViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewManager.swift; sourceTree = "<group>"; };
-		00F319AF2CD362D100F752D0 /* WatchviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchviewManager.swift; sourceTree = "<group>"; };
-		00F319B12CD367B100F752D0 /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
-		00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWorkingView.swift; sourceTree = "<group>"; };
-		00F319B52CD367C800F752D0 /* WatchWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWarningView.swift; sourceTree = "<group>"; };
-		00F319B72CD367D100F752D0 /* WatchFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchFinishView.swift; sourceTree = "<group>"; };
+		00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesignSystem.swift; sourceTree = "<group>"; };
+		00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V11.mlmodel; sourceTree = "<group>"; };
+		00D1B7692CDDDBA900BA2AF1 /* StartOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOnboardingView.swift; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		112177752CC283BC000A146F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		112177782CC283BC000A146F /* LiveActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityBundle.swift; sourceTree = "<group>"; };
 		1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
-		1121777C2CC283BC000A146F /* LiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivity.swift; sourceTree = "<group>"; };
-		1121777E2CC283BC000A146F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
-		645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcomeView.swift; sourceTree = "<group>"; };
-		645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNotiPermissionView.swift; sourceTree = "<group>"; };
-		645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrivacyView.swift; sourceTree = "<group>"; };
-		645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWarningView.swift; sourceTree = "<group>"; };
-		645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStandRecommendView.swift; sourceTree = "<group>"; };
-
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Presentations/Working/ViewModel/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Presentations/Working/ViewModel/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -191,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D1B76D2CDDDD9800BA2AF1 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,11 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				00078BE62CAFC79E00FB3F70 /* OnboardingView.swift */,
-				645C1B152CCBB3BF00251157 /* OnboardingWelcomeView.swift */,
-				645C1B172CCBB53C00251157 /* OnboardingNotiPermissionView.swift */,
-				645C1B192CCBBB4800251157 /* OnboardingPrivacyView.swift */,
-				645C1B1B2CCBBE7000251157 /* OnboardingWarningView.swift */,
-				645C1B1D2CCBBFAB00251157 /* OnboardingStandRecommendView.swift */,
+				00D1B7692CDDDBA900BA2AF1 /* StartOnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,8 +286,6 @@
 				001C6F7C2CAFBC6900B03767 /* hearo */,
 				112177772CC283BC000A146F /* LiveActivity */,
 				001C9F562CCF7983004EC4D2 /* HearoadWatch Watch App */,
-				001C9F672CCF7984004EC4D2 /* HearoadWatch Watch AppTests */,
-				001C9F712CCF7984004EC4D2 /* HearoadWatch Watch AppUITests */,
 				112177722CC283BC000A146F /* Frameworks */,
 				001C6F7B2CAFBC6900B03767 /* Products */,
 			);
@@ -360,7 +336,8 @@
 		001C6FAA2CAFC3E200B03767 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				00A04EA62CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original */,
+				00D1B7592CDDDAC100BA2AF1 /* Font */,
+				00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */,
 				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -370,20 +347,9 @@
 			isa = PBXGroup;
 			children = (
 				00A04EA32CB7CA510031DECC /* Helper */,
-				00A04EA22CB7CA320031DECC /* Enums */,
-				001C6FAC2CAFC44900B03767 /* Delegate */,
-				001C6FAF2CAFC46200B03767 /* Extensions */,
-				001C6FAE2CAFC45900B03767 /* Data */,
 				001C6FAD2CAFC45100B03767 /* Presentations */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		001C6FAC2CAFC44900B03767 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Delegate;
 			sourceTree = "<group>";
 		};
 		001C6FAD2CAFC45100B03767 /* Presentations */ = {
@@ -397,20 +363,6 @@
 				001C6FB72CAFC59F00B03767 /* Finish */,
 			);
 			path = Presentations;
-			sourceTree = "<group>";
-		};
-		001C6FAE2CAFC45900B03767 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		001C6FAF2CAFC46200B03767 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		001C6FB32CAFC4DF00B03767 /* Home */ = {
@@ -458,11 +410,6 @@
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
 				001C9F592CCF7983004EC4D2 /* ContentView.swift */,
 				001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */,
-				00F319AD2CD361B000F752D0 /* WatchViewManager.swift */,
-				00F319B12CD367B100F752D0 /* WatchHomeView.swift */,
-				00F319B32CD367BE00F752D0 /* WatchWorkingView.swift */,
-				00F319B52CD367C800F752D0 /* WatchWarningView.swift */,
-				00F319B72CD367D100F752D0 /* WatchFinishView.swift */,
 			);
 			path = "HearoadWatch Watch App";
 			sourceTree = "<group>";
@@ -473,23 +420,6 @@
 				001C9F5E2CCF7984004EC4D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		001C9F672CCF7984004EC4D2 /* HearoadWatch Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				001C9F682CCF7984004EC4D2 /* HearoadWatch_Watch_AppTests.swift */,
-			);
-			path = "HearoadWatch Watch AppTests";
-			sourceTree = "<group>";
-		};
-		001C9F712CCF7984004EC4D2 /* HearoadWatch Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				001C9F722CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITests.swift */,
-				001C9F742CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "HearoadWatch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 		0045C6B42CC02934009B4261 /* Warning */ = {
@@ -542,23 +472,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		00A04EA22CB7CA320031DECC /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				644F9A842CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel */,
-				00B104682CC0B0DB00529065 /* HornSoundClassifier.mlmodel */,
+				00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */,
+				00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
 				64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */,
-				00F319AF2CD362D100F752D0 /* WatchviewManager.swift */,
+				00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		00D1B7592CDDDAC100BA2AF1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */,
+				00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */,
+				00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		112177722CC283BC000A146F /* Frameworks */ = {
@@ -575,8 +508,6 @@
 			children = (
 				112177782CC283BC000A146F /* LiveActivityBundle.swift */,
 				1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */,
-				1121777C2CC283BC000A146F /* LiveActivity.swift */,
-				1121777E2CC283BC000A146F /* AppIntent.swift */,
 				112177802CC283BD000A146F /* Assets.xcassets */,
 				112177822CC283BD000A146F /* Info.plist */,
 			);
@@ -759,6 +690,9 @@
 				Base,
 			);
 			mainGroup = 001C6F712CAFBC6900B03767;
+			packageReferences = (
+				00D1B76B2CDDDD9800BA2AF1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 001C6F7B2CAFBC6900B03767 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -779,9 +713,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D1B7602CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */,
+				00D1B7612CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */,
+				00D1B7622CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */,
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
 				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
-				00A04EA72CB7CBB20031DECC /* SpoqaHanSansNeo_OTF_original in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +763,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				112177812CC283BD000A146F /* Assets.xcassets in Resources */,
+				00D1B75D2CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */,
+				00D1B75E2CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */,
+				00D1B75F2CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,27 +776,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645C1B1C2CCBBE7000251157 /* OnboardingWarningView.swift in Sources */,
+				00D1B7582CDDD9E100BA2AF1 /* FontDesignSystem.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
-				645C1B162CCBB3BF00251157 /* OnboardingWelcomeView.swift in Sources */,
-				645C1B1E2CCBBFAB00251157 /* OnboardingStandRecommendView.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
+				00D1B7682CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
+				00D1B7662CDDDB3D00BA2AF1 /* Haptic.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
-				645C1B182CCBB53C00251157 /* OnboardingNotiPermissionView.swift in Sources */,
-				00B104692CC0B0DB00529065 /* HornSoundClassifier.mlmodel in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
-				644F9A852CD8B266005B8A3D /* HornSoundClassifier_V9.mlmodel in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
-				645C1B1A2CCBBB4800251157 /* OnboardingPrivacyView.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
-				00F319B02CD362D100F752D0 /* WatchviewManager.swift in Sources */,
+				00D1B7642CDDDAF300BA2AF1 /* LottieView.swift in Sources */,
+				00D1B76A2CDDDBB100BA2AF1 /* StartOnboardingView.swift in Sources */,
 				00078BE52CAFC79400FB3F70 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -881,11 +817,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */,
-				00F319B22CD367B100F752D0 /* WatchHomeView.swift in Sources */,
-				00F319B62CD367C800F752D0 /* WatchWarningView.swift in Sources */,
-				00F319B82CD367D100F752D0 /* WatchFinishView.swift in Sources */,
-				00F319B42CD367BE00F752D0 /* WatchWorkingView.swift in Sources */,
-				00F319AE2CD361B000F752D0 /* WatchViewManager.swift in Sources */,
 				001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */,
 				001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */,
 			);
@@ -895,7 +826,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C9F692CCF7984004EC4D2 /* HearoadWatch_Watch_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,8 +833,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C9F732CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITests.swift in Sources */,
-				001C9F752CCF7984004EC4D2 /* HearoadWatch_Watch_AppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,8 +841,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				112177792CC283BC000A146F /* LiveActivityBundle.swift in Sources */,
-				1121777F2CC283BC000A146F /* AppIntent.swift in Sources */,
-				1121777D2CC283BC000A146F /* LiveActivity.swift in Sources */,
 				1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,13 +1003,12 @@
 		001C6FA12CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1112,13 +1037,12 @@
 		001C6FA22CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1147,7 +1071,6 @@
 		001C6FA42CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1167,7 +1090,6 @@
 		001C6FA52CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1187,7 +1109,6 @@
 		001C6FA72CAFBC6C00B03767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
@@ -1205,7 +1126,6 @@
 		001C6FA82CAFBC6C00B03767 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
@@ -1228,7 +1148,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1259,7 +1179,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1285,7 +1205,6 @@
 		001C9F7C2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1306,7 +1225,6 @@
 		001C9F7D2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1327,7 +1245,6 @@
 		001C9F7E2CCF7984004EC4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
@@ -1347,7 +1264,6 @@
 		001C9F7F2CCF7984004EC4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
@@ -1371,7 +1287,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1399,7 +1315,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2H928F4Z7L;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1496,6 +1412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00D1B76B2CDDDD9800BA2AF1 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00D1B76C2CDDDD9800BA2AF1 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00D1B76B2CDDDD9800BA2AF1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 001C6F722CAFBC6900B03767 /* Project object */;
 }

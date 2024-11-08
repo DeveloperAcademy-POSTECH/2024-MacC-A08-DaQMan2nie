@@ -2,17 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Information Property List</key>
-	<dict>
-		<key>Fonts provided by application</key>
-		<array>
-			<string>SpoqaHanSansNeo-Thin.otf</string>
-			<string>SpoqaHanSansNeo-Regular.otf</string>
-			<string>SpoqaHanSansNeo-Medium.otf</string>
-			<string>SpoqaHanSansNeo-Light.otf</string>
-			<string>SpoqaHanSansNeo-Bold.otf</string>
-		</array>
-	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Pretendard-Light.otf</string>
+		<string>Pretendard-Regular.otf</string>
+		<string>Pretendard-Medium.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
