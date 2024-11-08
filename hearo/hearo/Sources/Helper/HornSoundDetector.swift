@@ -9,7 +9,9 @@ import Foundation
 import AVFoundation
 import CoreML
 import SoundAnalysis
-import UserNotifications
+
+//import UserNotifications
+
 import UIKit
 import Combine
 
@@ -19,14 +21,19 @@ class HornSoundDetector: NSObject, ObservableObject {
     private var inputNode: AVAudioInputNode!
     private var soundClassifier: HornSoundClassifier_V11?
     private var streamAnalyzer: SNAudioStreamAnalyzer?
-    private var appRootManager: AppRootManager // appRootManager 속성 추가
 
+    
     @Published var isRecording = false
     @Published var classificationResult = "녹음 시작 전"
+    @Published var detectedHornSound = false
+    @Published var topClassification: SNClassification? // 가장 높은 분류 저장
+    @Published var mlConfidences: [Double] = Array(repeating: 0.0, count: 4) // 각 채널의 신뢰도 배열
     private var cancellables = Set<AnyCancellable>()
-    
+    private var appRootManager: AppRootManager // appRootManager 속성 추가
+
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
+
         super.init()
         setupAudioSession()
         setupAudioEngine()
@@ -38,12 +45,14 @@ class HornSoundDetector: NSObject, ObservableObject {
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.playAndRecord, mode: .default)
-            try audioSession.setPreferredInputNumberOfChannels(1) // 모노 입력으로 설정
+
             try audioSession.setActive(true)
+
         } catch {
             print("오디오 세션 설정 실패: \(error)")
         }
     }
+
 
     private func setupAudioEngine() {
         audioEngine = AVAudioEngine()
@@ -56,9 +65,11 @@ class HornSoundDetector: NSObject, ObservableObject {
     private func setupSoundClassifier() {
         do {
             let config = MLModelConfiguration()
-            config.computeUnits = .cpuOnly
+//             config.computeUnits = .cpuOnly
+            config.computeUnits = .all
             soundClassifier = try HornSoundClassifier_V11(configuration: config)
-            print("CPU 전용 설정으로 소리 분류기 생성 성공")
+            print("모든 하드웨어 설정으로 소리 분류기 생성 성공")
+
         } catch {
             print("소리 분류기 생성 실패: \(error)")
         }
@@ -70,7 +81,12 @@ class HornSoundDetector: NSObject, ObservableObject {
             return
         }
 
-        guard let streamAnalyzer = streamAnalyzer, let soundClassifier = soundClassifier else {
+        
+        let format = inputNode.outputFormat(forBus: 0)
+        streamAnalyzer = SNAudioStreamAnalyzer(format: format)
+        
+        guard let streamAnalyzer = streamAnalyzer,
+              let soundClassifier = soundClassifier else {
             print("스트림 분석기 또는 소리 분류기 생성 실패")
             return
         }
@@ -83,7 +99,6 @@ class HornSoundDetector: NSObject, ObservableObject {
             return
         }
 
-        let format = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 8192, format: format) { [weak self] buffer, time in
             self?.streamAnalyzer?.analyze(buffer, atAudioFramePosition: time.sampleTime)
         }
@@ -112,27 +127,12 @@ class HornSoundDetector: NSObject, ObservableObject {
         print("오디오 엔진 중지됨")
     }
 
-    func sendNotification(title: String, body: String) {
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = UNNotificationSound.default
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("알림 발송 실패: \(error.localizedDescription)")
-            } else {
-                print("알림 발송 성공")
-            }
-        }
-    }
-}
 
 extension HornSoundDetector: SNResultsObserving {
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
         
+
         DispatchQueue.main.async {
             if let topClassification = result.classifications.first, topClassification.confidence >= 0.99 {
                 let isRelevantSound = ["Bicyclebell", "Carhorn", "Siren"].contains(topClassification.identifier)
@@ -143,6 +143,7 @@ extension HornSoundDetector: SNResultsObserving {
                     
                     // AppRootManager의 루트를 warning으로 변경
                     self.appRootManager.currentRoot = .warning
+
                 }
             }
         }

@@ -23,9 +23,11 @@ struct StartOnboardingView: View {
       
       //      VStack {
       //        Spacer().frame(height: 230.67)
-      Image("MainCircle")
-        .offset(y: 225.67)
-        .clipped()
+      
+        Image("MainCircle")
+          .offset(y: 225.67)
+          .clipped()
+        
       
       
       //      }
