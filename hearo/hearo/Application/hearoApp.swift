@@ -1,3 +1,4 @@
+
 //
 //  hearoApp.swift
 //  hearo
@@ -179,8 +180,8 @@ struct ContentView: View {
             case .finish:
                 FinishView(viewModel: FinishViewModel(appRootManager: appRootManager))
             case .warning:
-                WarningView(appRootManager: appRootManager)
-            }
+                WarningView(viewModel: WarningViewModel(appRootManager: appRootManager))
+        }
         }
     }
 }
