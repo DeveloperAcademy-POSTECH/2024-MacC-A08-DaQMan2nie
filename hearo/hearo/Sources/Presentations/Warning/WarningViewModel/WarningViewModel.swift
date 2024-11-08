@@ -13,13 +13,18 @@ class WarningViewModel: ObservableObject {
         self.appRootManager = appRootManager
     }
 
-    var detectedSoundMessage: String {
-        if let sound = appRootManager.detectedSound {
-            return "\(sound) 소리가 감지되었습니다."
-        } else {
-            return "높은 신뢰도의 예기치 못한 소리가 감지되었습니다."
-        }
-    }
+    func alertImageName() -> String {
+           switch appRootManager.detectedSound {
+           case "Carhorn":
+               return "Car"
+           case "Siren":
+               return "Siren"
+           case "Bicyclebell":
+               return "Bicycle"
+           default:
+               return "exclamationmark.triangle.fill" // 기본 아이콘
+           }
+       }
 
     func returnToHome() {
         appRootManager.currentRoot = .working

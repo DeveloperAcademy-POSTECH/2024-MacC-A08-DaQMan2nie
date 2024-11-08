@@ -9,39 +9,23 @@ import SwiftUI
 struct WarningView: View {
     @StateObject var viewModel: WarningViewModel
 
-        init(appRootManager: AppRootManager) {
-            _viewModel = StateObject(wrappedValue: WarningViewModel(appRootManager: appRootManager))
-        }
+    init(appRootManager: AppRootManager) {
+        _viewModel = StateObject(wrappedValue: WarningViewModel(appRootManager: appRootManager))
+    }
 
-    
     var body: some View {
         VStack {
-            Text("경고!")
-                .font(.largeTitle)
-                .foregroundColor(.red)
+            Image(viewModel.alertImageName())
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
                 .padding()
-
-            // 감지된 소리 종류 표시
-            Text(viewModel.detectedSoundMessage)
-                .font(.title2)
-                .padding()
-
-            Button(action: {
-                viewModel.returnToHome() // 홈으로 돌아가기 액션
-            }) {
-                Text("홈으로 돌아가기")
-                    .font(.title)
-                    .padding()
-                    .background(Color.red)
-                    .cornerRadius(10)
-                    .foregroundColor(.white)
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+        .background(Color.red)
         .edgesIgnoringSafeArea(.all)
         .onAppear {
-            viewModel.autoTransitionToWorkingView() // 자동으로 WorkingView로 전환
+            viewModel.appRootManager.currentRoot = .working // 자동 전환
         }
     }
 }
