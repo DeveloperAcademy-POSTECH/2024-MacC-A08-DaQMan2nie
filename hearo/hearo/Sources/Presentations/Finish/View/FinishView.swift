@@ -51,8 +51,5 @@ struct FinishView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 1, green: 1, blue: 1, opacity: 1))
         .edgesIgnoringSafeArea(.all)
-        .onDisappear {
-                        triggerSuccessHaptic()
-                    }
     }
 }

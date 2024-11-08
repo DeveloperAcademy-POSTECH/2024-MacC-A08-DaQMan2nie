@@ -10,17 +10,18 @@ import WatchConnectivity
 
 class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     @Published var isRecording = false
-    @Published var classificationResults: [String] = Array(repeating: "녹음 시작 전", count: 4)
-    @Published var detectedHornSounds: [Bool] = Array(repeating: false, count: 4)
+    @Published var classificationResult: String = "녹음 시작 전"
     
-    private var soundDetectors: [HornSoundDetector] = []
-    private var mlConfidences: [Double] = Array(repeating: 0.0, count: 4)
+    private var soundDetector: HornSoundDetector
     private var cancellables = Set<AnyCancellable>()
     private var appRootManager: AppRootManager
     private var isActivityActive = false
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
+
+        self.soundDetector = HornSoundDetector(appRootManager: appRootManager) // 단일 soundDetector 인스턴스
+
         super.init()
         
         // `WCSession` 설정
@@ -29,72 +30,85 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             WCSession.default.activate()
         }
         
-        for _ in 0..<4 {
-            let soundDetector = HornSoundDetector()
-            soundDetectors.append(soundDetector)
-        }
+
+//         for _ in 0..<4 {
+//             let soundDetector = HornSoundDetector()
+//             soundDetectors.append(soundDetector)
+//         }
         setupBindings()
     }
     
     private func setupBindings() {
-        for (index, soundDetector) in soundDetectors.enumerated() {
-            soundDetector.$isRecording
-                .assign(to: \.isRecording, on: self)
-                .store(in: &cancellables)
+
+//         for (index, soundDetector) in soundDetectors.enumerated() {
+//             soundDetector.$isRecording
+//                 .assign(to: \.isRecording, on: self)
+//                 .store(in: &cancellables)
             
-            soundDetector.$classificationResult
-                .sink { [weak self] result in
-                    self?.classificationResults[index] = result
-                }
-                .store(in: &cancellables)
+//             soundDetector.$classificationResult
+//                 .sink { [weak self] result in
+//                     self?.classificationResults[index] = result
+//                 }
+//                 .store(in: &cancellables)
             
-            soundDetector.$detectedHornSound
-                .sink { [weak self] detected in
-                    self?.detectedHornSounds[index] = detected
-                }
-                .store(in: &cancellables)
+//             soundDetector.$detectedHornSound
+//                 .sink { [weak self] detected in
+//                     self?.detectedHornSounds[index] = detected
+//                 }
+//                 .store(in: &cancellables)
             
-            soundDetector.$topClassification
-                .sink { [weak self] topClassification in
-                    guard let self = self else { return }
-                    if let classification = topClassification {
-                        self.mlConfidences[index] = classification.confidence
-                        self.checkAllConfidences()
-                    }
-                }
-                .store(in: &cancellables)
-        }
-    }
+//             soundDetector.$topClassification
+//                 .sink { [weak self] topClassification in
+//                     guard let self = self else { return }
+//                     if let classification = topClassification {
+//                         self.mlConfidences[index] = classification.confidence
+//                         self.checkAllConfidences()
+//                     }
+//                 }
+//                 .store(in: &cancellables)
+//         }
+//     }
     
-    private func checkAllConfidences() {
-        // 모든 마이크의 신뢰도가 0.99 이상인지 확인
-        if mlConfidences.allSatisfy({ $0 >= 0.99 }) {
-            DispatchQueue.main.async {
-                self.appRootManager.currentRoot = .warning
-                self.sendWarningToWatch() // 애플워치에 경고 전송
-                self.updateApplicationContext() // 애플워치에 데이터 전송
+//     private func checkAllConfidences() {
+//         // 모든 마이크의 신뢰도가 0.99 이상인지 확인
+//         if mlConfidences.allSatisfy({ $0 >= 0.99 }) {
+//             DispatchQueue.main.async {
+//                 self.appRootManager.currentRoot = .warning
+//                 self.sendWarningToWatch() // 애플워치에 경고 전송
+//                 self.updateApplicationContext() // 애플워치에 데이터 전송
+//             }
+//         }
+//     }
+    
+//     private func getHighestConfidenceSound() -> String? {
+//         if let highestConfidenceIndex = mlConfidences.enumerated().max(by: { $0.element < $1.element })?.offset,
+//            highestConfidenceIndex < classificationResults.count {
+//             return classificationResults[highestConfidenceIndex]
+//         }
+//         return nil
+//     }
+    
+//     private func updateApplicationContext() {
+//         do {
+//             if let highestConfidenceSound = getHighestConfidenceSound() {
+//                 let context = ["highestConfidenceSound": highestConfidenceSound]
+//                 try WCSession.default.updateApplicationContext(context)
+//                 print("applicationContext 데이터 전송 성공: \(context)")
+//             }
+//         } catch {
+//             print("applicationContext 데이터 전송 실패: \(error.localizedDescription)")
+//         }
+
+        soundDetector.$isRecording
+            .assign(to: \.isRecording, on: self)
+            .store(in: &cancellables)
+        
+        soundDetector.$classificationResult
+            .sink { [weak self] result in
+                self?.classificationResult = result
             }
-        }
-    }
-    
-    private func getHighestConfidenceSound() -> String? {
-        if let highestConfidenceIndex = mlConfidences.enumerated().max(by: { $0.element < $1.element })?.offset,
-           highestConfidenceIndex < classificationResults.count {
-            return classificationResults[highestConfidenceIndex]
-        }
-        return nil
-    }
-    
-    private func updateApplicationContext() {
-        do {
-            if let highestConfidenceSound = getHighestConfidenceSound() {
-                let context = ["highestConfidenceSound": highestConfidenceSound]
-                try WCSession.default.updateApplicationContext(context)
-                print("applicationContext 데이터 전송 성공: \(context)")
-            }
-        } catch {
-            print("applicationContext 데이터 전송 실패: \(error.localizedDescription)")
-        }
+            .store(in: &cancellables)
+
     }
     
     private func sendWarningToWatch() {
@@ -102,36 +116,45 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             print("애플워치가 연결되지 않음")
             return
         }
+
         
 
-        if let highestConfidenceSound = getHighestConfidenceSound() {
+//         if let highestConfidenceSound = getHighestConfidenceSound() {
 
-            let message = ["alert": highestConfidenceSound]
+//             let message = ["alert": highestConfidenceSound]
             
-            WCSession.default.sendMessage(message, replyHandler: nil) { error in
-                print("애플워치로 경고 메시지 전송 오류: \(error.localizedDescription)")
-            }
-        } else {
-            print("경고를 보낼 신뢰도 높은 소리가 없음")
-        }
-    }
+//             WCSession.default.sendMessage(message, replyHandler: nil) { error in
+//                 print("애플워치로 경고 메시지 전송 오류: \(error.localizedDescription)")
+//             }
+//         } else {
+//             print("경고를 보낼 신뢰도 높은 소리가 없음")
+//         }
+//     }
     
-    func toggleRecording(start: Bool) {
-        for detector in soundDetectors {
-            if start {
-                detector.startRecording()
-            } else {
-                detector.stopRecording()
-            }
+//     func toggleRecording(start: Bool) {
+//         for detector in soundDetectors {
+//             if start {
+//                 detector.startRecording()
+//             } else {
+//                 detector.stopRecording()
+//             }
+
+
+        let message = ["alert": classificationResult]
+        WCSession.default.sendMessage(message, replyHandler: nil) { error in
+            print("애플워치로 경고 메시지 전송 오류: \(error.localizedDescription)")
+
         }
     }
     
     func startRecording() {
-        toggleRecording(start: true)
-    }
+
+//         toggleRecording(start: true)
+//     }
     
-    func stopRecording() {
-        toggleRecording(start: false)
+//     func stopRecording() {
+//         toggleRecording(start: false)
+
     }
     
     // 필수 WCSessionDelegate 메서드 구현
