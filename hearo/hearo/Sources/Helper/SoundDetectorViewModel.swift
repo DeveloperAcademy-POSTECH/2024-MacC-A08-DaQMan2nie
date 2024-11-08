@@ -147,16 +147,16 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     
-    func startRecording() {
-
-//         toggleRecording(start: true)
-//     }
-    
-//     func stopRecording() {
-//         toggleRecording(start: false)
-
-    }
-    
+//    func startRecording() {
+//
+////         toggleRecording(start: true)
+////     }
+//    
+////     func stopRecording() {
+////         toggleRecording(start: false)
+//
+//    }
+//    
     // 필수 WCSessionDelegate 메서드 구현
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("MLWCSession 활성화 완료. 상태: \(activationState)")
