@@ -42,17 +42,19 @@ struct OnboardingView: View {
             VStack(spacing: 7) {
                 // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
                 TabView(selection: $currentPage) {
+
                     LottieView(animationName: "warning", animationScale: 1, loopMode: .playOnce)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
                         .tag(OnboardingPage.warning)
 
-                    LottieView(animationName: "privacy", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
                         .tag(OnboardingPage.privacy)
 
-                    LottieView(animationName: "stand", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
                         .tag(OnboardingPage.stand)
 
-                    LottieView(animationName: "watch", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
                         .tag(OnboardingPage.watch)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

@@ -8,6 +8,8 @@ import Foundation
 import Combine
 import SwiftUI
 import AVFoundation
+import UIKit
+
 
 
 //import AudioToolbox
@@ -23,12 +25,6 @@ class WorkingViewModel: ObservableObject {
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
         self.soundDetectorViewModel = SoundDetectorViewModel(appRootManager: appRootManager)
-//fix 
-//         configureAudioSession() // AVAudioSession 설정
-//     }
-//fix 
-    // 오디오 세션 설정
-
         self.hornSoundDetector = HornSoundDetector(appRootManager: appRootManager)
 
         // AVAudioSession 설정
@@ -48,15 +44,7 @@ class WorkingViewModel: ObservableObject {
             print("오디오 세션 설정 중 오류 발생: \(error.localizedDescription)")
         }
     }
-//fix 
-    // 모든 채널의 분류 결과를 출력
-//     var classificationResult: String {
-//         var results = ""
-//         for (index, result) in soundDetectorViewModel.classificationResults.enumerated() {
-//             results += "채널 \(index + 1): \(result)\n"
-//         }
-//         return results
-//fix 
+
 
     private func observeSoundDetection() {
         soundDetectorViewModel.$classificationResult
@@ -79,7 +67,7 @@ class WorkingViewModel: ObservableObject {
             return
         }
 //fix 
-//         isRecording = true
+         isRecording = true
 //fix 
         print("WorkingViewModel: startRecording() 호출됨")
         hornSoundDetector.startRecording() // HornSoundDetector에서 처리
@@ -95,7 +83,7 @@ class WorkingViewModel: ObservableObject {
             return
         }
 //fix 
-//         isRecording = false
+         isRecording = false
 //fix 
         print("WorkingViewModel: stopRecording() 호출됨")
         hornSoundDetector.stopRecording() // HornSoundDetector에서 처리
@@ -109,7 +97,6 @@ class WorkingViewModel: ObservableObject {
     // 녹음 완료 및 종료 화면으로 이동
     func finishRecording() {
         stopRecording() // 녹음 중지 메서드 호출
-        triggerErrorHaptic()
         appRootManager.currentRoot = .finish // 종료 화면으로 전환
     }
 
@@ -119,4 +106,20 @@ class WorkingViewModel: ObservableObject {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 
+}
+extension WorkingViewModel {
+    // 움직임에 따라 햅틱 피드백 트리거
+    func triggerDynamicHapticFeedback(for offset: CGFloat, targetOffset: CGFloat) {
+        let intensity = min(max(offset / targetOffset, 0), 1.0) // 0~1 사이 값으로 제한
+        DispatchQueue.global(qos: .userInitiated).async {
+            HapticManager.shared.triggerImpact(intensity: intensity)
+        }
+    }
+    
+    // 강한 햅틱 피드백
+    func triggerFinalHapticFeedback() {
+        DispatchQueue.main.async {
+            HapticManager.shared.triggerNotification(type: .success)
+        }
+    }
 }
