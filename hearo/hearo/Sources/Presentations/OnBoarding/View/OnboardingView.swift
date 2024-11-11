@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import AVFoundation // AVAudioSession을 사용하기 위해 추가
+import Lottie
 
 struct OnboardingView: View {
     @StateObject var viewModel: OnboardingViewModel
@@ -41,7 +42,10 @@ struct OnboardingView: View {
             VStack(spacing: 7) {
                 // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
                 TabView(selection: $currentPage) {
-                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
+
+                    LottieView(animationName: "warning", animationScale: 1, loopMode: .playOnce)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
                         .tag(OnboardingPage.warning)
 
                     LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
