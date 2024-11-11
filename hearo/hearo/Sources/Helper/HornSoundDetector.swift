@@ -1,4 +1,3 @@
-
 //
 //  HornSoundDetector.swift
 //  hearo
@@ -20,6 +19,16 @@ class HornSoundDetector: NSObject, ObservableObject {
     private var inputNode: AVAudioInputNode!
     private var soundClassifier: HornSoundClassifier_V11?
     private var streamAnalyzer: SNAudioStreamAnalyzer?
+//fix 시작
+//     @Published var isRecording = false
+//     @Published var classificationResult = "녹음 시작 전"
+//     @Published var detectedHornSound = false
+//     @Published var topClassification: SNClassification? // 가장 높은 분류 저장
+//     @Published var mlConfidences: [Double] = Array(repeating: 0.0, count: 4) // 각 채널의 신뢰도 배열
+//     private var cancellables = Set<AnyCancellable>()
+    
+//     override init() {
+//fix 끝
     private var appRootManager: AppRootManager // appRootManager 속성 추가
 
     @Published var isRecording = false
@@ -28,10 +37,16 @@ class HornSoundDetector: NSObject, ObservableObject {
     
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
+
         super.init()
         setupAudioSession()
         setupAudioEngine()
         setupSoundClassifier()
+//fix 
+//         checkNotificationPermission()
+        
+        // 앱이 백그라운드로 전환될 때 녹음을 중지하도록 옵저버 설정
+//fix
         NotificationCenter.default.addObserver(self, selector: #selector(stopRecording), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
@@ -44,6 +59,13 @@ class HornSoundDetector: NSObject, ObservableObject {
             print("오디오 세션 설정 실패: \(error)")
         }
     }
+  //fix 
+//     private func setupAudioEngine() {
+//         audioEngine = AVAudioEngine()
+//         inputNode = audioEngine.inputNode
+//     }
+    
+//fix 
 
     private func setupAudioEngine() {
         audioEngine = AVAudioEngine()
@@ -63,17 +85,57 @@ class HornSoundDetector: NSObject, ObservableObject {
             print("소리 분류기 생성 실패: \(error)")
         }
     }
+//fix 
+    
+//     private func checkNotificationPermission() {
+//         UNUserNotificationCenter.current().getNotificationSettings { settings in
+//             switch settings.authorizationStatus {
+//             case .notDetermined:
+//                 self.requestNotificationPermission()
+//             case .denied:
+//                 print("알림 권한이 거부되었습니다. 설정에서 권한을 변경해주세요.")
+//             case .authorized, .provisional, .ephemeral:
+//                 print("알림 권한이 허용되었습니다.")
+//             @unknown default:
+//                 break
+//             }
+//         }
+//     }
+    
+//     private func requestNotificationPermission() {
+//         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
+//             if granted {
+//                 print("알림 권한이 허용되었습니다.")
+//             } else if let error = error {
+//                 print("알림 권한 요청 중 오류 발생: \(error.localizedDescription)")
+//             }
+//         }
+//     }
+    
+//fix 
+
 
     func startRecording() {
         guard !isRecording else {
             print("녹음이 이미 시작된 상태입니다.")
             return
         }
-
+//fix 
+        
+//         let format = inputNode.outputFormat(forBus: 0)
+//         streamAnalyzer = SNAudioStreamAnalyzer(format: format)
+        
+//         guard let streamAnalyzer = streamAnalyzer,
+//               let soundClassifier = soundClassifier else {
+//             print("스트림 분석기 또는 소리 분류기 생성 실패")
+//             return
+//         }
+//fix 
         guard let streamAnalyzer = streamAnalyzer, let soundClassifier = soundClassifier else {
             print("스트림 분석기 또는 소리 분류기 생성 실패")
             return
         }
+
 
         do {
             let request = try SNClassifySoundRequest(mlModel: soundClassifier.model)
@@ -82,11 +144,19 @@ class HornSoundDetector: NSObject, ObservableObject {
             print("분류 요청 생성 실패: \(error)")
             return
         }
+// //fix 
+        
+//         inputNode.installTap(onBus: 0, bufferSize: 8192, format: format) { [weak self] buffer, time in
+//             self?.streamAnalyzer?.analyze(buffer, atAudioFramePosition: time.sampleTime)
+//         }
+        
+//fix 
 
         let format = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 8192, format: format) { [weak self] buffer, time in
             self?.streamAnalyzer?.analyze(buffer, atAudioFramePosition: time.sampleTime)
         }
+
 
         audioEngine.prepare()
         do {
@@ -112,7 +182,10 @@ class HornSoundDetector: NSObject, ObservableObject {
         print("오디오 엔진 중지됨")
     }
 
+    
     func sendNotification(title: String, body: String) {
+        print("알림 발송 시도")
+
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
@@ -133,6 +206,27 @@ extension HornSoundDetector: SNResultsObserving {
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
         
+//fix 
+//         let topClassifications = result.classifications.prefix(3)
+        
+//         DispatchQueue.main.async {
+//             // 첫 번째 분류를 가장 신뢰도 높은 것으로 설정
+//             if let topClassification = topClassifications.first(where: { classification in
+//                 return classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren"
+//             }) {
+//                 self.topClassification = topClassification // 가장 높은 분류 저장
+//                 self.classificationResult = topClassification.identifier // 소리 종류만 저장
+//             }
+
+//             for (index, classification) in topClassifications.enumerated() {
+//                 if classification.identifier == "Bicyclebell" || classification.identifier == "Carhorn" || classification.identifier == "Siren" {
+//                     // 경적 및 사이렌 소리 감지
+//                     if classification.confidence >= 1.0 {
+//                         self.mlConfidences[index] = classification.confidence
+//                         // 원하는 로직을 추가하세요
+//                     }
+//                 }
+//fix 
         DispatchQueue.main.async {
             if let topClassification = result.classifications.first, topClassification.confidence >= 1.0 {
                 let isRelevantSound = ["Bicyclebell", "Carhorn", "Siren"].contains(topClassification.identifier)
@@ -144,6 +238,7 @@ extension HornSoundDetector: SNResultsObserving {
                 }
             } else {
                 print("신뢰도 부족 또는 관련 없는 소리 감지됨")
+
             }
         }
     }

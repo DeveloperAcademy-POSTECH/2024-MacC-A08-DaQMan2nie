@@ -145,7 +145,7 @@ struct HomeView: View {
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .offset(y: targetOffset - UIScreen.main.bounds.height / 57)
+                        .offset(y: 274)
                         .edgesIgnoringSafeArea(.all)
                 }
                 
