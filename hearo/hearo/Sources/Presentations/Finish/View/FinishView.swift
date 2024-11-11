@@ -27,7 +27,7 @@ struct FinishView: View {
     
             Text("오늘도 함께 무사히 도착했습니다.\n다음에도 안전하게 뵙겠습니다.")
                 .font(Font.custom("Spoqa Han Sans Neo", size: 15))
-                .foregroundColor(Color("HGray2"))
+                .foregroundColor(Color("MainFontColor"))
                 .font(Font.custom("Pretendard", size: 15))
                 .foregroundColor(Color(red: 0.24, green: 0.26, blue: 0.31))
                 .frame(width: 345, alignment: .center) // 가로 중앙 정렬
@@ -51,8 +51,5 @@ struct FinishView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 1, green: 1, blue: 1, opacity: 1))
         .edgesIgnoringSafeArea(.all)
-        .onDisappear {
-                        triggerSuccessHaptic()
-                    }
     }
 }

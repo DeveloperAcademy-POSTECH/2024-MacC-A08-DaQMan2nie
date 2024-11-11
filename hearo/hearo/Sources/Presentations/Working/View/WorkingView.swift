@@ -48,6 +48,8 @@ struct WorkingView: View {
                                    circleOffset = targetOffset
                                } else {
                                    circleOffset = newOffset
+                                   triggerHapticFeedback(for: newOffset, targetOffset: targetOffset) // Haptic 피드백 트리거
+
                                }
                            }
                            .onEnded { value in
@@ -55,6 +57,7 @@ struct WorkingView: View {
                                    withAnimation(.easeOut(duration: 0.3)) {
                                        circleOffset = targetOffset
                                    }
+                                   triggerFinalHaptic() // 강한 진동 트리거
                                    viewModel.finishRecording() // 녹음 중지 및 FinishView로 전환
                                } else {
                                    withAnimation(.easeOut(duration: 0.3)) {
