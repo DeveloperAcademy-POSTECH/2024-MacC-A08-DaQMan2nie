@@ -16,28 +16,13 @@ struct StartOnboardingView: View {
   var body: some View {
     
     
-    ZStack(alignment: .top) {
+    ZStack(alignment: .topLeading) {
       
       Color("Radish")
         .ignoresSafeArea(.all)
       
-      //      VStack {
-      //        Spacer().frame(height: 230.67)
-      
-        Image("MainCircle")
-          .offset(y: 225.67)
-          .clipped()
-        
-      
-      
-      //      }
-      
-      // 글씨
-      //      HStack {
-      //        Spacer().frame(width: 16)
-      
       VStack(alignment: .leading,spacing: 0) {
-        Spacer().frame(height: 52)
+        Spacer().frame(height: 45)
         
         Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영합니다!")
           .font(.mainTitle)
@@ -49,28 +34,19 @@ struct StartOnboardingView: View {
         
         
         
-        Text("히어로드는 주행 중 경적과 사이렌 소리를 감지해 주행자의 안전을 돕는 앱입니다.")
+        Text("히어로드는 주행 중 경적과 사이렌 소리를 감지해\n 주행자의 안전을 돕는 앱입니다.")
           .font(.regular)
           .foregroundStyle(Color("SubFontColor"))
           .frame(maxWidth: 323, minHeight: 42, alignment: .leading)
           .opacity(showSubtitle ? 1 : 0)
           .animation(.easeIn(duration: 0.5).delay(0.5), value: showSubtitle) // 타이핑 애니메이션 효과
-        //            .border(.black)
-        
-        
-        //          Spacer()
-        
       }
-     
-      //        .border(.red)
-      //        .ignoresSafeArea()
-      //              .padding(.top, 45)
-      
-      //        Spacer()
-      //      }
+    }
+    .overlay{
+      Image("MainCircle")
+        .offset(y:300)
+    }
       .padding(.leading, 16)
-      //      .border(.red)
-      
       .onAppear {
         // 애니메이션 트리거
         showTitle = true
@@ -81,13 +57,6 @@ struct StartOnboardingView: View {
           appRootManager.currentRoot = .onboarding
         }
       }
-      
-      
-    }
-    //    .ignoresSafeArea()
-    
-    
-    
   }
 }
 
