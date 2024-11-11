@@ -26,10 +26,10 @@ struct LiveActivityLiveActivity: Widget {
                 VStack(alignment: .leading) {
                     Text("히어로드")
                         .font(.LiveActivitySub)
-                        .foregroundColor(Color("MainFontColor"))
+                        .foregroundColor(.white)
                     Text("소리수집이\n중지되었습니다.")
                         .font(.LiveActivityMain)
-                        .foregroundColor(Color("MainFontColor"))
+                        .foregroundColor(.white)
                 }
                 
                 Spacer()
@@ -54,7 +54,7 @@ struct LiveActivityLiveActivity: Widget {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 59, height: 59, alignment: .top)
-                            .foregroundColor(.white)
+                           
                         
                         Spacer() // 아이콘과 텍스트 사이 간격
                         
@@ -64,11 +64,11 @@ struct LiveActivityLiveActivity: Widget {
                                 .foregroundColor(Color("SubFontColor"))
                             Text("소리수집이 중지되었습니다.")
                                 .font(.medium)
-                                .foregroundColor(Color("MainFontColor"))
+                                .foregroundColor(.white)
                         }
                     }
-                    .padding() // 전체 패딩 추가
-                    .frame(maxWidth: .infinity, maxHeight: 82) // HStack 최대 너비 설정
+                    .padding(10)
+                    .frame(maxWidth: .infinity, maxHeight: 59) // HStack 최대 너비 설정
                 }
             } compactLeading: {
                 Image("Caution")
@@ -78,7 +78,7 @@ struct LiveActivityLiveActivity: Widget {
             } compactTrailing: {
                 Text("수집중지")
                     .font(.DaynamicIsland)
-                    .foregroundColor(Color("MainFontColor"))
+                    .foregroundColor(.white)
             } minimal: {
                 Image("Caution")
                     .resizable()

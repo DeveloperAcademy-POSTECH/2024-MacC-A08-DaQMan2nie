@@ -45,6 +45,7 @@
 		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11873A372CE20B7F005639B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		11A2D0882CDE344500BF2BAF /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
@@ -767,6 +768,7 @@
 				00D1B75D2CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */,
 				00D1B75E2CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */,
 				00D1B75F2CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */,
+				11873A372CE20B7F005639B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,7 +1012,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1044,7 +1046,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearo/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
@@ -1150,7 +1152,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1181,7 +1183,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HearoadWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1289,7 +1291,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1317,7 +1319,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
+				DEVELOPMENT_TEAM = GT56H2MYWV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;

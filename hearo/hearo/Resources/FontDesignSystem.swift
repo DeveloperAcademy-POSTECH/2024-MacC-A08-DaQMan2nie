@@ -14,6 +14,6 @@ extension Font {
     static let mainTitle = Font.custom("Pretendard-Medium", size: 24) // Medium
     static let LiveActivityMain = Font.custom("Pretendard-Medium", size: 20)
     static let LiveActivitySub = Font.custom("Pretendard-Light", size: 13)
-    static let DaynamicIsland = Font.custom("Pretendard-Medium", size: 8)
+    static let DaynamicIsland = Font.custom("Pretendard-Medium", size: 12)
     
 }
