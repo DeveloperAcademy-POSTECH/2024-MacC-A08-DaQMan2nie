@@ -98,9 +98,10 @@ final class AppRootManager: ObservableObject {
     }
     
     // 라이브 액티비티 시작 메서드
-    func startLiveActivity(isWarning: Bool) {
-        // 항상 현재 `Live Activity` 상태를 확인하고 초기화
-        isActivityActive = Activity<LiveActivityAttributes>.activities.isEmpty == false
+    func startLiveActivity() {
+        #if os(iOS) // iOS에서만 라이브 액티비티 실행
+        // 기존의 Live Activity가 활성화되어 있는지 확인
+        isActivityActive = !Activity<LiveActivityAttributes>.activities.isEmpty
         
         guard !isActivityActive else {
             print("라이브 액티비티가 이미 활성화되어 있습니다.")
@@ -114,9 +115,9 @@ final class AppRootManager: ObservableObject {
         
         // attributes와 initialContentState를 선언
         let attributes = LiveActivityAttributes(name: "주행")
-        let initialContentState = LiveActivityAttributes.ContentState(isWarning: isWarning)
+        let initialContentState = LiveActivityAttributes.ContentState(isWarning: false)
         
-        let content = ActivityContent(state: initialContentState, staleDate: Date().addingTimeInterval(6)) // 전체 6초
+        let content = ActivityContent(state: initialContentState, staleDate: Date().addingTimeInterval(6))
         
         do {
             let activity = try Activity<LiveActivityAttributes>.request(
@@ -125,101 +126,49 @@ final class AppRootManager: ObservableObject {
             )
             
             isActivityActive = true
-            currentWarningState = isWarning
             print("라이브 액티비티가 시작되었습니다: \(activity.id)")
         } catch {
             print("라이브 액티비티 시작 실패: \(error)")
         }
+        #else
+        print("Apple Watch에서는 라이브 액티비티가 활성화되지 않습니다.")
+        #endif
     }
-    
-    
-    // 라이브 액티비티 시작 메서드
-        func startLiveActivity() {
-            // 기존의 Live Activity가 활성화되어 있는지 확인
-            isActivityActive = !Activity<LiveActivityAttributes>.activities.isEmpty
-            
-            guard !isActivityActive else {
-                print("라이브 액티비티가 이미 활성화되어 있습니다.")
-                return
-            }
-            
-            guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-                print("라이브 액티비티가 지원되지 않거나 비활성화되었습니다.")
-                return
-            }
-            
-            // attributes와 initialContentState를 선언
-            let attributes = LiveActivityAttributes(name: "주행")
-            let initialContentState = LiveActivityAttributes.ContentState(isWarning: false)
-            
-            let content = ActivityContent(state: initialContentState, staleDate: Date().addingTimeInterval(6))
-            
-            do {
-                let activity = try Activity<LiveActivityAttributes>.request(
-                    attributes: attributes,
-                    content: content
-                )
-                
-                isActivityActive = true
-                print("라이브 액티비티가 시작되었습니다: \(activity.id)")
-            } catch {
-                print("라이브 액티비티 시작 실패: \(error)")
-            }
+
+    // 라이브 액티비티 종료 메서드
+    func stopLiveActivity() {
+        guard !Activity<LiveActivityAttributes>.activities.isEmpty else {
+            print("라이브 액티비티가 이미 중지 상태입니다.")
+            return
         }
         
-        // 라이브 액티비티 종료 메서드
-        func stopLiveActivity() {
-            guard !Activity<LiveActivityAttributes>.activities.isEmpty else {
-                print("라이브 액티비티가 이미 중지 상태입니다.")
-                return
+        Task {
+            for activity in Activity<LiveActivityAttributes>.activities {
+                await activity.end(nil, dismissalPolicy: .immediate)
+                print("라이브 액티비티가 중지되었습니다: \(activity.id)")
             }
-            
-            Task {
-                for activity in Activity<LiveActivityAttributes>.activities {
-                    await activity.end(nil, dismissalPolicy: .immediate)
-                    print("라이브 액티비티가 중지되었습니다: \(activity.id)")
-                }
-                isActivityActive = false
-                print("모든 라이브 액티비티가 성공적으로 중지되었습니다.")
-            }
+            isActivityActive = false
+            print("모든 라이브 액티비티가 성공적으로 중지되었습니다.")
         }
-    
+    }
+
     
     // 오디오 및 ML 작업 중지 메서드
-    func stopAudioAndMLTasks() {
-        hornSoundDetector?.stopRecording()
-        print("오디오 수집 및 ML 예측 중지됨")
-    }
-    
-    // 오디오 작업을 working 상태에서만 재개하는 메서드
-    func resumeAudioTasksIfWorking() {
-        if currentRoot == .working {
-            hornSoundDetector?.startRecording()
-            print("오디오 수집 및 ML 예측 재개됨 (working 상태에서만)")
-        } else {
-            print("오디오 수집은 working 상태에서만 재개됩니다.")
+        func stopAudioAndMLTasks() {
+            hornSoundDetector?.stopRecording()
+            print("오디오 수집 및 ML 예측 중지됨")
         }
         
-    }
-    
-    // 오디오 및 ML 작업 중지 메서드
-    func stopAudioAndMLTasks() {
-        hornSoundDetector?.stopRecording()
-        print("오디오 수집 및 ML 예측 중지됨")
-    }
-    
-    // 오디오 작업을 working 상태에서만 재개하는 메서드
-    func resumeAudioTasksIfWorking() {
-        if currentRoot == .working {
-            hornSoundDetector?.startRecording()
-            print("오디오 수집 및 ML 예측 재개됨 (working 상태에서만)")
-        } else {
-            print("오디오 수집은 working 상태에서만 재개됩니다.")
+        // Working 상태에서만 오디오 작업 재개
+        func resumeAudioTasksIfWorking() {
+            if currentRoot == .working {
+                hornSoundDetector?.startRecording()
+                print("오디오 수집 및 ML 예측 재개됨 (working 상태에서만)")
+            } else {
+                print("오디오 수집은 working 상태에서만 재개됩니다.")
+            }
         }
-        
     }
-    
-}
 // ContentView 정의 (AppRootManager 클래스 외부에 위치)
 struct ContentView: View {
     @ObservedObject var appRootManager: AppRootManager
