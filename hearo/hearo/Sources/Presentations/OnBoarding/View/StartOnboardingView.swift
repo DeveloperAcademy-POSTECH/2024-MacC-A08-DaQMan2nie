@@ -29,7 +29,7 @@ struct StartOnboardingView: View {
           .foregroundStyle(Color("MainFontColor"))
           .frame(height: 61)
           .opacity(showTitle ? 1 : 0)
-          .animation(.easeIn(duration: 0.5), value: showTitle) // 타이핑 애니메이션 효과
+          .animation(.easeIn(duration: 1.0), value: showTitle) // 타이핑 애니메이션 효과
           .padding(.bottom, 10)
         
         
@@ -39,14 +39,15 @@ struct StartOnboardingView: View {
           .foregroundStyle(Color("SubFontColor"))
           .frame(maxWidth: 323, minHeight: 42, alignment: .leading)
           .opacity(showSubtitle ? 1 : 0)
-          .animation(.easeIn(duration: 0.5).delay(0.5), value: showSubtitle) // 타이핑 애니메이션 효과
+          .animation(.easeIn(duration: 1.0).delay(1.0), value: showSubtitle) // 타이핑 애니메이션 효과
       }
+      .padding(.leading, 16)
     }
     .overlay{
       Image("MainCircle")
         .offset(y:300)
     }
-      .padding(.leading, 16)
+      
       .onAppear {
         // 애니메이션 트리거
         showTitle = true
