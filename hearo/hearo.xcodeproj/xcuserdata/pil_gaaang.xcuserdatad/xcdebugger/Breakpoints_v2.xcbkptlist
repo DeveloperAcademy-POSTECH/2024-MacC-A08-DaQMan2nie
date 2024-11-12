@@ -20,5 +20,24 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< Updated upstream
+=======
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35B5EB06-74AC-48F5-97F1-7808B582A78F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hearo/Sources/Presentations/Working/ViewModel/WorkingViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "WorkingViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+>>>>>>> Stashed changes
    </Breakpoints>
 </Bucket>

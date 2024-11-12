@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct WarningView: View {
-    @ObservedObject var viewModel: WarningViewModel // StateObject 대신 ObservedObject로 수정
+    @ObservedObject var viewModel: WarningViewModel
 
     var body: some View {
         VStack {
@@ -17,7 +17,6 @@ struct WarningView: View {
                 .scaledToFit()
                 .frame(width: 400, height: 400)
                 .padding()
-
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.red)

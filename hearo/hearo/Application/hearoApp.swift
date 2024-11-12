@@ -108,7 +108,7 @@ final class AppRootManager: ObservableObject {
 
     // 라이브 액티비티 종료 메서드
     func stopLiveActivity() {
-        guard isActivityActive else {
+        guard !Activity<LiveActivityAttributes>.activities.isEmpty else {
             print("라이브 액티비티가 이미 중지 상태입니다.")
             return
         }
@@ -118,9 +118,7 @@ final class AppRootManager: ObservableObject {
                 await activity.end(nil, dismissalPolicy: .immediate)
                 print("라이브 액티비티가 중지되었습니다: \(activity.id)")
             }
-            
-            isActivityActive = false
-            currentWarningState = false // 중지되었으므로 상태 리셋
+            print("모든 라이브 액티비티가 성공적으로 중지되었습니다.")
         }
     }
 
