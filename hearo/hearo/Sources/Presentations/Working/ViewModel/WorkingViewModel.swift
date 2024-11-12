@@ -73,7 +73,6 @@ class WorkingViewModel: ObservableObject {
         hornSoundDetector.startRecording() // HornSoundDetector에서 처리
         print("WorkingViewModel: 녹음 시작 완료")
 
-        appRootManager.startLiveActivity(isWarning: false) // 녹음 시작 시 라이브 액티비티 활성화
     }
 
     // 녹음 중지
@@ -88,8 +87,6 @@ class WorkingViewModel: ObservableObject {
         print("WorkingViewModel: stopRecording() 호출됨")
         hornSoundDetector.stopRecording() // HornSoundDetector에서 처리
         print("녹음 중지 완료")
-
-
         appRootManager.stopLiveActivity() // 녹음 중지 시 라이브 액티비티 비활성화
 
     }
