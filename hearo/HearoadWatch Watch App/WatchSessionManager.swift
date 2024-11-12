@@ -24,10 +24,11 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     }
     
     // iOS에서 경고 메시지를 수신하는 메서드
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         if let alert = message["alert"] as? String {
             DispatchQueue.main.async {
-                self.showAlert(with: alert)
+                self.showAlert(with: alert) // 메시지 수신 후 즉각적으로 알림 표시
+                print("애플워치 - 메시지 수신: \(alert)")
             }
         }
     }

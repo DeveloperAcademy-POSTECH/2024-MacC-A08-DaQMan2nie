@@ -4,69 +4,45 @@
 //
 //  Created by 규북 on 10/13/24.
 //
-
 import Foundation
 import Combine
 import WatchConnectivity
 
-class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
+class SoundDetectorViewModel: NSObject, ObservableObject {
     @Published var isRecording = false
     @Published var classificationResult: String = "녹음 시작 전"
-    
-    private var soundDetector: HornSoundDetector
-    private var cancellables = Set<AnyCancellable>()
+    @Published var confidence: Double = 0.0
+
+    private var hornSoundDetector: HornSoundDetector
     private var appRootManager: AppRootManager
+    private var cancellables = Set<AnyCancellable>()
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
-        self.soundDetector = HornSoundDetector(appRootManager: appRootManager) // 단일 soundDetector 인스턴스
+        self.hornSoundDetector = HornSoundDetector(appRootManager: appRootManager)
         super.init()
-        
-        // `WCSession` 설정
-        if WCSession.isSupported() {
-            WCSession.default.delegate = self
-            WCSession.default.activate()
-        }
-        
         setupBindings()
     }
 
     private func setupBindings() {
-        soundDetector.$isRecording
+        hornSoundDetector.$isRecording
             .assign(to: \.isRecording, on: self)
             .store(in: &cancellables)
 
-        soundDetector.$classificationResult
-            .sink { [weak self] result in
-                self?.classificationResult = result
-                self?.sendWarningToWatch() // classificationResult가 변경될 때 Apple Watch에 실시간으로 경고 전송
-            }
+        hornSoundDetector.$classificationResult
+            .assign(to: \.classificationResult, on: self)
+            .store(in: &cancellables)
+
+        hornSoundDetector.$confidence
+            .assign(to: \.confidence, on: self)
             .store(in: &cancellables)
     }
 
-    func sendWarningToWatch() {
-        guard WCSession.default.isReachable else {
-            print("애플워치가 연결되지 않음")
-            return
-        }
-        
-        let message = ["alert": classificationResult]
-        WCSession.default.sendMessage(message, replyHandler: nil) { error in
-            print("애플워치로 경고 메시지 전송 오류: \(error.localizedDescription)")
-        }
+    func startRecording() {
+        hornSoundDetector.startRecording()
     }
 
-    // 필수 WCSessionDelegate 메서드 구현
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("MLWCSession 활성화 완료. 상태: \(activationState)")
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        print("MLWCSession 비활성화됨")
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        print("MLWCSession 비활성화됨. 다시 활성화")
-        WCSession.default.activate()
+    func stopRecording() {
+        hornSoundDetector.stopRecording()
     }
 }

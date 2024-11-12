@@ -14,17 +14,19 @@ class WarningViewModel: ObservableObject {
     }
 
     func alertImageName() -> String {
-           switch appRootManager.detectedSound {
-           case "Carhorn":
-               return "Car"
-           case "Siren":
-               return "Siren"
-           case "Bicyclebell":
-               return "Bicycle"
-           default:
-               return "exclamationmark.triangle.fill" // 기본 아이콘
-           }
-       }
+        let detectedSound = appRootManager.detectedSound ?? "nil" // 기본값 설정
+        print("⚠️ WarningViewModel에서 감지된 소리: \(detectedSound)")
+        switch detectedSound {
+        case "Carhorn":
+            return "Car" // 자동차 이미지 이름
+        case "Siren":
+            return "Siren" // 사이렌 이미지 이름
+        case "Bicyclebell":
+            return "Bicycle" // 자전거 이미지 이름
+        default:
+            return "exclamationmark.triangle.fill" // 기본 경고 아이콘
+        }
+    }
 
 
 }
