@@ -26,5 +26,13 @@ class WarningViewModel: ObservableObject {
            }
        }
 
+    func returnToHome() {
+        appRootManager.currentRoot = .working
+    }
 
+    func autoTransitionToWorkingView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.appRootManager.currentRoot = .working
+        }
+    }
 }

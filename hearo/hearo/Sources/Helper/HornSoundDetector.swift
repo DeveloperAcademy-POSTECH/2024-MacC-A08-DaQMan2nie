@@ -111,25 +111,35 @@ class HornSoundDetector: NSObject, ObservableObject {
     }
 
     @objc func resumeRecording() {
-        guard !isRecording else { return }
-        startRecording()
+        if audioEngine.isRunning {
+            print("오디오 엔진이 실행 중입니다. 녹음 상태 동기화.")
+            isRecording = true
+        } else {
+            print("오디오 엔진이 실행 중이 아닙니다. 녹음 재개.")
+            startRecording()
+        }
+
         print("녹음 재개됨 (앱 포그라운드)")
-        
-        // 포그라운드 진입 시 라이브 액티비티 다시 시작
         appRootManager.startLiveActivity(isWarning: false)
     }
-    
-    // MARK: - Stop Recording
+
     @objc func stopRecording() {
-        guard isRecording else { return }
-        audioEngine.stop()
-        inputNode.removeTap(onBus: 0)
+        guard isRecording else {
+            print("녹음이 이미 중지된 상태입니다.")
+            return
+        }
+
+        print("녹음 중지 작업 시작")
+        audioEngine.stop() // 오디오 엔진 중지
+        inputNode.removeTap(onBus: 0) // 오디오 탭 제거
         streamAnalyzer = nil
         isRecording = false
-        print("녹음 중지됨 (앱 백그라운드)")
-        
-        // 백그라운드 진입 시 라이브 액티비티 중지
-        appRootManager.stopLiveActivity()
+
+        print("오디오 엔진 상태 확인 및 강제 중지")
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            print("오디오 엔진 강제 중지됨")
+        }
     }
 
     // MARK: - Send Notification
@@ -152,19 +162,28 @@ class HornSoundDetector: NSObject, ObservableObject {
 
 extension HornSoundDetector: SNResultsObserving {
     func request(_ request: SNRequest, didProduce result: SNResult) {
-        guard let result = result as? SNClassificationResult else { return }
+        guard let result = result as? SNClassificationResult else {
+            print("SNClassificationResult 변환 실패")
+            return
+        }
 
         DispatchQueue.main.async {
             if let topClassification = result.classifications.first, topClassification.confidence >= 1.0 {
+                print("최상위 분류: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)")
+                
+                // 필요한 소리만 처리
                 let relevantSounds = ["Bicyclebell", "Carhorn", "Siren"]
                 if relevantSounds.contains(topClassification.identifier) {
                     self.classificationResult = topClassification.identifier
                     self.appRootManager.detectedSound = topClassification.identifier
                     self.appRootManager.currentRoot = .warning
+                    
                     print("감지된 소리: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)")
+                } else {
+                    print("관련 없는 소리 감지: \(topClassification.identifier)")
                 }
             } else {
-                print("소리 인식중")
+                print("신뢰도 낮음: \(result.classifications.first?.identifier ?? "None"), 신뢰도: \(result.classifications.first?.confidence ?? 0)")
             }
         }
     }
