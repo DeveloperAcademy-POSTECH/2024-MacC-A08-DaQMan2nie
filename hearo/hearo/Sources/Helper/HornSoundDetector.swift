@@ -14,7 +14,7 @@ import Combine
 import WatchConnectivity
 
 class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResultsObserving {
-   
+
     private var audioEngine: AVAudioEngine!
     private var inputNode: AVAudioInputNode!
     private var soundClassifier: HornSoundClassifier_V8?
@@ -141,8 +141,9 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
 
     // MARK: - Trigger Warning Actions
     private func triggerWarningActions(for sound: String) {
-        self.appRootManager.currentRoot = .warning
         self.appRootManager.detectedSound = sound
+        self.appRootManager.currentRoot = .warning
+        self.appRootManager.updateLiveActivity(isWarning: true) // 라이브 액티비티 상태 업데이트
         sendWarningToWatch(alert: sound)
         print("⚠️ 경고 알림 처리 완료: \(sound)")
     }
@@ -186,5 +187,5 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
         print("WCSession 비활성화됨. 다시 활성화 준비")
         WCSession.default.activate()
     }
-    
+
 }
