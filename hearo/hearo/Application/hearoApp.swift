@@ -28,6 +28,7 @@ struct hearoApp: App {
         }
     }
     private func handleScenePhaseChange(_ newPhase: ScenePhase) {
+
             switch newPhase {
             case .background:
                 // 백그라운드로 전환되면 모든 오디오 및 ML 작업 중지
@@ -42,6 +43,7 @@ struct hearoApp: App {
             default:
                 break
             }
+
         }
     }
 
@@ -200,8 +202,24 @@ final class AppRootManager: ObservableObject {
         
     }
     
+    // 오디오 및 ML 작업 중지 메서드
+    func stopAudioAndMLTasks() {
+        hornSoundDetector?.stopRecording()
+        print("오디오 수집 및 ML 예측 중지됨")
+    }
+    
+    // 오디오 작업을 working 상태에서만 재개하는 메서드
+    func resumeAudioTasksIfWorking() {
+        if currentRoot == .working {
+            hornSoundDetector?.startRecording()
+            print("오디오 수집 및 ML 예측 재개됨 (working 상태에서만)")
+        } else {
+            print("오디오 수집은 working 상태에서만 재개됩니다.")
+        }
+        
+    }
+    
 }
-
 // ContentView 정의 (AppRootManager 클래스 외부에 위치)
 struct ContentView: View {
     @ObservedObject var appRootManager: AppRootManager

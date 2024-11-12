@@ -143,6 +143,7 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
     private func triggerWarningActions(for sound: String) {
         self.appRootManager.detectedSound = sound
         self.appRootManager.currentRoot = .warning
+
         sendWarningToWatch(alert: sound)
         print("⚠️ 경고 알림 처리 완료: \(sound)")
     }
