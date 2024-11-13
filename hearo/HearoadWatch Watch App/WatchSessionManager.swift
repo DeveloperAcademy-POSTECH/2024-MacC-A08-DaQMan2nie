@@ -43,17 +43,28 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
         case "Bicyclebell":
             return "Bicycle" // bicycle 이미지 이름
         default:
-            return "exclamationmark.triangle.fill" // 기본 알림 아이콘
+            return "Car" // 기본 알림 아이콘
         }
     }
 
     // 3초 동안 알림 표시 후 기본 상태로 복구
     func showAlert(with message: String) {
+        // "녹음 시작 전" 메시지는 무시
+        guard message != "녹음 시작 전" else {
+            print("메시지 무시: \(message)")
+            return
+        }
+
         alertMessage = message
         isAlerting = true
         
         // 강한 진동 알림 발생
         playUrgentHapticPattern()
+        
+        // UI 업데이트: 빨간 배경, 아이콘 표시
+        DispatchQueue.main.async {
+            print("UI 업데이트 - 배경색: 빨간색, 메시지: \(message)")
+        }
         
         // 3초 후에 기본 상태로 복구
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -79,6 +90,7 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     func resetAlert() {
         alertMessage = "인식중"
         isAlerting = false
+        print("UI 상태 복구 - 배경색: 검정, 메시지: 기본 상태")
     }
     
     // WCSession 활성화 완료 시 호출되는 메서드

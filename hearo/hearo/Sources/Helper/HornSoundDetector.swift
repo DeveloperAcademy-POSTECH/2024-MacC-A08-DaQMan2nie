@@ -13,7 +13,7 @@ import UserNotifications
 import Combine
 import WatchConnectivity
 
-class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResultsObserving {
+class HornSoundDetector: NSObject, ObservableObject, SNResultsObserving {
 
     private var audioEngine: AVAudioEngine!
     private var inputNode: AVAudioInputNode!
@@ -34,7 +34,6 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
         setupAudioSession()
         setupAudioEngine()
         setupSoundClassifier()
-        activateWCSession()
     }
 
     // MARK: - Audio Session Setup
@@ -73,17 +72,6 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
         }
     }
 
-    // MARK: - WCSession Activation
-    private func activateWCSession() {
-        guard WCSession.isSupported() else {
-            print("WCSession이 지원되지 않음")
-            return
-        }
-        let session = WCSession.default
-        session.delegate = self
-        session.activate()
-        print("WCSession 활성화 요청 완료")
-    }
 
     // MARK: - Start Recording
     func startRecording() {
@@ -123,14 +111,17 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
     }
 
     // MARK: - SNResultsObserving
-    @objc(request:didProduceResult:) func request(_ request: SNRequest, didProduce result: SNResult) {
+    @objc(request:didProduceResult:)
+    func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
         DispatchQueue.main.async {
             if let topClassification = result.classifications.first {
                 print("최상위 분류: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)")
-
-                // 관심 있는 소리만 처리
-                if self.relevantSounds.contains(topClassification.identifier), topClassification.confidence >= 0.99 {
+                
+                // 관심 있는 소리와 신뢰도 기준 체크
+                if self.relevantSounds.contains(topClassification.identifier),
+                   topClassification.confidence >= 0.99 {
+                    self.classificationResult = topClassification.identifier // 바로 업데이트
                     self.triggerWarningActions(for: topClassification.identifier)
                 } else {
                     print("관련 없는 소리 무시: \(topClassification.identifier)")
@@ -138,54 +129,18 @@ class HornSoundDetector: NSObject, ObservableObject, WCSessionDelegate, SNResult
             }
         }
     }
-
     // MARK: - Trigger Warning Actions
     private func triggerWarningActions(for sound: String) {
-        self.appRootManager.detectedSound = sound
-        self.appRootManager.currentRoot = .warning
-
-        sendWarningToWatch(alert: sound)
+        appRootManager.detectedSound = sound
+        appRootManager.currentRoot = .warning
         print("⚠️ 경고 알림 처리 완료: \(sound)")
+        
+        // Watch로 바로 데이터 전달
+        NotificationCenter.default.post(name: .detectedSoundNotification, object: nil, userInfo: ["sound": sound])
     }
+    
+}
 
-    private func sendWarningToWatch(alert: String) {
-        guard WCSession.isSupported() else {
-            print("WCSession이 지원되지 않음")
-            return
-        }
-
-        guard WCSession.default.activationState == .activated else {
-            print("WCSession이 활성화되지 않음, 재활성화 시도")
-            WCSession.default.activate()
-            return
-        }
-
-        guard WCSession.default.isReachable else {
-            print("애플워치가 연결되지 않음")
-            return
-        }
-
-        let message = ["alert": alert]
-        WCSession.default.sendMessage(message, replyHandler: { response in
-            print("✅ 애플워치로 경고 메시지 전송 성공: \(alert)")
-        }) { error in
-            print("❌ 애플워치로 경고 메시지 전송 실패: \(error.localizedDescription)")
-        }
-    }
-
-    // MARK: - WCSessionDelegate
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("WCSession 활성화 완료: \(activationState.rawValue)")
-    }
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        // 세션이 비활성화될 때 호출됩니다.
-        print("WCSession 비활성화됨")
-    }
-
-    func sessionDidDeactivate(_ session: WCSession) {
-        // 세션이 비활성화된 후 다시 활성화를 준비합니다.
-        print("WCSession 비활성화됨. 다시 활성화 준비")
-        WCSession.default.activate()
-    }
-
+extension Notification.Name {
+    static let detectedSoundNotification = Notification.Name("detectedSoundNotification")
 }

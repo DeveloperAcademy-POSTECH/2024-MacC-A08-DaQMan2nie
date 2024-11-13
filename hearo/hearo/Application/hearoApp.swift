@@ -57,6 +57,8 @@ struct hearoApp: App {
     }
 
 final class AppRootManager: ObservableObject {
+    static let shared = AppRootManager() // 싱글톤 객체
+
     @Published var currentRoot: AppRoot = .splash {
         didSet {
             // working 상태로 전환될 때 오디오 수집 자동 시작
@@ -87,10 +89,7 @@ final class AppRootManager: ObservableObject {
         case warning
     }
     
-    init() {
-        self.hornSoundDetector = HornSoundDetector(appRootManager: self)
-    }
-    
+ 
     // 스플래시 끝났을 때 호출
     func determineNextRoot() {
         let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")

@@ -3,41 +3,4 @@
    uuid = "E612D0C1-8F2A-42B7-B849-5689FA63B147"
    type = "1"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88C89FED-F133-41C7-AF37-E3E6A1698142"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hearo/Sources/Helper/Coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-<<<<<<< Updated upstream
-=======
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "35B5EB06-74AC-48F5-97F1-7808B582A78F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "hearo/Sources/Presentations/Working/ViewModel/WorkingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "WorkingViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
->>>>>>> Stashed changes
-   </Breakpoints>
 </Bucket>
