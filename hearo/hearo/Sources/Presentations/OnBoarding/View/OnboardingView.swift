@@ -51,10 +51,10 @@ struct OnboardingView: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .tag(OnboardingPage.privacy)
 
-                    LottieView(animationName: "stand", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
                         .tag(OnboardingPage.stand)
 
-                    LottieView(animationName: "watch", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
                         .tag(OnboardingPage.watch)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
