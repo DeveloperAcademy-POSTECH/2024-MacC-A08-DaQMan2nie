@@ -37,7 +37,6 @@
 		00D1B7622CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */; };
 		00D1B7642CDDDAF300BA2AF1 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */; };
 		00D1B7662CDDDB3D00BA2AF1 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */; };
-		00D1B7682CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */; };
 		00D1B76A2CDDDBB100BA2AF1 /* StartOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7692CDDDBA900BA2AF1 /* StartOnboardingView.swift */; };
 		00D1B76D2CDDDD9800BA2AF1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D1B76C2CDDDD9800BA2AF1 /* Lottie */; };
 		112177742CC283BC000A146F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112177732CC283BC000A146F /* WidgetKit.framework */; };
@@ -158,7 +157,6 @@
 		00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
-		00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HornSoundClassifier_V11.mlmodel; sourceTree = "<group>"; };
 		00D1B7692CDDDBA900BA2AF1 /* StartOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOnboardingView.swift; sourceTree = "<group>"; };
 		112177712CC283BC000A146F /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		112177732CC283BC000A146F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -479,7 +477,6 @@
 		00A04EA32CB7CA510031DECC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				00D1B7672CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel */,
 				002E52F42CE33BF000901A5A /* HornSoundClassifier_V8.mlmodel */,
 				00D1B7632CDDDAED00BA2AF1 /* LottieView.swift */,
 				64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */,
@@ -785,7 +782,6 @@
 				00D1B7582CDDD9E100BA2AF1 /* FontDesignSystem.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
-				00D1B7682CDDDB5B00BA2AF1 /* HornSoundClassifier_V11.mlmodel in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				00D1B7662CDDDB3D00BA2AF1 /* Haptic.swift in Sources */,
