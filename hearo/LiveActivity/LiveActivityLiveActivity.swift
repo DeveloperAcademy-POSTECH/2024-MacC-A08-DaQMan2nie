@@ -34,7 +34,7 @@ struct LiveActivityLiveActivity: Widget {
                 
                 Spacer()
                 
-                Image("Caution") // "Caution" 이미지를 왼쪽에 추가
+                Image("AppCaution") // "AppCaution" 이미지를 왼쪽에 추가
                     .resizable()
                     .scaledToFit()
                     .frame(width: 91, height: 91)
@@ -50,7 +50,7 @@ struct LiveActivityLiveActivity: Widget {
             DynamicIsland {
                 DynamicIslandExpandedRegion(.center) {
                     HStack {
-                        Image("Caution") // 아이콘
+                        Image("AppCaution") // 아이콘
                             .resizable()
                             .scaledToFit()
                             .frame(width: 59, height: 59, alignment: .top)
@@ -71,7 +71,7 @@ struct LiveActivityLiveActivity: Widget {
                     .frame(maxWidth: .infinity, maxHeight: 59) // HStack 최대 너비 설정
                 }
             } compactLeading: {
-                Image("Caution")
+                Image("AppCaution")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30)
@@ -80,7 +80,7 @@ struct LiveActivityLiveActivity: Widget {
                     .font(.DaynamicIsland)
                     .foregroundColor(.white)
             } minimal: {
-                Image("Caution")
+                Image("AppCaution")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30)
