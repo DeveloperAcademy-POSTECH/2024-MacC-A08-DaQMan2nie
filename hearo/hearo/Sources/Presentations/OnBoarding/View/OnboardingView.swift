@@ -43,18 +43,18 @@ struct OnboardingView: View {
                 // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
                 TabView(selection: $currentPage) {
 
-                    LottieView(animationName: "warning", animationScale: 1, loopMode: .playOnce)
+                   Image("AppCaution")
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-
                         .tag(OnboardingPage.warning)
 
-                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
+                    Image("privacy")
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .tag(OnboardingPage.privacy)
 
-                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
                         .tag(OnboardingPage.stand)
 
-                    LottieView(animationName: "phone", animationScale: 1, loopMode: .playOnce)
+                    LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
                         .tag(OnboardingPage.watch)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -86,7 +86,7 @@ struct OnboardingView: View {
                                 .foregroundStyle(Color("HPrimaryColor"))
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
 
-                            Image("시작하기")
+                            Image("StartButton")
                         }
                     }
 

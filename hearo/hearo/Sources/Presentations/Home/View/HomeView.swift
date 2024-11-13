@@ -70,7 +70,7 @@ struct HomeView: View {
                                             circleOffset = targetOffset
                                         }
                                         
-                                        // Lottie 애니메이션 시작
+                                        // Lottie 애니메이션 시작xq
                                         startLottieAnimation = true
                                         showTip = false // targetOffset에 도달했을 때 showTip을 false로 설정
                                         
