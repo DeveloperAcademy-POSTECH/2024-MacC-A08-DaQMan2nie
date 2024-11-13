@@ -41,12 +41,13 @@ struct StartOnboardingView: View {
           .opacity(showSubtitle ? 1 : 0)
           .animation(.easeIn(duration: 0.5).delay(0.5), value: showSubtitle) // 타이핑 애니메이션 효과
       }
+      .padding(.leading, 16)
+
     }
     .overlay{
       Image("MainCircle")
         .offset(y:300)
     }
-      .padding(.leading, 16)
       .onAppear {
         // 애니메이션 트리거
         showTitle = true
