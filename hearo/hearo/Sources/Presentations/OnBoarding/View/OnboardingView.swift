@@ -44,7 +44,9 @@ struct OnboardingView: View {
                 TabView(selection: $currentPage) {
 
                    Image("AppCaution")
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .resizable()
+                            .frame(width: 150, height: 150)
+                            .scaledToFit()
                         .tag(OnboardingPage.warning)
 
                     Image("privacy")
@@ -104,11 +106,9 @@ struct OnboardingView: View {
     }
 
     private func requestMicrophonePermission() {
-        let audioSession = AVAudioSession.sharedInstance()
-        
         if #available(iOS 17.0, *) {
-            // iOS 17 이상: requestPermission(for:) 사용
-            audioSession.perform(NSSelectorFromString("requestPermissionFor:")) { granted in
+            // iOS 17 이상: 새로운 메서드 사용
+            AVAudioApplication.requestRecordPermission { granted in
                 DispatchQueue.main.async {
                     if granted {
                         print("마이크 접근 권한이 허용되었습니다.")
@@ -118,8 +118,8 @@ struct OnboardingView: View {
                 }
             }
         } else {
-            // iOS 17 미만: requestRecordPermission 사용
-            audioSession.requestRecordPermission { granted in
+            // iOS 17 미만: 기존 메서드 사용
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
                 DispatchQueue.main.async {
                     if granted {
                         print("마이크 접근 권한이 허용되었습니다.")
