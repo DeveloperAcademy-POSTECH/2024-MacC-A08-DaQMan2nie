@@ -33,7 +33,7 @@ struct HomeView: View {
                     HStack {
                         Spacer().frame(width: 16)
                         
-                        Text("안녕하세요!\n오늘도 안전한 주행 함께해요!")
+                        Text("오늘도 히어로드와 함께!\n안전한 주행 함께해요!")
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)
