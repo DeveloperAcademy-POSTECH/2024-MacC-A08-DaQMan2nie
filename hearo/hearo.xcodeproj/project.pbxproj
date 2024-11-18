@@ -1164,7 +1164,7 @@
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HearoadWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = pilgaaang.hearo;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ada.hearoad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1195,7 +1195,7 @@
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = HearoadWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = pilgaaang.hearo;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ada.hearoad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1302,19 +1302,19 @@
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I want ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "사용자의 소리를 이용하여 상황을 파악하기 위해 마이크에 접근합니다.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ada.hearoad.LiveActivity;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ada.hearoad.live-activity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1330,19 +1330,19 @@
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I want ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "사용자의 소리를 이용하여 상황을 파악하기 위해 마이크에 접근합니다.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ada.hearoad.LiveActivity;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ada.hearoad.live-activity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
