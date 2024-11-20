@@ -1016,7 +1016,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -1053,7 +1053,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
