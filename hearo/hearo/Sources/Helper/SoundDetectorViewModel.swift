@@ -12,7 +12,8 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     @Published var isRecording = false
     @Published var classificationResult: String = "녹음 시작 전"
     @Published var confidence: Double = 0.0
-    
+    @Published var isWatchConnected: Bool = false // 애플 워치 연결 상태 추적
+
     private var hornSoundDetector: HornSoundDetector
     private var appRootManager: AppRootManager
     private var cancellables = Set<AnyCancellable>()
@@ -23,6 +24,8 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
         super.init()
         setupBindings()
         setupWCSession() // WCSession 설정
+        updateWatchConnectionStatus() // 초기 연결 상태 확인
+
 
         // NotificationCenter를 통해 detectedSoundNotification 노티피케이션 수신 등록
         NotificationCenter.default.addObserver(
@@ -69,6 +72,13 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             session.activate()
         }
     }
+    private func updateWatchConnectionStatus() {
+           let session = WCSession.default
+           DispatchQueue.main.async {
+               self.isWatchConnected = session.isReachable // 애플 워치 연결 여부 업데이트
+               print("애플 워치 연결 상태: \(self.isWatchConnected ? "연결됨" : "연결 안 됨")")
+           }
+       }
     
     func startRecording() {
         hornSoundDetector.startRecording()
@@ -107,6 +117,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
         case .inactive:
             print("WCSession이 비활성 상태.")
         case .activated:
+            updateWatchConnectionStatus() // 연결 상태 업데이트
             print("WCSession 활성화 성공.")
         @unknown default:
             print("알 수 없는 WCSession 상태.")
@@ -117,14 +128,19 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
         }
     }
     func sessionDidBecomeInactive(_ session: WCSession) {
-        // 세션이 비활성화되었을 때 로그를 남기거나 필요한 작업을 수행
-        print("WCSession이 비활성화되었습니다. 세션 상태: \(session.activationState.rawValue)")
+        print("WCSession이 비활성화되었습니다.")
+        updateWatchConnectionStatus() // 연결 상태 업데이트
     }
-    
+
     func sessionDidDeactivate(_ session: WCSession) {
-        // 세션이 비활성화된 후 다시 활성화를 준비
         print("WCSession이 비활성화되었습니다. 새로운 세션을 활성화합니다.")
         WCSession.default.activate()
+        updateWatchConnectionStatus() // 연결 상태 업데이트
+    }
+    
+    func sessionReachabilityDidChange(_ session: WCSession) {
+        updateWatchConnectionStatus() // 연결 상태 업데이트
+        print("WCSession 연결 상태 변경됨: \(session.isReachable ? "연결됨" : "연결 안 됨")")
     }
     
 }

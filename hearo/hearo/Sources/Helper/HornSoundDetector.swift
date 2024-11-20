@@ -75,6 +75,7 @@ class HornSoundDetector: NSObject, ObservableObject, SNResultsObserving {
 
     // MARK: - Start Recording
     func startRecording() {
+        //ver 1.01 update
         guard !isRecording else {
             print("녹음이 이미 진행 중입니다.")
             return
@@ -102,14 +103,33 @@ class HornSoundDetector: NSObject, ObservableObject, SNResultsObserving {
         }
     }
 
+//    func stopRecording() {
+//        guard isRecording else { return }
+//        audioEngine.stop()
+//        inputNode.removeTap(onBus: 0)
+//        isRecording = false
+//        print("오디오 엔진 중지 완료")
+//    }
+
     func stopRecording() {
-        guard isRecording else { return }
+        guard isRecording else {
+            print("오디오 엔진은 이미 중지된 상태입니다.")
+            return
+        }
+
         audioEngine.stop()
         inputNode.removeTap(onBus: 0)
         isRecording = false
-        print("오디오 엔진 중지 완료")
-    }
 
+        do {
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+            print("오디오 세션 비활성화 완료")
+        } catch {
+            print("오디오 세션 비활성화 실패: \(error.localizedDescription)")
+        }
+
+        print("오디오 엔진 및 세션 중지 완료")
+    }
     // MARK: - SNResultsObserving
     @objc(request:didProduceResult:)
     func request(_ request: SNRequest, didProduce result: SNResult) {
