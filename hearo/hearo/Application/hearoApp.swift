@@ -182,9 +182,7 @@ struct ContentView: View {
             case .onboarding:
                 OnboardingView(viewModel: OnboardingViewModel(appRootManager: appRootManager))
             case .home:
-                HomeView(viewModel: HomeViewModel(appRootManager: AppRootManager()),
-                        soundDetectorViewModel: SoundDetectorViewModel(appRootManager: AppRootManager())
-                    )
+                HomeView(viewModel: HomeViewModel(appRootManager: appRootManager))
             case .working:
                 WorkingView(viewModel: WorkingViewModel(appRootManager: appRootManager))
             case .finish:
