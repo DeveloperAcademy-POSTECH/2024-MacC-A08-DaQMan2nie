@@ -9,8 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
-    @StateObject var soundDetectorViewModel: SoundDetectorViewModel
-    
     private var randomTip: String {
         let tips = TipMessage.allCases
         return tips.randomElement()?.message ?? ""
@@ -40,15 +38,6 @@ struct HomeView: View {
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)
                         Spacer()
-                    }
-                    HStack{
-                        Spacer().frame(width: 16)
-
-                        Text(soundDetectorViewModel.isWatchConnected ? "애플 워치가 성공적으로 연결되었어요." : "애플 워치를 아직 못 찾았어요.")
-                                               .font(.LiveActivitySub)
-                                               .foregroundColor(Color("SubFontColor"))
-                        Spacer()
-
                     }
                     
                     Spacer().frame(height: 149)
@@ -198,8 +187,5 @@ enum TipMessage: String, CaseIterable {
 }
 
 #Preview {
-    HomeView(
-        viewModel: HomeViewModel(appRootManager: AppRootManager()),
-        soundDetectorViewModel: SoundDetectorViewModel(appRootManager: AppRootManager())
-    )
+    HomeView(viewModel: HomeViewModel(appRootManager: AppRootManager()))
 }
