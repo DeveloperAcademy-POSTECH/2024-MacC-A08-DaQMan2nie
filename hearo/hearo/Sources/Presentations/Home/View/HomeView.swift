@@ -14,8 +14,9 @@ struct HomeView: View {
     @State private var showArrowAndText: Bool = false // 새로운 텍스트 및 애니메이션 표시 여부
     @State private var startLottieAnimation: Bool = false // Lottie 애니메이션 시작 여부
     @State private var backgroundOpacity: Double = 0.0 // 흰 배경 불투명도
-    @State private var isInfoActive = false // Info 뷰 활성화 상태를 관리하는 변수
-
+    @State private var isInfoActive: Bool = false // Info로 이동 여부를 관리하는 상태
+    
+    
     private var randomTip: String {
         let tips = TipMessage.allCases
         return tips.randomElement()?.message ?? ""
@@ -23,7 +24,7 @@ struct HomeView: View {
     
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -36,7 +37,7 @@ struct HomeView: View {
                     HStack {
                         Spacer().frame(width: 16)
                         
-                        Text("오늘도 히어로드와 함께!\n안전한 주행 함께해요!")
+                        Text("오늘도 히어로드와 함께\n안전한 주행 함께해요!")
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)
@@ -44,15 +45,16 @@ struct HomeView: View {
                         Spacer()
                         
                         NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
-                            Image(systemName: "questionmark.circle.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.gray)
-                        }
+                                                  Image(systemName: "questionmark.circle.fill")
+                                                      .resizable()
+                                                      .scaledToFit()
+                                                      .frame(width: 30, height: 30)
+                                                      .foregroundColor(.gray)
+                                              }
+                        
                         
                         Spacer().frame(width: 25)
-
+                        
                     }
                     
                     Spacer().frame(height: 149)

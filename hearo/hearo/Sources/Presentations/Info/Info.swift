@@ -14,16 +14,17 @@ struct Info: View {
         ZStack {
             Color.white // 전체 배경을 흰색으로 설정
                 .ignoresSafeArea()
+
             VStack {
                 Spacer().frame(height: 87)
 
                 Rectangle()
-                    .frame(width : 365, height: 0.5)
+                    .frame(width: 365, height: 0.5)
                     .foregroundColor(.gray)
 
                 Spacer().frame(height: 16)
 
-                HStack{
+                HStack {
                     Spacer().frame(width: 18)
                     NavigationLink(destination: OnboardingTabView()) {
                         HStack {
@@ -41,11 +42,11 @@ struct Info: View {
                 }
                 Spacer().frame(height: 16)
                 Rectangle()
-                    .frame(width : 365, height: 0.5)
+                    .frame(width: 365, height: 0.5)
                     .foregroundColor(Color(UIColor.lightGray))
                 Spacer().frame(height: 16)
-                
-                HStack{
+
+                HStack {
                     Spacer().frame(width: 18)
                     NavigationLink(destination: FeedBack()) {
                         HStack {
@@ -62,7 +63,7 @@ struct Info: View {
                 }
                 Spacer().frame(height: 16)
                 Rectangle()
-                    .frame(width : 365, height: 0.5)
+                    .frame(width: 365, height: 0.5)
                     .foregroundColor(Color(UIColor.lightGray))
 
                 Spacer()
@@ -73,26 +74,31 @@ struct Info: View {
                     .padding(.bottom, 16)
             }
         }
-        .navigationTitle("Info")
-        .navigationBarTitleDisplayMode(.inline) // 제목 크기 조정
-        .navigationBarBackButtonHidden(true) // 기본 뒤로가기 버튼 숨김
+        .navigationBarBackButtonHidden(true) // 기본 네비게이션 바 숨김
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
                     isHomeActive = false // 홈 화면으로 복귀
                 }) {
-                    Image(systemName: "chevron.backward")
-                        .foregroundColor(.gray)
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.gray)
+
+                    }
                 }
             }
+        }
+        .onAppear {
+            // 기본 네비게이션 버튼 제거 확인 (디버깅용)
+            print("Info 화면에서 기본 네비게이션 바 숨김 적용됨")
         }
     }
 }
 
 struct Info_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            Info(isHomeActive: .constant(true))
+        NavigationStack {
+            Info(isHomeActive: .constant(true)) // 테스트용 홈 화면 연결
         }
     }
 }
