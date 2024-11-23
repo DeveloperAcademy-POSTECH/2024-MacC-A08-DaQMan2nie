@@ -28,6 +28,11 @@
 		0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045C6B92CC02969009B4261 /* WarningViewModel.swift */; };
 		007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCD2CB159AD00C0E9FD /* WorkingView.swift */; };
 		007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */; };
+		00B4A89D2CF1B3F6000A02C3 /* FeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B4A89C2CF1B3F1000A02C3 /* FeedBack.swift */; };
+		00B4A89F2CF1B43D000A02C3 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B4A89E2CF1B43A000A02C3 /* TabView.swift */; };
+		00B4A8A12CF1B67A000A02C3 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B4A8A02CF1B67A000A02C3 /* Info.swift */; };
+		00B4A8A32CF1B6BA000A02C3 /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B4A8A22CF1B6BA000A02C3 /* OnboardingTabView.swift */; };
+		00B4A8A82CF1C4C2000A02C3 /* +Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B4A8A72CF1C4B4000A02C3 /* +Color.swift */; };
 		00D1B7582CDDD9E100BA2AF1 /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
 		00D1B75D2CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */; };
 		00D1B75E2CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */; };
@@ -151,6 +156,11 @@
 		007BEFCF2CB159BF00C0E9FD /* WorkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingViewModel.swift; sourceTree = "<group>"; };
 		00A04EA82CB7CC320031DECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00AD926C2CD227A200DDA11B /* HearoadWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HearoadWatch.entitlements; sourceTree = "<group>"; };
+		00B4A89C2CF1B3F1000A02C3 /* FeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBack.swift; sourceTree = "<group>"; };
+		00B4A89E2CF1B43A000A02C3 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		00B4A8A02CF1B67A000A02C3 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		00B4A8A22CF1B6BA000A02C3 /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
+		00B4A8A72CF1C4B4000A02C3 /* +Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Color.swift"; sourceTree = "<group>"; };
 		00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDesignSystem.swift; sourceTree = "<group>"; };
 		00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -348,6 +358,7 @@
 		001C6FAB2CAFC3F900B03767 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				00B4A8A62CF1C4AE000A02C3 /* extension */,
 				00A04EA32CB7CA510031DECC /* Helper */,
 				001C6FAD2CAFC45100B03767 /* Presentations */,
 			);
@@ -357,6 +368,7 @@
 		001C6FAD2CAFC45100B03767 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				00B4A89B2CF1B3E6000A02C3 /* Info */,
 				001C6FB42CAFC50000B03767 /* OnBoarding */,
 				001C6FB32CAFC4DF00B03767 /* Home */,
 				007BEFCA2CB1598F00C0E9FD /* Working */,
@@ -484,6 +496,25 @@
 				00D1B7652CDDDB3B00BA2AF1 /* Haptic.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		00B4A89B2CF1B3E6000A02C3 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				00B4A89E2CF1B43A000A02C3 /* TabView.swift */,
+				00B4A89C2CF1B3F1000A02C3 /* FeedBack.swift */,
+				00B4A8A02CF1B67A000A02C3 /* Info.swift */,
+				00B4A8A22CF1B6BA000A02C3 /* OnboardingTabView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		00B4A8A62CF1C4AE000A02C3 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				00B4A8A72CF1C4B4000A02C3 /* +Color.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		00D1B7592CDDDAC100BA2AF1 /* Font */ = {
@@ -780,18 +811,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D1B7582CDDD9E100BA2AF1 /* FontDesignSystem.swift in Sources */,
+				00B4A8A32CF1B6BA000A02C3 /* OnboardingTabView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
+				00B4A89F2CF1B43D000A02C3 /* TabView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
 				00D1B7662CDDDB3D00BA2AF1 /* Haptic.swift in Sources */,
 				001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */,
 				00078BE92CAFC7A800FB3F70 /* OnboardingViewModel.swift in Sources */,
+				00B4A8A12CF1B67A000A02C3 /* Info.swift in Sources */,
 				00078BDF2CAFC75900FB3F70 /* FinishView.swift in Sources */,
 				64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */,
 				007BEFCE2CB159AD00C0E9FD /* WorkingView.swift in Sources */,
 				007BEFD02CB159BF00C0E9FD /* WorkingViewModel.swift in Sources */,
 				64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */,
+				00B4A89D2CF1B3F6000A02C3 /* FeedBack.swift in Sources */,
+				00B4A8A82CF1C4C2000A02C3 /* +Color.swift in Sources */,
 				0045C6B82CC0295F009B4261 /* WarningView.swift in Sources */,
 				00078BE72CAFC79E00FB3F70 /* OnboardingView.swift in Sources */,
 				002E52F52CE33BF000901A5A /* HornSoundClassifier_V8.mlmodel in Sources */,

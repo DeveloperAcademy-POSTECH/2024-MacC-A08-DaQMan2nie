@@ -9,22 +9,25 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
-    private var randomTip: String {
-        let tips = TipMessage.allCases
-        return tips.randomElement()?.message ?? ""
-    }
-    
     @State private var circleOffset: CGFloat = 0
     @State private var showTip: Bool = true // 주행 팁 텍스트 표시 여부
     @State private var showArrowAndText: Bool = false // 새로운 텍스트 및 애니메이션 표시 여부
     @State private var startLottieAnimation: Bool = false // Lottie 애니메이션 시작 여부
     @State private var backgroundOpacity: Double = 0.0 // 흰 배경 불투명도
+    @State private var isInfoActive = false // Info 뷰 활성화 상태를 관리하는 변수
+
+    private var randomTip: String {
+        let tips = TipMessage.allCases
+        return tips.randomElement()?.message ?? ""
+    }
+    
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
-    
+
     var body: some View {
+        NavigationView {
             ZStack {
-                Color.white // 다크 모드에서도 흰색으로 고정
+                Color.white
                     .ignoresSafeArea()
                 
                 VStack {
@@ -37,12 +40,24 @@ struct HomeView: View {
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
                             .frame(height: 70)
+                        
                         Spacer()
+                        
+                        NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
+                            Image(systemName: "questionmark.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Spacer().frame(width: 25)
+
                     }
                     
                     Spacer().frame(height: 149)
                     
-                    // 원형 버튼을 드래그 가능하도록 설정
+                    // 원형 버튼 드래그
                     Image("StartCircle")
                         .offset(y: circleOffset)
                         .gesture(
@@ -53,70 +68,24 @@ struct HomeView: View {
                                         showArrowAndText = false
                                     }
                                     let newOffset = value.translation.height
-                                    
-                                    if newOffset < 0 {
-                                        circleOffset = 0
-                                    } else if newOffset > targetOffset {
-                                        circleOffset = targetOffset
-                                    } else {
-                                        circleOffset = newOffset
-                                        triggerHapticFeedback(for: newOffset, targetOffset: targetOffset) // Haptic 피드백 트리거
-                                    }
+                                    circleOffset = max(0, min(targetOffset, newOffset))
                                 }
                                 .onEnded { value in
                                     if circleOffset >= minimumOffset {
-                                        // 버튼이 targetOffset에 도달했을 때 showTip을 false로 설정
-                                        withAnimation(.easeOut(duration: 0.3)) {
-                                            circleOffset = targetOffset
-                                        }
-                                        
-                                        // Lottie 애니메이션 시작xq
+                                        triggerFinalHaptic()
                                         startLottieAnimation = true
-                                        showTip = false // targetOffset에 도달했을 때 showTip을 false로 설정
-                                        
-                                        // 강한 진동과 함께 애니메이션 시작
-                                                                            triggerFinalHaptic()
-                                        
-                                        // 1.5초 후에 흰 배경 서서히 나타나기 시작
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                            withAnimation(.easeIn(duration: 2.0)) {
-                                                backgroundOpacity = 1.0
-                                            }
-                                            
-                                            // 흰 배경이 다 덮인 후 WorkingView로 전환
+                                            backgroundOpacity = 1.0
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                                 viewModel.startWorking()
-                                                triggerErrorHaptic()
                                             }
                                         }
                                     } else {
-                                        // 버튼이 제자리로 돌아갈 때 showTip을 다시 true로 설정
-                                        withAnimation(.easeOut(duration: 0.3)) {
-                                            circleOffset = 0
-                                        }
-                                        withAnimation(.easeIn(duration: 0.3)) {
-                                            showTip = true
-                                            showArrowAndText = false
-                                        }
+                                        circleOffset = 0
+                                        showTip = true
                                     }
                                 }
-
                         )
-                    
-                    ZStack {
-                        if showArrowAndText {
-                            VStack {
-                                LottieView(animationName: "arrow_GR", animationScale: 1)
-                                    .frame(height: 150, alignment: .top)
-                                    .offset(y: -90)
-                                    .padding()
-                                Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
-                                    .font(.light)
-                                    .foregroundColor(Color("SubFontColor"))
-                            }
-                            .transition(.opacity)
-                        }
-                    }
                     
                     Spacer().frame(height: 52)
                     
@@ -138,38 +107,18 @@ struct HomeView: View {
                     
                     Spacer()
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
                 
-                // "start_view" Lottie 애니메이션
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .offset(y: 274)
                         .edgesIgnoringSafeArea(.all)
                 }
-                
-                // 흰색 배경 오버레이
-                Color.white
-                    .opacity(backgroundOpacity)
-                    .ignoresSafeArea()
-            }
-            .contentShape(Rectangle())
-            .onLongPressGesture(minimumDuration: 0.1) { // 꾹 눌렀을 때 화살표와 텍스트 표시
-                withAnimation(.easeOut(duration: 0.3)) {
-                    showTip = false
-                    showArrowAndText = true
-                }
-            } onPressingChanged: { isPressing in
-                if !isPressing {
-                    withAnimation(.easeIn(duration: 0.3)) {
-                        showTip = true
-                        showArrowAndText = false
-                    }
-                }
             }
         }
     }
+}
+
 
 //랜덤문구 정의
 enum TipMessage: String, CaseIterable {
