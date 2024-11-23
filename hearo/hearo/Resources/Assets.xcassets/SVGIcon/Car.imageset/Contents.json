@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Car.svg",
+      "filename" : "KakaoTalk_Photo_2024-11-23-23-29-36 3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Car 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Car 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
