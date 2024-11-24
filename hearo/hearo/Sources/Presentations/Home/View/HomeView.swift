@@ -10,130 +10,137 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     @State private var circleOffset: CGFloat = 0
-    @State private var showTip: Bool = true // 주행 팁 텍스트 표시 여부
-    @State private var showArrowAndText: Bool = false // 새로운 텍스트 및 애니메이션 표시 여부
+    @State private var showHintAndAnimation: Bool = true // 로티와 힌트 텍스트 및 힌트 원 표시 여부
     @State private var startLottieAnimation: Bool = false // Lottie 애니메이션 시작 여부
     @State private var backgroundOpacity: Double = 0.0 // 흰 배경 불투명도
     @State private var isInfoActive: Bool = false // Info로 이동 여부를 관리하는 상태
-    
-    
-    private var randomTip: String {
-        let tips = TipMessage.allCases
-        return tips.randomElement()?.message ?? ""
-    }
-    
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
-    
+
     var body: some View {
         NavigationView {
             ZStack {
-                Color.white
+                Color.white // 다크 모드에서도 흰 배경 유지
                     .ignoresSafeArea()
-                
+
                 VStack {
                     Spacer().frame(height: 89)
-                    
-                    HStack {
+
+                    HStack(alignment: .top) {
                         Spacer().frame(width: 16)
                         
                         Text("오늘도 히어로드와 함께\n안전한 주행 함께해요!")
                             .font(.mainTitle)
                             .foregroundColor(Color("MainFontColor"))
+                            .lineSpacing(5)
                             .frame(height: 70)
-                        
+
                         Spacer()
-                        
+
                         NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
-                                                  Image(systemName: "questionmark.circle.fill")
-                                                      .resizable()
-                                                      .scaledToFit()
-                                                      .frame(width: 30, height: 30)
-                                                      .foregroundColor(.gray)
-                                              }
-                        
-                        
+                            Image("Info_Icon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 45, height: 45)
+                        }
+
                         Spacer().frame(width: 25)
-                        
                     }
-                    
+
                     Spacer().frame(height: 149)
-                    
-                    // 원형 버튼 드래그
-                    Image("StartCircle")
-                        .offset(y: circleOffset)
-                        .gesture(
-                            DragGesture()
-                                .onChanged { value in
-                                    withAnimation(.easeOut(duration: 0.3)) {
-                                        showTip = false
-                                        showArrowAndText = false
-                                    }
-                                    let newOffset = value.translation.height
-                                    circleOffset = max(0, min(targetOffset, newOffset))
-                                }
-                                .onEnded { value in
-                                    if circleOffset >= minimumOffset {
-                                        triggerFinalHaptic()
-                                        startLottieAnimation = true
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                            backgroundOpacity = 1.0
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                                viewModel.startWorking()
-                                            }
+
+                    ZStack {
+                        // 목표 지점 힌트 원
+                        if showHintAndAnimation {
+                            Circle()
+                                .fill(Color(hex: "58D53C").opacity(0.1))
+                                .frame(width: 139, height: 139)
+                                .position(x: UIScreen.main.bounds.width / 2, y: targetOffset + 100)
+                                .allowsHitTesting(false) // 힌트 원의 터치 이벤트 차단
+                        }
+                        
+                        // 원형 버튼 (항상 터치 우선순위가 높도록 ZStack의 마지막에 배치)
+                        Image("StartCircle")
+                            .offset(y: circleOffset)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        // 드래그 중 힌트와 애니메이션을 숨김
+                                        withAnimation(.easeOut(duration: 0.3)) {
+                                            showHintAndAnimation = false
                                         }
-                                    } else {
-                                        circleOffset = 0
-                                        showTip = true
+                                        let newOffset = value.translation.height
+                                        // offset을 제한하여 부드럽게 드래그 가능하도록 설정
+                                        circleOffset = max(0, min(targetOffset, newOffset))
                                     }
-                                }
-                        )
-                    
+                                    .onEnded { value in
+                                        if circleOffset >= minimumOffset {
+                                            // 목표 지점으로 부드럽게 이동
+                                            withAnimation(.easeOut(duration: 0.3)) {
+                                                circleOffset = targetOffset
+                                            }
+                                            triggerFinalHaptic() // 진동 효과 실행
+                                            startLottieAnimation = true
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                                withAnimation(.easeIn(duration: 2.0)) {
+                                                    backgroundOpacity = 1.0
+                                                }
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                                    viewModel.startWorking()
+                                                }
+                                            }
+                                        } else {
+                                            // 드래그 실패 시 원래 위치로 부드럽게 복귀
+                                            withAnimation(.easeOut){
+                                                circleOffset = 0
+                                                showHintAndAnimation = true
+                                            }
+                                            
+                                        }
+                                    }
+                            )
+
+                    }
+
                     Spacer().frame(height: 52)
-                    
-                    if showTip {
+
+                    // 힌트 애니메이션과 텍스트
+                    if showHintAndAnimation {
                         VStack {
-                            Text("주행 Tip!")
-                                .font(.medium)
-                                .foregroundColor(Color("SubFontColor"))
-                            
-                            Text(randomTip)
+                            LottieView(animationName: "arrow_GR", animationScale: 1)
+                                .frame(height: 150, alignment: .top)
+                                .offset(y: -240)
+                                .padding()
+                                .allowsHitTesting(false) // 애니메이션이 터치 이벤트를 방해하지 않도록 설정
+
+                            Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
                                 .font(.light)
                                 .foregroundColor(Color("SubFontColor"))
-                                .multilineTextAlignment(.center)
-                                .frame(height: 50)
-                                .padding(.horizontal, 20)
+                                .offset(y: -60)
+                                .allowsHitTesting(false) // 텍스트도 터치 이벤트를 방해하지 않도록 설정
                         }
-                        .opacity(showTip ? 1 : 0)
+                        .transition(.opacity)
                     }
-                    
+
                     Spacer()
                 }
-                
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
+
+                // "start_view" Lottie 애니메이션
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .offset(y: 274)
+                        .offset(y: 260)
                         .edgesIgnoringSafeArea(.all)
                 }
+
+                // 흰색 배경 오버레이
+                Color.white
+                    .opacity(backgroundOpacity)
+                    .ignoresSafeArea()
             }
         }
-    }
-}
-
-
-//랜덤문구 정의
-enum TipMessage: String, CaseIterable {
-    case carefulObservation = "주변을 주의 깊게 살피며\n여유로운 주행을 즐겨보세요."
-    case speedControl = "속도를 조절하며 주변 상황에 유의하세요.\n안전이 최우선입니다!"
-    case warningCheck = "경고 알림이 울리면 한 번 뒤를 확인해 보세요.\n항상 안전이 우선이에요."
-    case safeRoads = "안전한 주행을 위해 자전거 도로를 이용하고,\n교차로에서는 주의하세요."
-    case stayCalm = "급한 상황에서도 여유를 잃지 마세요.\n제가 함께하고 있어요."
-    case slipperyRoads = "주행 중 미끄러운 도로나 장애물에 유의하며\n편안히 주행하세요."
-    case checkSurroundings = "주변 소리가 감지되면 잠시 속도를 줄이며\n상황을 확인해 보세요."
-    
-    var message: String {
-        return self.rawValue
     }
 }
 
