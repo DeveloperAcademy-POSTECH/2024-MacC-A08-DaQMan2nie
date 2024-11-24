@@ -108,11 +108,10 @@ struct OnboardingTabView: View {
                             currentTab += 1
                         }
                     } else {
-                        // Info 화면으로 이동
-                        navigateToInfo = true
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }) {
-                    Text(currentTab == 2 ? "완료" : "확인") // 버튼 텍스트
+                    Text(currentTab == 2 ? "돌아가기" : "확인") // 버튼 텍스트
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 225, height: 58)
