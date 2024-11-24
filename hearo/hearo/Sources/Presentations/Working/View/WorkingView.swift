@@ -12,8 +12,11 @@ struct WorkingView: View {
        @State private var circleOffset: CGFloat = 0
     @State private var showArrowAndText: Bool = false
        @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
+    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
+
        private let targetOffset: CGFloat = 274
        private let minimumOffset: CGFloat = 197
+    
 
        init(viewModel: WorkingViewModel) {
            self.viewModel = viewModel
@@ -23,11 +26,20 @@ struct WorkingView: View {
            ZStack {
                Color.white // 다크 모드에서도 흰색 배경
                    .ignoresSafeArea()
-               
+               ZStack{
+                   Text("소리수집중")
+                    .font(Font.custom("Pretendard", size: 44))
+                    .foregroundColor(Color("MainFontColor"))
+                   .offset(y:-307)
+                   
+                   // 워치 연동 상태에 따른 이미지 변경
+                                 Image(isWatchConnected ? "Watch_Enable" : "Watch_Disable")
+                                     .offset(x: 160, y: -307)
+                   
+               }
                // Lottie 애니메이션과 원형 버튼
                LottieView(animationName: "sound_collection", animationScale: 1)
                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//                   .offset(y: targetOffset - UIScreen.main.bounds.height / 4)
                    .offset(x: -1.4 ,y: 60)
                    .edgesIgnoringSafeArea(.all)
                  
@@ -101,14 +113,16 @@ struct WorkingView: View {
            .onDisappear {
                viewModel.stopRecording()
            }
-           .onLongPressGesture(minimumDuration: 0.1) {
+           .onLongPressGesture(minimumDuration: 0) { // 터치 시 즉시 실행
                withAnimation(.easeOut(duration: 0.3)) {
                    showArrowAndText = true
                }
            } onPressingChanged: { isPressing in
-               if !isPressing {
-                   withAnimation(.easeIn(duration: 0.3)) {
-                       showArrowAndText = false
+               if !isPressing { // 터치가 끝난 경우
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // 3초 동안 유지
+                       withAnimation(.easeIn(duration: 0.3)) {
+                           showArrowAndText = false
+                       }
                    }
                }
            }
