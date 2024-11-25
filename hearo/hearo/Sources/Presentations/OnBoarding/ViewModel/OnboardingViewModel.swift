@@ -15,10 +15,6 @@ class OnboardingViewModel: ObservableObject {
         self.appRootManager = appRootManager
     }
 
-    func moveToNextTab() {
-      currentTab += 1
-    }
-
     func moveToHome() {
         UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
         appRootManager.currentRoot = .home

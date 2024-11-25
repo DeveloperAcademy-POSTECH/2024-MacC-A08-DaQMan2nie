@@ -21,7 +21,7 @@ struct OnboardingView: View {
       
       VStack(spacing: 20) {
         
-        // 우측 상단 페이지 인디케이터
+  // MARK: 페이지 인디케이터, Skip 버튼
         HStack {
           HStack(spacing: 6) {
             ForEach(0..<3) { index in
@@ -54,8 +54,8 @@ struct OnboardingView: View {
         .padding(.top, 39)
         .padding(.bottom, 78)
         
-        // 상단 타이틀 및 설명
-        VStack(spacing: 9) {
+// MARK: 상단 타이틀 및 설명
+        VStack(spacing: 0) {
           if currentTab == 0 {
             Text("정확한 소리 수집을 위해\n휴대폰을 거치해주세요.")
               .font(.semiBold)
@@ -64,14 +64,13 @@ struct OnboardingView: View {
           } else if currentTab == 1 {
             Text("워치를 함께 사용하여\n소리를 진동으로 느껴보세요.")
               .font(.semiBold)
-              .fontWeight(.bold)
               .multilineTextAlignment(.center)
             
           } else if currentTab == 2 {
             Text("히어로드는 여러분의\n안전한 주행을 보조합니다.")
               .font(.semiBold)
-              .fontWeight(.bold)
               .multilineTextAlignment(.center)
+              .padding(.bottom, 9)
             
             Text("피해 또는 상해를 입을 수 있는 상황, 고위험이나\n긴급 상황 중에는 알람에만 의존해서는 안됩니다.")
               .font(.LiveActivitySub)
@@ -104,16 +103,16 @@ struct OnboardingView: View {
           .tag(2)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // 페이지 인디케이터 숨기기
-        .frame(height: 300)
+//        .frame(height: 300)
         
         Spacer() // 콘텐츠와 버튼 간 여백
         
-        // 버튼 영역
+        // MARK: 버튼
         Button(action: {
           if currentTab < 2 {
             // 다음 페이지로 이동
             withAnimation {
-              viewModel.moveToNextTab()
+              currentTab += 1
             }
           } else {
             // main 페이지로 이동
@@ -121,18 +120,17 @@ struct OnboardingView: View {
           }
         }) {
           Text(currentTab == 2 ? "시작하기" : "확인") // 버튼 텍스트
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 225, height: 58)
-            .background(
-              RoundedRectangle(cornerRadius: 92)
-                .fill(Color(hex: "58D53C"))
-            )
-            .onTapGesture {
-              
-            }
+//            .font(.headline)
+//            .foregroundColor(.white)
+//            .frame(width: 225, height: 58)
+//            .background(
+//              RoundedRectangle(cornerRadius: 92)
+//                .fill(Color(hex: "58D53C"))
+//            )
         }
-        Spacer().frame(height: 63)
+        .buttonStyle(CustomButtonStyle())
+        .padding(.bottom, 63)
+        
       }
     }
   }

@@ -53,6 +53,7 @@
 		64D66A8B2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A8C2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A902CF4A4E500CDB1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */; };
+		64D66A922CF4A6A000CDB1D9 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +178,7 @@
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Helper/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Helper/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -514,6 +516,7 @@
 		00B4A8A62CF1C4AE000A02C3 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */,
 				00B4A8A72CF1C4B4000A02C3 /* +Color.swift */,
 			);
 			path = extension;
@@ -818,6 +821,7 @@
 				00B4A8A32CF1B6BA000A02C3 /* OnboardingTabView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
+				64D66A922CF4A6A000CDB1D9 /* CustomButtonStyle.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				00B4A89F2CF1B43D000A02C3 /* TabView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
