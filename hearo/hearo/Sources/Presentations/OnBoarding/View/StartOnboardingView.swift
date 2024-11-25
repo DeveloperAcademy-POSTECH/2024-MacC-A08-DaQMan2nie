@@ -10,54 +10,61 @@ import SwiftUI
 struct StartOnboardingView: View {
   
   @ObservedObject var appRootManager: AppRootManager
-  @State private var showTitle = false
-  @State private var showSubtitle = false
   
   var body: some View {
     
     
-    ZStack(alignment: .topLeading) {
+    ZStack(alignment: .top) {
       
       Color("Radish")
         .ignoresSafeArea(.all)
       
-      VStack(alignment: .leading,spacing: 0) {
-        Spacer().frame(height: 45)
+      VStack(alignment: .center,spacing: 0) {
+        Spacer().frame(height: 125)
         
-        Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영합니다!")
-          .font(.mainTitle)
+        Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영해요!")
+          .font(.semiBold)
+          .multilineTextAlignment(.center)
           .foregroundStyle(Color("MainFontColor"))
           .frame(height: 61)
-          .opacity(showTitle ? 1 : 0)
-          .animation(.easeIn(duration: 0.5), value: showTitle) // 타이핑 애니메이션 효과
           .padding(.bottom, 10)
         
         
         
-        Text("히어로드는 주행 중 경적과 사이렌 소리를 감지해\n 주행자의 안전을 돕는 앱입니다.")
-          .font(.regular)
-          .foregroundStyle(Color("SubFontColor"))
-          .frame(maxWidth: 323, minHeight: 42, alignment: .leading)
-          .opacity(showSubtitle ? 1 : 0)
-          .animation(.easeIn(duration: 0.5).delay(0.5), value: showSubtitle) // 타이핑 애니메이션 효과
+        Text("저희 앱은 주행 중 경적과 사이렌 소리를\n감지하여 알림을 주어, 주행자의 안전을 돕습니다.")
+          .font(.LiveActivitySub)
+          .multilineTextAlignment(.center)
+          .foregroundStyle(.black)
+          .frame(alignment: .center)
+        
+        Spacer().frame(height: 23)
+        
+        Image("OnboardingCircle")
+        
+        Spacer()
       }
-      .padding(.leading, 16)
+      
+      VStack {
+        Spacer()
+        Button {
+          appRootManager.currentRoot = .onboarding
+        } label: {
+          Text("확인") // 버튼 텍스트
+              .font(.headline)
+              .foregroundColor(.white)
+              .frame(width: 225, height: 58)
+              .background(
+                  RoundedRectangle(cornerRadius: 92)
+                      .fill(Color.green)
+              )
+        }
+        
+        Spacer().frame(height: 63)
+
+      }
 
     }
-    .overlay{
-      Image("MainCircle")
-        .offset(y:300)
-    }
-      .onAppear {
-        // 애니메이션 트리거
-        showTitle = true
-        showSubtitle = true
-        
-        // 3초 후 TabView로 전환
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-          appRootManager.currentRoot = .onboarding
-        }
-      }
+
   }
 }
 

@@ -9,14 +9,10 @@ import Foundation
 
 class OnboardingViewModel: ObservableObject {
     @Published var appRootManager: AppRootManager
-    @Published var currentPage: Int = 0
+    @Published var currentTab: Int = 0
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
-    }
-
-    func moveToNextPage() {
-        currentPage += 1
     }
 
     func moveToHome() {

@@ -15,7 +15,6 @@
 		00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEA2CAFC7B000FB3F70 /* HomeView.swift */; };
 		00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */; };
 		001C6F7E2CAFBC6900B03767 /* hearoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C6F7D2CAFBC6900B03767 /* hearoApp.swift */; };
-		001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */; };
 		001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */; };
 		001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C9F592CCF7983004EC4D2 /* ContentView.swift */; };
@@ -50,8 +49,11 @@
 		1121777B2CC283BC000A146F /* LiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */; };
 		112177812CC283BD000A146F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112177802CC283BD000A146F /* Assets.xcassets */; };
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		11873A372CE20B7F005639B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C6F832CAFBC6C00B03767 /* Assets.xcassets */; };
 		11A2D0882CDE344500BF2BAF /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
+		64D66A8B2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
+		64D66A8C2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
+		64D66A902CF4A4E500CDB1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */; };
+		64D66A922CF4A6A000CDB1D9 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */; };
 		64F73A252CBAC9F100D2A140 /* HornSoundDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */; };
 		64F73A272CBAD1C000D2A140 /* SoundDetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -136,7 +138,6 @@
 		00078BEC2CAFC7BA00FB3F70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		001C6F7A2CAFBC6900B03767 /* hearo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F7D2CAFBC6900B03767 /* hearoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearoApp.swift; sourceTree = "<group>"; };
-		001C6F832CAFBC6C00B03767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001C6F862CAFBC6C00B03767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		001C6F8C2CAFBC6C00B03767 /* hearoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C6F962CAFBC6C00B03767 /* hearoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +176,9 @@
 		1121777A2CC283BC000A146F /* LiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityLiveActivity.swift; sourceTree = "<group>"; };
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		64F73A242CBAC9F100D2A140 /* HornSoundDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HornSoundDetector.swift; path = hearo/Sources/Helper/HornSoundDetector.swift; sourceTree = SOURCE_ROOT; };
 		64F73A262CBAD1C000D2A140 /* SoundDetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundDetectorViewModel.swift; path = hearo/Sources/Helper/SoundDetectorViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -320,6 +324,7 @@
 		001C6F7C2CAFBC6900B03767 /* hearo */ = {
 			isa = PBXGroup;
 			children = (
+				64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */,
 				00A04EA82CB7CC320031DECC /* Info.plist */,
 				001C6FA92CAFC3D800B03767 /* Application */,
 				001C6FAA2CAFC3E200B03767 /* Resources */,
@@ -350,7 +355,6 @@
 			children = (
 				00D1B7592CDDDAC100BA2AF1 /* Font */,
 				00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */,
-				001C6F832CAFBC6C00B03767 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -512,6 +516,7 @@
 		00B4A8A62CF1C4AE000A02C3 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */,
 				00B4A8A72CF1C4B4000A02C3 /* +Color.swift */,
 			);
 			path = extension;
@@ -523,6 +528,7 @@
 				00D1B75A2CDDDAD300BA2AF1 /* Pretendard-Light.otf */,
 				00D1B75B2CDDDAD300BA2AF1 /* Pretendard-Medium.otf */,
 				00D1B75C2CDDDAD300BA2AF1 /* Pretendard-Regular.otf */,
+				64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -747,10 +753,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D1B7602CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */,
+				64D66A902CF4A4E500CDB1D9 /* Assets.xcassets in Resources */,
 				00D1B7612CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */,
 				00D1B7622CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */,
+				64D66A8C2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */,
 				001C6F872CAFBC6C00B03767 /* Preview Assets.xcassets in Resources */,
-				001C6F842CAFBC6C00B03767 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,8 +805,8 @@
 				112177812CC283BD000A146F /* Assets.xcassets in Resources */,
 				00D1B75D2CDDDAD300BA2AF1 /* Pretendard-Light.otf in Resources */,
 				00D1B75E2CDDDAD300BA2AF1 /* Pretendard-Regular.otf in Resources */,
+				64D66A8B2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */,
 				00D1B75F2CDDDAD300BA2AF1 /* Pretendard-Medium.otf in Resources */,
-				11873A372CE20B7F005639B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,6 +821,7 @@
 				00B4A8A32CF1B6BA000A02C3 /* OnboardingTabView.swift in Sources */,
 				00078BED2CAFC7BA00FB3F70 /* HomeViewModel.swift in Sources */,
 				00078BE12CAFC77000FB3F70 /* FinishViewModel.swift in Sources */,
+				64D66A922CF4A6A000CDB1D9 /* CustomButtonStyle.swift in Sources */,
 				00078BEB2CAFC7B000FB3F70 /* HomeView.swift in Sources */,
 				00B4A89F2CF1B43D000A02C3 /* TabView.swift in Sources */,
 				0045C6BA2CC02969009B4261 /* WarningViewModel.swift in Sources */,
