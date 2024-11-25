@@ -9,161 +9,161 @@ import AVFoundation // AVAudioSession을 사용하기 위해 추가
 import Lottie
 
 struct OnboardingView: View {
-    @StateObject var viewModel: OnboardingViewModel
-    @State private var currentPage: OnboardingPage = .warning
-    @State private var isPermissionRequested: Bool = false // 권한 요청 상태를 추적
-
-    var body: some View {
-        ZStack {
-            // 텍스트 영역 : currentPage 따라 다름
-            VStack(alignment: .leading, spacing: 0) {
-                Spacer().frame(height: 45)
-
-                HStack(spacing: 0) {
-                    Spacer().frame(width: 16)
-
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text(currentPage.title)
-                            .font(.mainTitle)
-                            .foregroundStyle(Color("MainFontColor"))
-
-                        Spacer().frame(height: 17)
-
-                        Text(currentPage.description)
-                            .font(.regular)
-                            .foregroundStyle(Color("SubFontColor"))
-                    }
-
-                    Spacer()
-                }
-                Spacer()
+  @StateObject var viewModel: OnboardingViewModel
+  @State private var currentTab = 0 // 현재 탭 인덱스를 관리하는 변수
+  @State private var isPermissionRequested: Bool = false // 권한 요청 상태를 추적
+  
+  var body: some View {
+    
+    ZStack {
+      Color(hex: "FCFFF5") // 배경색 설정
+        .ignoresSafeArea()
+      
+      VStack(spacing: 20) {
+        
+        // 우측 상단 페이지 인디케이터
+        HStack {
+          HStack(spacing: 6) {
+            ForEach(0..<3) { index in
+              if currentTab == index {
+                Rectangle()
+                  .fill(Color.gray)
+                  .frame(width: 20, height: 8)
+                  .cornerRadius(4)
+              } else {
+                Circle()
+                  .fill(Color.gray.opacity(0.4))
+                  .frame(width: 8, height: 8)
+              }
             }
-
-            VStack(spacing: 7) {
-                // Lottie 애니메이션 영역 - TabView로 슬라이드 가능
-                TabView(selection: $currentPage) {
-
-                   Image("AppCaution")
-                        .resizable()
-                            .frame(width: 150, height: 150)
-                            .scaledToFit()
-                        .tag(OnboardingPage.warning)
-
-                    Image("privacy")
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .tag(OnboardingPage.privacy)
-
-                    LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
-                        .tag(OnboardingPage.stand)
-
-                    LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
-                        .tag(OnboardingPage.watch)
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-                .frame(maxHeight: 374)
-                .padding(.vertical, 20)
-
-                // 커스텀 페이지 인디케이터
-                HStack(spacing: 8) {
-                    ForEach(OnboardingPage.allCases, id: \.self) { page in
-                        Circle()
-                            .fill(currentPage == page ? Color(red: 113/255, green: 113/255, blue: 113/255) : Color(red: 36/255, green: 36/255, blue: 36/255).opacity(0.3))
-                            .frame(width: 8, height: 8)
-                    }
-                }
-                .padding(.bottom, 16)
+          }
+          .padding(.leading, 20)
+          
+          Spacer()
+          
+          Button {
+            if currentTab < 2 {
+              currentTab = 2
             }
-
-            if currentPage == .watch {
-                VStack {
-                    Spacer()
-
-                    Button(action: {
-                        viewModel.moveToHome()
-                    }) {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 361, height: 58)
-                                .foregroundStyle(Color("HPrimaryColor"))
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-
-                            Image("StartButton")
-                        }
-                    }
-
-                    Spacer().frame(height: 63)
-                }
+          } label: {
+            Image("Skip")
+              .padding(.trailing, 20)
+          }
+          
+        }
+        .padding(.top, 39)
+        .padding(.bottom, 78)
+        
+        // 상단 타이틀 및 설명
+        VStack(spacing: 9) {
+          if currentTab == 0 {
+            Text("정확한 소리 수집을 위해\n휴대폰을 거치해주세요.")
+              .font(.semiBold)
+              .multilineTextAlignment(.center)
+            
+          } else if currentTab == 1 {
+            Text("워치를 함께 사용하여\n소리를 진동으로 느껴보세요.")
+              .font(.semiBold)
+              .fontWeight(.bold)
+              .multilineTextAlignment(.center)
+            
+          } else if currentTab == 2 {
+            Text("히어로드는 여러분의\n안전한 주행을 보조합니다.")
+              .font(.semiBold)
+              .fontWeight(.bold)
+              .multilineTextAlignment(.center)
+            
+            Text("피해 또는 상해를 입을 수 있는 상황, 고위험이나\n긴급 상황 중에는 알람에만 의존해서는 안됩니다.")
+              .font(.LiveActivitySub)
+              .foregroundColor(.black)
+              .multilineTextAlignment(.center)
+          }
+        }
+        
+        
+        // 콘텐츠 슬라이드(TabView)
+        TabView(selection: $currentTab) {
+          VStack {
+            LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
+              .frame(width: 200, height: 200)
+          }
+          .tag(0)
+          
+          VStack {
+            LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
+              .frame(width: 200, height: 200)
+          }
+          .tag(1)
+          
+          VStack {
+            Image("safeinfo")
+              .resizable()
+              .scaledToFit()
+              .frame(width: 350, height: 300)
+          }
+          .tag(2)
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // 페이지 인디케이터 숨기기
+        .frame(height: 300)
+        
+        Spacer() // 콘텐츠와 버튼 간 여백
+        
+        // 버튼 영역
+        Button(action: {
+          if currentTab < 2 {
+            // 다음 페이지로 이동
+            withAnimation {
+              viewModel.moveToNextTab()
+            }
+          } else {
+            // main 페이지로 이동
+            viewModel.moveToHome()
+          }
+        }) {
+          Text(currentTab == 2 ? "시작하기" : "확인") // 버튼 텍스트
+            .font(.headline)
+            .foregroundColor(.white)
+            .frame(width: 225, height: 58)
+            .background(
+              RoundedRectangle(cornerRadius: 92)
+                .fill(Color(hex: "58D53C"))
+            )
+            .onTapGesture {
+              
             }
         }
-        .onAppear {
-            // 두 번째 페이지에서 권한 요청 실행
-            if currentPage == .privacy && !isPermissionRequested {
-                requestMicrophonePermission()
-                isPermissionRequested = true
-            }
-        }
+        Spacer().frame(height: 63)
+      }
     }
-
-    private func requestMicrophonePermission() {
-        if #available(iOS 17.0, *) {
-            // iOS 17 이상: 새로운 메서드 사용
-            AVAudioApplication.requestRecordPermission { granted in
-                DispatchQueue.main.async {
-                    if granted {
-                        print("마이크 접근 권한이 허용되었습니다.")
-                    } else {
-                        print("마이크 접근 권한이 거부되었습니다.")
-                    }
-                }
-            }
-        } else {
-            // iOS 17 미만: 기존 메서드 사용
-            AVAudioSession.sharedInstance().requestRecordPermission { granted in
-                DispatchQueue.main.async {
-                    if granted {
-                        print("마이크 접근 권한이 허용되었습니다.")
-                    } else {
-                        print("마이크 접근 권한이 거부되었습니다.")
-                    }
-                }
-            }
+  }
+  
+  private func requestMicrophonePermission() {
+    if #available(iOS 17.0, *) {
+      // iOS 17 이상: 새로운 메서드 사용
+      AVAudioApplication.requestRecordPermission { granted in
+        DispatchQueue.main.async {
+          if granted {
+            print("마이크 접근 권한이 허용되었습니다.")
+          } else {
+            print("마이크 접근 권한이 거부되었습니다.")
+          }
         }
+      }
+    } else {
+      // iOS 17 미만: 기존 메서드 사용
+      AVAudioSession.sharedInstance().requestRecordPermission { granted in
+        DispatchQueue.main.async {
+          if granted {
+            print("마이크 접근 권한이 허용되었습니다.")
+          } else {
+            print("마이크 접근 권한이 거부되었습니다.")
+          }
+        }
+      }
     }
-    enum OnboardingPage: Int, CaseIterable {
-        case warning
-        case privacy
-        case stand
-        case watch
-
-        var title: String {
-            switch self {
-            case .warning:
-                return "우리의 경고 알림은\n\"보조 수단\"이에요."
-            case .privacy:
-                return "저희는 오직 주행을 위한\n오디오를 써요."
-            case .stand:
-                return "정확한 감지를 위해\n주행 중 거치대를 사용해 주세요."
-            case .watch:
-                return "더 안전한 주행을 위해\n워치 앱을 함께 켜 주세요."
-            }
-        }
-
-        var description: String {
-            switch self {
-            case .warning:
-                return "저는 당신의 곁에서 위험을 감지해 드리지만, 무엇보다\n중요한 건 자신의 안전이에요. 함께 신중히 주행해요."
-            case .privacy:
-                return "• 마이크로 인식된 소리는 오직 위험 신호를 감지하기 위한\n목적으로만 사용됩니다.\n• 인식되는 소리는 실시간 분석 후 저장하지 않습니다."
-            case .stand:
-                return "안전한 주행을 위한 작은 준비가 큰 차이를 만듭니다."
-            case .watch:
-                return "워치가 있다면 워치 앱을 함께 켜 주세요.\n손목에서 바로 알림을 확인할 수 있습니다."
-            }
-        }
-    }
+  }
 }
 
 #Preview {
-    OnboardingView(viewModel: OnboardingViewModel(appRootManager: AppRootManager()))
+  OnboardingView(viewModel: OnboardingViewModel(appRootManager: AppRootManager()))
 }
