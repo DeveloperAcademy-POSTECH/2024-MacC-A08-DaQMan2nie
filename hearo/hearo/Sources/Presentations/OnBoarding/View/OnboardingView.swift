@@ -120,13 +120,6 @@ struct OnboardingView: View {
           }
         }) {
           Text(currentTab == 2 ? "시작하기" : "확인") // 버튼 텍스트
-//            .font(.headline)
-//            .foregroundColor(.white)
-//            .frame(width: 225, height: 58)
-//            .background(
-//              RoundedRectangle(cornerRadius: 92)
-//                .fill(Color(hex: "58D53C"))
-//            )
         }
         .buttonStyle(CustomButtonStyle())
         .padding(.bottom, 63)

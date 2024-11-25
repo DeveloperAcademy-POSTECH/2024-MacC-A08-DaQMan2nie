@@ -14,7 +14,7 @@ struct OnboardingTabView: View {
     
     var body: some View {
         ZStack {
-            Color.white // 전체 배경을 흰색으로 설정
+            Color("Background") // 전체 배경을 흰색으로 설정
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {
@@ -45,24 +45,21 @@ struct OnboardingTabView: View {
                 VStack(spacing: 8) {
                     if currentTab == 0 {
                         Text("정확한 소리 수집을 위해\n휴대폰을 거치해주세요.")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                        .font(.semiBold)
                             .multilineTextAlignment(.center)
                         
                     } else if currentTab == 1 {
                         Text("워치를 함께 사용하여\n소리를 진동으로 느껴보세요.")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                        .font(.semiBold)
                             .multilineTextAlignment(.center)
                     } else if currentTab == 2 {
                         Text("히어로드는 여러분의\n안전한 주행을 보조합니다.")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                        .font(.semiBold)
                             .multilineTextAlignment(.center)
                         
                         Text("피해 또는 상해를 입을 수 있는 상황, 고위험이나\n긴급 상황 중에는 알람에만 의존해서는 안됩니다.")
                             .font(.LiveActivitySub)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
                             .multilineTextAlignment(.center)
                     }
                 }
@@ -112,15 +109,9 @@ struct OnboardingTabView: View {
                         navigateToInfo = true
                     }
                 }) {
-                    Text(currentTab == 2 ? "완료" : "확인") // 버튼 텍스트
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 225, height: 58)
-                        .background(
-                            RoundedRectangle(cornerRadius: 92)
-                                .fill(Color.green)
-                        )
+                    Text(currentTab == 2 ? "돌아가기" : "확인") // 버튼 텍스트
                 }
+                .buttonStyle(CustomButtonStyle())
                 
                 Spacer().frame(height: 63)
             }
