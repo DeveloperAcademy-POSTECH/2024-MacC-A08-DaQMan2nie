@@ -50,14 +50,9 @@ struct StartOnboardingView: View {
           appRootManager.currentRoot = .onboarding
         } label: {
           Text("확인") // 버튼 텍스트
-              .font(.headline)
-              .foregroundColor(.white)
-              .frame(width: 225, height: 58)
-              .background(
-                  RoundedRectangle(cornerRadius: 92)
-                      .fill(Color.green)
-              )
         }
+        .buttonStyle(CustomButtonStyle())
+        
         
         Spacer().frame(height: 63)
 
