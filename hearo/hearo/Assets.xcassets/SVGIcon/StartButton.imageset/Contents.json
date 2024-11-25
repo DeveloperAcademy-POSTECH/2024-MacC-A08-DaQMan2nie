@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "시작하기.svg",
+      "filename" : "시작하기 3.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "시작하기 1.svg",
+      "filename" : "시작하기 4.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "시작하기 2.svg",
+      "filename" : "시작하기.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
