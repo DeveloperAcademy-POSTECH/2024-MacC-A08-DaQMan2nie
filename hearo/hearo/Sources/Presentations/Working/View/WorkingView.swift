@@ -16,7 +16,6 @@ struct WorkingView: View {
 
        private let targetOffset: CGFloat = 274
        private let minimumOffset: CGFloat = 197
-    
 
        init(viewModel: WorkingViewModel) {
            self.viewModel = viewModel
@@ -43,7 +42,6 @@ struct WorkingView: View {
                    .offset(x: -1.4 ,y: 60)
                    .edgesIgnoringSafeArea(.all)
                  
-               
                Image("StartCircle")
                    .offset(y: circleOffset)
                    .gesture(
@@ -94,7 +92,9 @@ struct WorkingView: View {
                    }
                    .padding(.top, 400)
                    .transition(.opacity)
+                   .allowsHitTesting(false) // 터치 이벤트 차단 방지
                }
+
                
                // 흰색 오버레이 (초기 불투명도 1.0에서 0으로 서서히 감소)
                Color.white
