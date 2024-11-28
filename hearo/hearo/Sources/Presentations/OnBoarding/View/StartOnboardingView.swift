@@ -26,8 +26,8 @@ struct StartOnboardingView: View {
           .font(.semiBold)
           .multilineTextAlignment(.center)
           .foregroundStyle(Color("MainFontColor"))
-          .frame(height: 61)
           .padding(.bottom, 10)
+          
         
         
         
