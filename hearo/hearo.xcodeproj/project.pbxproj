@@ -1056,11 +1056,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo/Preview\\ Content HearoadWatch\\ Watch\\ App";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -1093,11 +1093,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo/Preview\\ Content HearoadWatch\\ Watch\\ App";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -1202,7 +1202,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo HearoadWatch\\ Watch\\ App/Preview\\ Content";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1233,7 +1233,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo HearoadWatch\\ Watch\\ App/Preview\\ Content";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1341,7 +1341,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1369,7 +1369,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;

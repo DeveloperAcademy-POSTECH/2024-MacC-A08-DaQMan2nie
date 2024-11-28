@@ -38,13 +38,15 @@ struct HomeView: View {
                         Spacer()
 
                         NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
-                            Image("Info_Icon")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 45, height: 45)
-                        }
+                                                   Image(systemName: "questionmark.circle.fill")
+                                                       .resizable()
+                                                       .scaledToFit()
+                                                       .frame(width: 30, height: 30)
+                                                       .foregroundColor(.gray)
+                                               }
 
-                        Spacer().frame(width: 25)
+
+                         Spacer().frame(width: 25)
                     }
 
                     Spacer().frame(height: 149)
