@@ -23,7 +23,7 @@ struct WorkingView: View {
        
        var body: some View {
            ZStack {
-               Color.white // 다크 모드에서도 흰색 배경
+               Color("Radish") // 다크 모드에서도 흰색 배경
                    .ignoresSafeArea()
                ZStack{
                    Text("소리수집중")
