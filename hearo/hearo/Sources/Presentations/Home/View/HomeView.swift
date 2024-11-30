@@ -37,14 +37,16 @@ struct HomeView: View {
 
                         Spacer()
                         
-
-                        NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
-                            Image(systemName: "exclamationmark.circle.fill")
-                                   .resizable()
-                                   .scaledToFit()
-                                   .frame(width: 45, height: 45)
+                        VStack{
+                            Spacer().frame(height: 5)
+                            NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
+                                Image(systemName: "exclamationmark.circle.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.gray)
+                            }
                         }
-
                         Spacer().frame(width: 25)
                     }
                     
