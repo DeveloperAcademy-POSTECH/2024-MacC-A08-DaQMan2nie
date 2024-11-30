@@ -14,6 +14,7 @@ struct HomeView: View {
     @State private var startLottieAnimation: Bool = false // Lottie 애니메이션 시작 여부
     @State private var backgroundOpacity: Double = 0.0 // 흰 배경 불투명도
     @State private var isInfoActive: Bool = false // Info로 이동 여부를 관리하는 상태
+    
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
 
