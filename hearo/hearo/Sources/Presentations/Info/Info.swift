@@ -16,21 +16,26 @@ struct Info: View {
                 .ignoresSafeArea()
 
             VStack {
-                Spacer().frame(height: 87)
-
+                Spacer().frame(height: 9)
+                HStack{
+                    Spacer().frame(width:18)
+                    Text("안내")
+                        .font(.semiBold)
+                        .foregroundColor(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                
                 Rectangle()
                     .frame(width: 365, height: 0.5)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(UIColor.lightGray))
 
                 Spacer().frame(height: 16)
 
                 HStack {
-                    Spacer().frame(width: 18)
+                    
                     NavigationLink(destination: OnboardingTabView()) {
                         HStack {
-                            Circle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(Color(UIColor.lightGray))
+                         
                             Spacer().frame(width: 16)
 
                             Text("앱 사용시 고려할 사항")
@@ -50,10 +55,8 @@ struct Info: View {
                     Spacer().frame(width: 18)
                     NavigationLink(destination: FeedBack()) {
                         HStack {
-                            Circle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(Color(UIColor.lightGray))
-                            Spacer().frame(width: 16)
+                            
+                            
                             Text("유저 피드백")
                                 .font(.body)
                                 .foregroundColor(.primary)
