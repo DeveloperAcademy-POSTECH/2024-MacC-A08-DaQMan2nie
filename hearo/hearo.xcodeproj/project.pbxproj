@@ -1062,7 +1062,7 @@
 				INFOPLIST_FILE = hearo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 \n않습니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 않습니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1099,7 +1099,7 @@
 				INFOPLIST_FILE = hearo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 \n않습니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 않습니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

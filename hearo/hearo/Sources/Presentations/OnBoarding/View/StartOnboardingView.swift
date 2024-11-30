@@ -26,7 +26,7 @@ struct StartOnboardingView: View {
           .font(.semiBold)
           .multilineTextAlignment(.center)
           .foregroundStyle(Color("MainFontColor"))
-          .padding(.bottom, 10)
+          .padding(.bottom, 9)
           
         
         
@@ -40,7 +40,8 @@ struct StartOnboardingView: View {
         Spacer().frame(height: 23)
         
         Image("OnboardingCircle")
-        
+//          LottieView(animationName: "OnboardingCircle", animationScale: 1, loopMode: .loop)
+//              .frame(width: 200, height: 200)
         Spacer()
       }
       

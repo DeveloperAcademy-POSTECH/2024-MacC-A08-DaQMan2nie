@@ -18,10 +18,13 @@ import UIKit
 class WorkingViewModel: ObservableObject {
     @Published var appRootManager: AppRootManager
     @Published var soundDetectorViewModel: SoundDetectorViewModel
+    @Published var isWatchConnected: Bool = false // 연결 상태 추적
+
     private var isRecording: Bool = false // 녹음 상태를 추적하는 변수
     private var cancellables = Set<AnyCancellable>() // Combine 구독을 저장하는 변수 추가
     private var hornSoundDetector: HornSoundDetector // HornSoundDetector 사용
-
+    
+    
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
         self.soundDetectorViewModel = SoundDetectorViewModel(appRootManager: appRootManager)
@@ -31,7 +34,15 @@ class WorkingViewModel: ObservableObject {
         configureAudioSession()
         // 감지된 소리 이벤트를 관찰하고 WarningView로 전환
         observeSoundDetection()
+        setupBindings()
+
     }
+    private func setupBindings() {
+         // SoundDetectorViewModel의 isWatchConnected를 관찰
+         soundDetectorViewModel.$isWatchConnected
+             .assign(to: \.isWatchConnected, on: self)
+             .store(in: &cancellables)
+     }
     
 
     func configureAudioSession() {

@@ -36,6 +36,7 @@ struct HomeView: View {
                             .frame(height: 70)
 
                         Spacer()
+                        
 
                         NavigationLink(destination: Info(isHomeActive: $isInfoActive), isActive: $isInfoActive) {
                             Image(systemName: "exclamationmark.circle.fill")
@@ -46,8 +47,19 @@ struct HomeView: View {
 
                         Spacer().frame(width: 25)
                     }
+                    
+                    Spacer().frame(height: 60)
+                    
+                    if showHintAndAnimation{
+                        
+                        Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
+                            .font(.light)
+                            .foregroundColor(Color("SubFontColor"))
+                            .offset(y: 60)
+                            .allowsHitTesting(false) // 텍스트도 터치 이벤트를 방해하지 않도록 설정
+                    }
 
-                    Spacer().frame(height: 149)
+                    Spacer().frame(height: 60)
 
                     ZStack {
                         // 목표 지점 힌트 원
@@ -102,23 +114,18 @@ struct HomeView: View {
 
                     }
 
-                    Spacer().frame(height: 52)
+                    Spacer().frame(height: 152)
 
-                    // 힌트 애니메이션과 텍스트
+                
                     if showHintAndAnimation {
-                        VStack {
                             LottieView(animationName: "arrow_GR", animationScale: 1)
                                 .frame(height: 150, alignment: .top)
-                                .offset(y: -240)
+                                .offset(y: -300)
                                 .padding()
                                 .allowsHitTesting(false) // 애니메이션이 터치 이벤트를 방해하지 않도록 설정
 
-                            Text("아이콘을 아래로 내리면 주행이 시작됩니다.")
-                                .font(.light)
-                                .foregroundColor(Color("SubFontColor"))
-                                .offset(y: -60)
-                                .allowsHitTesting(false) // 텍스트도 터치 이벤트를 방해하지 않도록 설정
-                        }
+                           
+                        
                         .transition(.opacity)
                     }
 
@@ -131,7 +138,7 @@ struct HomeView: View {
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .offset(y: 260)
+                        .offset(y: 220)
                         .edgesIgnoringSafeArea(.all)
                 }
 

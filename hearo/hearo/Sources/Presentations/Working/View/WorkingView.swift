@@ -26,15 +26,17 @@ struct WorkingView: View {
                Color("Radish") // 다크 모드에서도 흰색 배경
                    .ignoresSafeArea()
                ZStack{
-                   Text("소리수집중")
-                    .font(Font.custom("Pretendard", size: 44))
-                    .foregroundColor(Color("MainFontColor"))
-                   .offset(y:-307)
-                   
-                   // 워치 연동 상태에 따른 이미지 변경
-                                 Image(isWatchConnected ? "Watch_Enable" : "Watch_Disable")
-                                     .offset(x: 160, y: -307)
-                   
+                   HStack{
+                       Text("소리수집중")
+                           .font(Font.custom("Pretendard", size: 44))
+                           .foregroundColor(Color("MainFontColor"))
+                           .offset(y:-307)
+                       
+                       // 워치 연동 상태에 따른 이미지 변경
+                       Image(isWatchConnected ? "SVGIcon/Watch_Enable" : "SVGIcon/Watch_Disable")
+                           .offset(x: 160, y: -307)
+                       
+                   }
                }
                // Lottie 애니메이션과 원형 버튼
                LottieView(animationName: "sound_collection", animationScale: 1)

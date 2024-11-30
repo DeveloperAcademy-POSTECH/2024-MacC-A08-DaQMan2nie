@@ -12,6 +12,8 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
     @Published var isRecording = false
     @Published var classificationResult: String = "녹음 시작 전"
     @Published var confidence: Double = 0.0
+    @Published var isWatchConnected: Bool = false // 애플워치 연결 상태를 추적
+
     
     private var hornSoundDetector: HornSoundDetector
     private var appRootManager: AppRootManager
@@ -32,6 +34,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             object: nil
         )
     }
+    
     
     @objc private func handleDetectedSoundNotification(_ notification: Notification) {
         if let sound = notification.userInfo?["sound"] as? String {
@@ -62,13 +65,24 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             .store(in: &cancellables)
     }
     
-    private func setupWCSession() {
+    func setupWCSession() {
         if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
             session.activate()
+            print("WCSession 활성화 요청")
+            updateWatchConnectionState() // 초기 연결 상태 확인
         }
+        else {
+                print("WCSession이 지원되지 않습니다.")
+            }
     }
+    private func updateWatchConnectionState() {
+        // 애플워치 연결 상태를 업데이트
+        isWatchConnected = WCSession.default.isPaired && WCSession.default.isWatchAppInstalled
+        print("애플워치 연결 상태 업데이트: \(isWatchConnected ? "연결됨" : "연결되지 않음")")
+    }
+    
     
     func startRecording() {
         hornSoundDetector.startRecording()
@@ -98,9 +112,20 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             }
         }
     }
+    func sessionWatchStateDidChange(_ session: WCSession) {
+        DispatchQueue.main.async {
+            self.updateWatchConnectionState()
+        }
+    }
+
+    
     
     // WCSessionDelegate 메서드
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        DispatchQueue.main.async {
+            self.updateWatchConnectionState()
+        }
+        
         switch activationState {
         case .notActivated:
             print("WCSession이 활성화되지 않음.")
@@ -116,6 +141,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
             print("WCSession 활성화 실패: \(error.localizedDescription)")
         }
     }
+    
     func sessionDidBecomeInactive(_ session: WCSession) {
         // 세션이 비활성화되었을 때 로그를 남기거나 필요한 작업을 수행
         print("WCSession이 비활성화되었습니다. 세션 상태: \(session.activationState.rawValue)")
