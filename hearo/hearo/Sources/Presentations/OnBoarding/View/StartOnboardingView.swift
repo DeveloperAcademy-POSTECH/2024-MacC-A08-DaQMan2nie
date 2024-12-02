@@ -20,7 +20,7 @@ struct StartOnboardingView: View {
         .ignoresSafeArea(.all)
       
       VStack(alignment: .center,spacing: 0) {
-        Spacer().frame(height: 125)
+        Spacer().frame(height: 100)
         
         Text("당신을 위한 소리 감지 앱\n히어로드에 오신 걸 환영해요!")
           .font(.semiBold)
@@ -37,11 +37,16 @@ struct StartOnboardingView: View {
           .foregroundStyle(.black)
           .frame(alignment: .center)
         
-        Spacer().frame(height: 23)
+        
         
         Image("OnboardingCircle")
+              .resizable()
+                .aspectRatio(contentMode: .fit)
+                  .frame(width: 400, height: 400)
+          
 //          LottieView(animationName: "OnboardingCircle", animationScale: 1, loopMode: .loop)
-//              .frame(width: 200, height: 200)
+//              .frame(width: 220, height: 220)
+          
         Spacer()
       }
       

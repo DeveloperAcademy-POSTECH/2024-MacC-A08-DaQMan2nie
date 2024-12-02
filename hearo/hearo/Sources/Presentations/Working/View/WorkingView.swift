@@ -93,12 +93,13 @@ struct WorkingView: View {
                
             if showArrowAndText {
                 VStack {
-                    LottieView(animationName: "arrow_WH", animationScale: 1)
+                    LottieView(animationName: "arrow_GR", animationScale: 1)
                         .frame(height: 150, alignment: .top)
+                        .scaleEffect(x: 1.1, y: 1.0)
                         .offset(y: -120)
                         .padding()
                     Text("아이콘을 아래로 내리면 주행이 종료됩니다.")
-                        .font(.light)
+                        .font(Font.hint)
                         .foregroundColor(Color("SubFontColor"))
                 }
                 .padding(.top, 400)

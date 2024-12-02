@@ -93,9 +93,11 @@ struct OnboardingView: View {
                   .tag(0)
                   
                   VStack {
-                      Spacer().frame(width:20)
                       LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
-                          .frame(width: 200, height: 200)
+                          .frame(width: 250, height: 250)
+                          .scaleEffect(1.1)
+                          .offset(y: 40)
+                      
                   }
                   .tag(1)
                   
@@ -103,10 +105,10 @@ struct OnboardingView: View {
                       Image("safeinfo")
                           .resizable()
                           .scaledToFit()
-                          .frame(width: 350, height: 300)
+                          .frame(width: 350, height: 350)
                   }
                   .tag(2)
-              }
+              } 
               .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // 페이지 인디케이터 숨기기
           }
         
