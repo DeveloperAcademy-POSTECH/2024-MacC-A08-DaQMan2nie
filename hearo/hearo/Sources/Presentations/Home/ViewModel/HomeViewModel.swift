@@ -13,14 +13,6 @@ class HomeViewModel: ObservableObject {
 
     init(appRootManager: AppRootManager) {
         self.appRootManager = appRootManager
-        updateCurrentDate()
-    }
-
-    func updateCurrentDate() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.dateFormat = "yyyy. MM. dd. EEEE"
-        currentDate = dateFormatter.string(from: Date())
     }
 
     func startWorking() {

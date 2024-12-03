@@ -18,41 +18,45 @@ struct OnboardingView: View {
     ZStack {
       Color(hex: "FCFFF5") // 배경색 설정
         .ignoresSafeArea()
-      
+        Spacer().frame(height: 20)
       VStack(spacing: 20) {
         
   // MARK: 페이지 인디케이터, Skip 버튼
-        HStack {
-          HStack(spacing: 6) {
-            ForEach(0..<3) { index in
-              if currentTab == index {
-                Rectangle()
-                  .fill(Color.gray)
-                  .frame(width: 20, height: 8)
-                  .cornerRadius(4)
-              } else {
-                Circle()
-                  .fill(Color.gray.opacity(0.4))
-                  .frame(width: 8, height: 8)
+          HStack {
+              HStack(spacing: 6) {
+                  ForEach(0..<3) { index in
+                      if currentTab == index {
+                          Rectangle()
+                              .fill(Color.gray)
+                              .frame(width: 20, height: 8)
+                              .cornerRadius(4)
+                      } else {
+                          Circle()
+                              .fill(Color.gray.opacity(0.4))
+                              .frame(width: 8, height: 8)
+                      }
+                  }
               }
-            }
+              .padding(.leading, 20)
+              
+              Spacer()
+              if currentTab < 2 {
+                  Button {
+                      if currentTab < 2 {
+                          currentTab = 2
+                      }
+                  } label: {
+                      Text("건너뛰기")
+                          .font(Font.custom("Pretendard", size: 16))
+                          .multilineTextAlignment(.center)
+                          .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
+                  }
+                  Spacer().frame(width:22)
+              }
           }
-          .padding(.leading, 20)
-          
-          Spacer()
-          
-          Button {
-            if currentTab < 2 {
-              currentTab = 2
-            }
-          } label: {
-            Image("Skip")
-              .padding(.trailing, 20)
-          }
-          
-        }
-        .padding(.top, 39)
-        .padding(.bottom, 78)
+          .frame(height: 30)
+        .padding(.top, 20)
+        .padding(.bottom, 60)
         
 // MARK: 상단 타이틀 및 설명
         VStack(spacing: 0) {
@@ -78,34 +82,41 @@ struct OnboardingView: View {
               .multilineTextAlignment(.center)
           }
         }
+          ZStack {
+              // 콘텐츠 슬라이드(TabView)
+              TabView(selection: $currentTab) {
+                  VStack {
+                      Spacer().frame(width:20)
+                      LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
+                          .frame(width: 200, height: 200)
+                  }
+                  .tag(0)
+                  
+                  VStack {
+                      LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
+                          .frame(width: 250, height: 250)
+                          .scaleEffect(1.1)
+                          .offset(y: 40)
+                      
+                  }
+                  .tag(1)
+                  
+                  VStack {
+                      Image("safeinfo")
+                          .resizable()
+                          .scaledToFit()
+                          .frame(width: 350, height: 350)
+                  }
+                  .tag(2)
+              } 
+              .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // 페이지 인디케이터 숨기기
+          }
         
-        
-        // 콘텐츠 슬라이드(TabView)
-        TabView(selection: $currentTab) {
-          VStack {
-            LottieView(animationName: "phone", animationScale: 1, loopMode: .loop)
-              .frame(width: 200, height: 200)
-          }
-          .tag(0)
-          
-          VStack {
-            LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
-              .frame(width: 200, height: 200)
-          }
-          .tag(1)
-          
-          VStack {
-            Image("safeinfo")
-              .resizable()
-              .scaledToFit()
-              .frame(width: 350, height: 300)
-          }
-          .tag(2)
-        }
+      
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // 페이지 인디케이터 숨기기
-//        .frame(height: 300)
+        .frame(height: 300)
         
-        Spacer() // 콘텐츠와 버튼 간 여백
+          Spacer()
         
         // MARK: 버튼
         Button(action: {

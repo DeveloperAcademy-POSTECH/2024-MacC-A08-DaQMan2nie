@@ -1056,19 +1056,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo/Preview\\ Content HearoadWatch\\ Watch\\ App";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 않습니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ada.hearoad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1093,19 +1093,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo/Preview\\ Content HearoadWatch\\ Watch\\ App";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Hearod;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearoad;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱이 소리를 분석하여 위험신호를 잡기 위해 마이크에 접근합니다.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크가 인식한 소리는 위험 신호 감지 목적에만 사용되며, 실시간 분석 후 저장되지 않습니다.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ada.hearoad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1202,7 +1202,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo HearoadWatch\\ Watch\\ App/Preview\\ Content";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1233,7 +1233,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "hearo HearoadWatch\\ Watch\\ App/Preview\\ Content";
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HearoadWatch-Watch-App-Info.plist";
@@ -1341,7 +1341,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
@@ -1369,7 +1369,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT56H2MYWV;
+				DEVELOPMENT_TEAM = J5N8Y9F8Z8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiveActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
