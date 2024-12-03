@@ -38,8 +38,9 @@ class WorkingViewModel: ObservableObject {
 
     }
     private func setupBindings() {
-         // SoundDetectorViewModel의 isWatchConnected를 관찰
+         // `SoundDetectorViewModel`의 `isWatchConnected`를 구독하여 동기화
          soundDetectorViewModel.$isWatchConnected
+             .receive(on: DispatchQueue.main)
              .assign(to: \.isWatchConnected, on: self)
              .store(in: &cancellables)
      }

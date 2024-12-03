@@ -138,7 +138,7 @@ class HornSoundDetector: NSObject, ObservableObject, SNResultsObserving {
         guard let result = result as? SNClassificationResult else { return }
         DispatchQueue.main.async {
             if let topClassification = result.classifications.first {
-                print("최상위 분류: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)")
+//                print("최상위 분류: \(topClassification.identifier), 신뢰도: \(topClassification.confidence)")
                 
                 // 관심 있는 소리와 신뢰도 기준 체크
                 if self.relevantSounds.contains(topClassification.identifier),
