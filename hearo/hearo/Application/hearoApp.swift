@@ -56,7 +56,7 @@ struct hearoApp: App {
         var name: String
     }
 
-final class AppRootManager: ObservableObject {
+final class AppRootManager: NSObject, ObservableObject, WCSessionDelegate {
     static let shared = AppRootManager() // 싱글톤 객체
 
     @Published var currentRoot: AppRoot = .splash {
@@ -69,6 +69,9 @@ final class AppRootManager: ObservableObject {
                 hornSoundDetector?.stopRecording()
                 print("오디오 수집 중지됨")
             }
+          
+            // 워치 앱으로 현재 상태 전송
+            sendCurrentRootToWatch()
         }
     }  // 기본값: splash
     @Published var detectedSound: String? = nil // 감지된 소리 저장
@@ -76,7 +79,7 @@ final class AppRootManager: ObservableObject {
     private var isWarning = false // isWarning 상태 저장
     private var currentWarningState: Bool = false // 현재 isWarning 상태 저장
     private var hornSoundDetector: HornSoundDetector? // HornSoundDetector 인스턴스
-    
+    private let wcSession = WCSession.default
     
     // 루트 뷰 상태를 나타내는 열거형
     enum AppRoot {
@@ -89,6 +92,46 @@ final class AppRootManager: ObservableObject {
         case warning
     }
     
+  override init() {
+    super.init()
+    
+    if WCSession.isSupported() {
+      wcSession.delegate = self
+      wcSession.activate()
+    }
+  }
+  
+  private func sendCurrentRootToWatch() {
+    let screen: String
+    switch currentRoot {
+    case .working: screen = "working"
+    case .home: screen = "home"
+      default : screen = "home" // 기본값으로 HomeView 표시
+    }
+    
+    if wcSession.isReachable {
+      wcSession.sendMessage(["currentRoot": screen], replyHandler: nil, errorHandler: { error in
+        print("워치로 상태 전송 실패: \(error.localizedDescription)")
+      })
+    } else {
+      do {
+        try wcSession.updateApplicationContext(["currentRoot": screen])
+      } catch {
+        print("워치로 상태 전송 실패: \(error.localizedDescription)")
+      }
+    }
+  }
+  
+  // MARK: - WCSessionDelegate
+
+      func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+
+      func sessionDidBecomeInactive(_ session: WCSession) {}
+
+      func sessionDidDeactivate(_ session: WCSession) {}
+
+      func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {}
+  
  
     // 스플래시 끝났을 때 호출
     func determineNextRoot() {
@@ -168,6 +211,10 @@ final class AppRootManager: ObservableObject {
             }
         }
     }
+
+
+
+
 // ContentView 정의 (AppRootManager 클래스 외부에 위치)
 struct ContentView: View {
     @ObservedObject var appRootManager: AppRootManager

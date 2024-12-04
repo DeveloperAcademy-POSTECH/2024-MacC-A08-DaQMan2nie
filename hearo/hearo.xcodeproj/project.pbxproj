@@ -51,6 +51,7 @@
 		112177852CC283BD000A146F /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 112177712CC283BC000A146F /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11A2D0882CDE344500BF2BAF /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
 		646A53882D00A4A8008A81AC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A53872D00A4A8008A81AC /* SplashView.swift */; };
+		646A538A2D00ACE1008A81AC /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A53892D00ACE1008A81AC /* WatchHomeView.swift */; };
 		64D66A8B2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A8C2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A902CF4A4E500CDB1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */; };
@@ -178,6 +179,7 @@
 		112177802CC283BD000A146F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112177822CC283BD000A146F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		646A53872D00A4A8008A81AC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		646A53892D00ACE1008A81AC /* WatchHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchHomeView.swift; sourceTree = "<group>"; };
 		64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64D66A912CF4A6A000CDB1D9 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				001C9F852CD0CA11004EC4D2 /* HearoadWatch-Watch-App-Info.plist */,
 				001C9F572CCF7983004EC4D2 /* HearoadWatchApp.swift */,
 				646A53872D00A4A8008A81AC /* SplashView.swift */,
+				646A53892D00ACE1008A81AC /* WatchHomeView.swift */,
 				001C9F832CCF81A1004EC4D2 /* WatchSessionManager.swift */,
 				001C9F592CCF7983004EC4D2 /* ContentView.swift */,
 				001C9F5B2CCF7984004EC4D2 /* Assets.xcassets */,
@@ -867,6 +870,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */,
+				646A538A2D00ACE1008A81AC /* WatchHomeView.swift in Sources */,
 				646A53882D00A4A8008A81AC /* SplashView.swift in Sources */,
 				001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */,
 				001C9F582CCF7983004EC4D2 /* HearoadWatchApp.swift in Sources */,
