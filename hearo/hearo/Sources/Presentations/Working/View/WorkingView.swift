@@ -12,6 +12,7 @@ struct WorkingView: View {
     @State private var circleOffset: CGFloat = 0
     @State private var showArrowAndText: Bool = false
     @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
+    @State private var isTransitioningToNextView: Bool = false
 //    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
     
     private let targetOffset: CGFloat = 274
@@ -36,7 +37,7 @@ struct WorkingView: View {
                 .edgesIgnoringSafeArea(.all)
                
             HStack{
-                Text("소리수집중")
+                Text("소리 수집중")
                     .font(Font.custom("Pretendard", size: 44))
                     .foregroundColor(Color("MainFontColor"))
                     .offset(y:-307)
@@ -77,8 +78,16 @@ struct WorkingView: View {
                                     circleOffset = targetOffset
                                 }
                                 triggerFinalHaptic() // 강한 진동 트리거
-                                viewModel
-                                    .finishRecording() // 녹음 중지 및 FinishView로 전환
+                                
+                                // 2초간 애니메이션 후 뷰 전환
+                                withAnimation(.easeOut(duration: 2.0)) {
+                                    overlayOpacity = 1.0 // 화면 덮기 애니메이션
+                                }
+                                triggerFinalHaptic()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    viewModel.finishRecording() // 녹음 중지 및 다음 뷰로 전환
+                                    isTransitioningToNextView = true // 전환 상태 업데이트
+                                }
                             } else {
                                 withAnimation(.easeOut(duration: 0.3)) {
                                     circleOffset = 0
