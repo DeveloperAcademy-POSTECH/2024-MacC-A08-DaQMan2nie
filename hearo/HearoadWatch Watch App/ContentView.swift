@@ -104,3 +104,7 @@ struct ContentView: View {
         timer = nil
     }
 }
+
+#Preview {
+  ContentView()
+}
