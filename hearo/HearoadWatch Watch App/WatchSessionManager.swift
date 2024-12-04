@@ -117,6 +117,19 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
     }
   }
   
+  func alertTextName() -> String {
+    switch alertMessage {
+    case "Carhorn":
+      return "자동차" // carhorn 텍스트 이름
+    case "Siren":
+      return "사이렌" // siren 덱스트 이름
+    case "Bicyclebell":
+      return "자전거" // bicycle 덱스트 이름
+    default:
+      return "자동차" // 기본 알림 아이콘
+    }
+  }
+  
   // 3초 동안 알림 표시 후 기본 상태로 복구
   func showAlert(with message: String) {
     // "녹음 시작 전" 메시지는 무시
