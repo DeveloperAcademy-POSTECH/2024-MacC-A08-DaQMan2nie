@@ -95,7 +95,7 @@ class SoundDetectorViewModel: NSObject, ObservableObject, WCSessionDelegate {
 //      guard let self else { return }
       self?.updateWatchConnectionState()
     }
-    print("워치 연결 확인 타이머 시작(현재 화면: WorkingView)")
+    print("워치 연결 확인 타이머 시작(현재 화면: \(appRootManager.currentRoot))")
   }
   
   private func stopConnectionCheckTimer() {

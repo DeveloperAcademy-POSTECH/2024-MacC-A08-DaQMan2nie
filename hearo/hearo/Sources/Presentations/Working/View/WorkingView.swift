@@ -12,29 +12,40 @@ struct WorkingView: View {
     @State private var circleOffset: CGFloat = 0
     @State private var showArrowAndText: Bool = false
     @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
+
     @State private var isTransitioningToNextView: Bool = false
+
 //    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
     
+
+    @State private var backgroundOpacity: Double = 0.0 // 전환 중 흰색 배경 불투명도
+    @State private var isTransitioning: Bool = false // 전환 상태 관리
+
+
+
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
 
     init(viewModel: WorkingViewModel) {
         self.viewModel = viewModel
     }
-       
+
     var body: some View {
         ZStack {
             Color("Radish")
                 .ignoresSafeArea()
-            
-          // Lottie 애니메이션과 원형 버튼
+
+
+            // Lottie 애니메이션과 원형 버튼
+
             LottieView(animationName: "sound_collection", animationScale: 1)
                 .frame(
                     width: UIScreen.main.bounds.width,
                     height: UIScreen.main.bounds.height
                 )
-                .offset(x: -1.4 ,y: 60)
+                .offset(x: -1.4, y: 60)
                 .edgesIgnoringSafeArea(.all)
+
                
             HStack{
                 Text("소리 수집중")
@@ -42,13 +53,12 @@ struct WorkingView: View {
                     .foregroundColor(Color("MainFontColor"))
                     .offset(x:10, y:-307)
                        
+
                 // 워치 연동 상태에 따른 이미지 변경
               Image(viewModel.isWatchConnected ? "WatchOn" : "WatchOff")
                     .offset(x: 40, y: -307)
-                       
             }
-                              
-                 
+
             Image("StartCircle")
                 .offset(y: circleOffset)
                 .gesture(
@@ -58,19 +68,7 @@ struct WorkingView: View {
                                 showArrowAndText = false
                             }
                             let newOffset = value.translation.height
-                               
-                            if newOffset < 0 {
-                                circleOffset = 0
-                            } else if newOffset > targetOffset {
-                                circleOffset = targetOffset
-                            } else {
-                                circleOffset = newOffset
-                                triggerHapticFeedback(
-                                    for: newOffset,
-                                    targetOffset: targetOffset
-                                ) // Haptic 피드백 트리거
-
-                            }
+                            circleOffset = max(0, min(targetOffset, newOffset))
                         }
                         .onEnded { value in
                             if circleOffset >= minimumOffset {
@@ -78,6 +76,7 @@ struct WorkingView: View {
                                     circleOffset = targetOffset
                                 }
                                 triggerFinalHaptic() // 강한 진동 트리거
+
                                 
                                 // 2초간 애니메이션 후 뷰 전환
                                 withAnimation(.easeOut(duration: 2.0)) {
@@ -87,18 +86,16 @@ struct WorkingView: View {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                     viewModel.finishRecording() // 녹음 중지 및 다음 뷰로 전환
                                     isTransitioningToNextView = true // 전환 상태 업데이트
+
                                 }
                             } else {
                                 withAnimation(.easeOut(duration: 0.3)) {
                                     circleOffset = 0
                                 }
                             }
-                            withAnimation(.easeIn(duration: 0.3)) {
-                                showArrowAndText = false
-                            }
                         }
                 )
-               
+
             if showArrowAndText {
                 VStack {
                     LottieView(animationName: "arrow_GR", animationScale: 1)
@@ -115,7 +112,6 @@ struct WorkingView: View {
                 .allowsHitTesting(false) // 터치 이벤트 차단 방지
             }
 
-               
             // 흰색 오버레이 (초기 불투명도 1.0에서 0으로 서서히 감소)
             Color.white
                 .opacity(overlayOpacity)
@@ -125,6 +121,13 @@ struct WorkingView: View {
                         overlayOpacity = 0.0 // 1초에 걸쳐 서서히 투명해짐
                     }
                 }
+
+            // 전환 중 흰색 배경 오버레이
+            if isTransitioning {
+                Color.white
+                    .opacity(backgroundOpacity)
+                    .ignoresSafeArea()
+            }
         }
         .contentShape(Rectangle())
         .onAppear {
@@ -133,18 +136,17 @@ struct WorkingView: View {
         .onDisappear {
             viewModel.stopRecording()
         }
-        .onLongPressGesture(minimumDuration: 0) { // 터치 시 즉시 실행
+        .onLongPressGesture(minimumDuration: 0) {
             withAnimation(.easeOut(duration: 0.3)) {
                 showArrowAndText = true
             }
         } onPressingChanged: { isPressing in
-            if !isPressing { // 터치가 끝난 경우
-                DispatchQueue.main
-                    .asyncAfter(deadline: .now() + 4.0) { // 3초 동안 유지
-                        withAnimation(.easeIn(duration: 0.3)) {
-                            showArrowAndText = false
-                        }
+            if !isPressing {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        showArrowAndText = false
                     }
+                }
             }
         }
     }
