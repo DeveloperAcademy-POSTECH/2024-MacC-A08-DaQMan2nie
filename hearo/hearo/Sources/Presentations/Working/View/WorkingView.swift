@@ -12,9 +12,14 @@ struct WorkingView: View {
     @State private var circleOffset: CGFloat = 0
     @State private var showArrowAndText: Bool = false
     @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
+
+//    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
+    
+
     @State private var backgroundOpacity: Double = 0.0 // 전환 중 흰색 배경 불투명도
     @State private var isTransitioning: Bool = false // 전환 상태 관리
-    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
+
+
 
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
@@ -28,7 +33,9 @@ struct WorkingView: View {
             Color("Radish")
                 .ignoresSafeArea()
 
+
             // Lottie 애니메이션과 원형 버튼
+
             LottieView(animationName: "sound_collection", animationScale: 1)
                 .frame(
                     width: UIScreen.main.bounds.width,
@@ -44,7 +51,7 @@ struct WorkingView: View {
                     .offset(y: -307)
 
                 // 워치 연동 상태에 따른 이미지 변경
-                Image(isWatchConnected ? "WatchOn" : "WatchOff")
+              Image(viewModel.isWatchConnected ? "WatchOn" : "WatchOff")
                     .offset(x: 40, y: -307)
             }
 
