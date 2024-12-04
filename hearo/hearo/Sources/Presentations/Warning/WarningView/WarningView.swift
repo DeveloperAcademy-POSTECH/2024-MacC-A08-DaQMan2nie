@@ -20,7 +20,8 @@ struct WarningView: View {
         // 감지된 소리에 따라 알맞은 텍스트를 표시
         Image("\(viewModel.alertImageName())-text")
           .padding(.top, 157)
-          .padding(.bottom, 80)
+          .padding(.bottom, 90)
+          .offset(y: -47)
         
         // 감지된 소리에 따라 알맞은 이미지를 표시
         Image(viewModel.alertImageName())

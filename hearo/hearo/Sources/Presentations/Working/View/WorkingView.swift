@@ -13,6 +13,8 @@ struct WorkingView: View {
     @State private var showArrowAndText: Bool = false
     @State private var overlayOpacity: Double = 1.0 // 처음에 화면을 덮는 흰색 오버레이 불투명도
 
+    @State private var isTransitioningToNextView: Bool = false
+
 //    @State private var isWatchConnected: Bool = false // 워치 연동 상태 관리
     
 
@@ -44,11 +46,13 @@ struct WorkingView: View {
                 .offset(x: -1.4, y: 60)
                 .edgesIgnoringSafeArea(.all)
 
-            HStack {
-                Text("소리수집중")
+               
+            HStack{
+                Text("소리 수집중")
                     .font(Font.custom("Pretendard", size: 44))
                     .foregroundColor(Color("MainFontColor"))
-                    .offset(y: -307)
+                    .offset(x:10, y:-307)
+                       
 
                 // 워치 연동 상태에 따른 이미지 변경
               Image(viewModel.isWatchConnected ? "WatchOn" : "WatchOff")
@@ -73,14 +77,16 @@ struct WorkingView: View {
                                 }
                                 triggerFinalHaptic() // 강한 진동 트리거
 
-                                // 화면 전환 딜레이와 배경 서서히 전환
-                                isTransitioning = true
-                                withAnimation(.easeIn(duration: 1.5)) {
-                                    backgroundOpacity = 1.0
+                                
+                                // 2초간 애니메이션 후 뷰 전환
+                                withAnimation(.easeOut(duration: 2.0)) {
+                                    overlayOpacity = 1.0 // 화면 덮기 애니메이션
                                 }
+                                triggerFinalHaptic()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    viewModel.finishRecording() // 녹음 중지 및 다음 뷰로 전환
+                                    isTransitioningToNextView = true // 전환 상태 업데이트
 
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                    viewModel.finishRecording() // 녹음 중지 및 FinishView로 전환
                                 }
                             } else {
                                 withAnimation(.easeOut(duration: 0.3)) {

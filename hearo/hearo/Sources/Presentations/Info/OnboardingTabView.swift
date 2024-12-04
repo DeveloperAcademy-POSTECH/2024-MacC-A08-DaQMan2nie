@@ -14,7 +14,7 @@ struct OnboardingTabView: View {
     
     var body: some View {
         ZStack {
-            Color("Background") // 전체 배경을 흰색으로 설정
+            Color.radish // 전체 배경을 흰색으로 설정
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {
