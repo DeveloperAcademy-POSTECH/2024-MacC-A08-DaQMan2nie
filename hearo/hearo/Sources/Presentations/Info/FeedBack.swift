@@ -12,7 +12,7 @@ struct FeedBack: View {
     
     var body: some View {
         ZStack {
-            Color.white // 배경 흰색
+            Color.radish // 배경 흰색
                 .ignoresSafeArea()
             
             VStack {
