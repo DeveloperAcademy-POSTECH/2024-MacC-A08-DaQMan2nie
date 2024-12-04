@@ -14,6 +14,7 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
   @Published var alertMessage: String = " " // 기본 메시지
   @Published var isAlerting: Bool = false // 알림 상태 확인
   @Published var isIOSConnected: Bool = false // iOS 연결 상태
+  @Published var currentScreen: String = "home" // 기본값 home
   
   private override init() {
     super.init()
@@ -28,7 +29,12 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
   // MARK: - iOS에서 데이터 수신
   // iOS에서 경고 메시지를 수신하는 메서드
   func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
-    if let alert = message["alert"] as? String {
+    if let root = message["currentRoot"] as? String {
+      DispatchQueue.main.async {
+        self.currentScreen = root
+        print("애플워치 - 아이폰 현재 화면 메시지 수신: \(root)")
+      }
+    } else if let alert = message["alert"] as? String {
       DispatchQueue.main.async {
         self.showAlert(with: alert) // 메시지 수신 후 즉각적으로 알림 표시
         print("애플워치 - 메시지 수신: \(alert)")
@@ -37,7 +43,12 @@ class WatchSessionManager: NSObject, ObservableObject, WCSessionDelegate {
   }
   
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    if let alert = applicationContext["alert"] as? String {
+    if let root = applicationContext["currentRoot"] as? String {
+      DispatchQueue.main.async {
+        self.currentScreen = root
+        print("워치 앱 - ApplicationContext 아이폰 현재 화면 데이터 수신: \(root)")
+      }
+    } else if let alert = applicationContext["alert"] as? String {
       DispatchQueue.main.async {
         self.showAlert(with: alert)
         print("워치 앱 - ApplicationContext 데이터 수신: \(alert)")
