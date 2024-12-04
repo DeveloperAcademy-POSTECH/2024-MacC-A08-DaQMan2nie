@@ -14,8 +14,8 @@ struct WatchHomeView: View {
                 .ignoresSafeArea(.all)
                 
                 Text("히어로드와 함께\n안전한 주행하세요!\n")
-                    .font(Font.custom("Pretendard", size: 22).weight(.medium))
-                    .foregroundColor(Color("SubFontColor"))
+                    .font(Font.custom("Pretendard", size: 20).weight(.medium))
+                    .foregroundColor(Color("MainFontColor"))
                     .multilineTextAlignment(.center)
                     .offset(y:-65)
                 
