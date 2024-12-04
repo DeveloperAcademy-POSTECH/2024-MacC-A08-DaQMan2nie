@@ -92,8 +92,9 @@ final class AppRootManager: ObservableObject {
  
     // 스플래시 끝났을 때 호출
     func determineNextRoot() {
-        let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
-        self.currentRoot = hasSeenOnboarding ? .home : .startOnboarding
+//        let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+//        self.currentRoot = hasSeenOnboarding ? .home : .startOnboarding
+        self.currentRoot = .startOnboarding
     }
     
     // 라이브 액티비티 시작 메서드
