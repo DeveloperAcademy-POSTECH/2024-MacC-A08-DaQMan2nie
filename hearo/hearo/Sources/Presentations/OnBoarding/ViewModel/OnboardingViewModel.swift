@@ -16,7 +16,7 @@ class OnboardingViewModel: ObservableObject {
     }
 
     func moveToHome() {
-        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+//        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
         appRootManager.currentRoot = .home
     }
 }
