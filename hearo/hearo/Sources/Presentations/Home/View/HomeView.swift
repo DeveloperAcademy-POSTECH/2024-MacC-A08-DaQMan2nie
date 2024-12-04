@@ -17,16 +17,18 @@ struct HomeView: View {
     
     private let targetOffset: CGFloat = 274
     private let minimumOffset: CGFloat = 197
-
+    private let transitionDelay: Double = 3.0 // 화면 전환 딜레이 시간 (초)
+    
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color.white // 다크 모드에서도 흰 배경 유지
                     .ignoresSafeArea()
-
+                
                 VStack {
                     Spacer().frame(height: 89)
-
+                    
                     HStack(alignment: .top) {
                         Spacer().frame(width: 16)
                         
@@ -35,7 +37,7 @@ struct HomeView: View {
                             .foregroundColor(Color("MainFontColor"))
                             .lineSpacing(5)
                             .frame(height: 70)
-
+                        
                         Spacer()
                         
                         VStack{
@@ -61,9 +63,9 @@ struct HomeView: View {
                             .offset(y: 60)
                             .allowsHitTesting(false) // 텍스트도 터치 이벤트를 방해하지 않도록 설정
                     }
-
+                    
                     Spacer().frame(height: 60)
-
+                    
                     ZStack {
                         // 목표 지점 힌트 원
                         if showHintAndAnimation {
@@ -80,24 +82,23 @@ struct HomeView: View {
                             .gesture(
                                 DragGesture()
                                     .onChanged { value in
-                                        // 드래그 중 힌트와 애니메이션을 숨김
                                         withAnimation(.easeOut(duration: 0.3)) {
                                             showHintAndAnimation = false
                                         }
                                         let newOffset = value.translation.height
-                                        // offset을 제한하여 부드럽게 드래그 가능하도록 설정
                                         circleOffset = max(0, min(targetOffset, newOffset))
                                     }
                                     .onEnded { value in
                                         if circleOffset >= minimumOffset {
-                                            // 목표 지점으로 부드럽게 이동
                                             withAnimation(.easeOut(duration: 0.3)) {
                                                 circleOffset = targetOffset
                                             }
-                                            triggerFinalHaptic() // 진동 효과 실행
+                                            triggerFinalHaptic()
                                             startLottieAnimation = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                                withAnimation(.easeIn(duration: 1.5)) {
+                                            
+                                            // 화면 전환 딜레이 추가
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + transitionDelay) {
+                                                withAnimation(.easeIn(duration: 2.0)) {
                                                     backgroundOpacity = 1.0
                                                 }
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -105,39 +106,37 @@ struct HomeView: View {
                                                 }
                                             }
                                         } else {
-                                            // 드래그 실패 시 원래 위치로 부드럽게 복귀
-                                            withAnimation(.easeOut){
+                                            withAnimation(.easeOut) {
                                                 circleOffset = 0
                                                 showHintAndAnimation = true
                                             }
-                                            
                                         }
                                     }
                             )
-
                     }
-
+                    
+                    
                     Spacer().frame(height: 152)
-
-                
+                    
+                    
                     if showHintAndAnimation {
-                            LottieView(animationName: "arrow_GR", animationScale: 1)
-                                .frame(height: 150, alignment: .top)
-                                .scaleEffect(x: 1.1, y: 1.0)
-                                .offset(y: -300)
-                                .padding()
-                                .allowsHitTesting(false) // 애니메이션이 터치 이벤트를 방해하지 않도록 설정
-
-                           
+                        LottieView(animationName: "arrow_GR", animationScale: 1)
+                            .frame(height: 150, alignment: .top)
+                            .scaleEffect(x: 1.1, y: 1.0)
+                            .offset(y: -300)
+                            .padding()
+                            .allowsHitTesting(false) // 애니메이션이 터치 이벤트를 방해하지 않도록 설정
                         
-                        .transition(.opacity)
+                        
+                        
+                            .transition(.opacity)
                     }
-
+                    
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
-
+                
                 // "start_view" Lottie 애니메이션
                 if startLottieAnimation {
                     LottieView(animationName: "start_view", animationScale: 1)
@@ -145,7 +144,7 @@ struct HomeView: View {
                         .offset(y: targetOffset-30)
                         .edgesIgnoringSafeArea(.all)
                 }
-
+                
                 // 흰색 배경 오버레이
                 Color.white
                     .opacity(backgroundOpacity)
