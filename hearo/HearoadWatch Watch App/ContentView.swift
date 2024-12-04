@@ -49,7 +49,7 @@ struct ContentView: View {
     }
     .onAppear {
       // 기본 화면 설정
-      currentView = sessionManager.currentScreen == "working" ? "working" : "alert"
+      currentView = sessionManager.currentScreen == "working" ? "working" : "home"
     }
   }
   
