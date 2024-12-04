@@ -40,7 +40,7 @@ struct WorkingView: View {
                 Text("소리 수집중")
                     .font(Font.custom("Pretendard", size: 44))
                     .foregroundColor(Color("MainFontColor"))
-                    .offset(y:-307)
+                    .offset(x:10, y:-307)
                        
                 // 워치 연동 상태에 따른 이미지 변경
               Image(viewModel.isWatchConnected ? "WatchOn" : "WatchOff")
