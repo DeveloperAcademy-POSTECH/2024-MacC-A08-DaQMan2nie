@@ -53,6 +53,7 @@
 		646A53882D00A4A8008A81AC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A53872D00A4A8008A81AC /* SplashView.swift */; };
 		646A538A2D00ACE1008A81AC /* WatchHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A53892D00ACE1008A81AC /* WatchHomeView.swift */; };
 		646A538C2D00B02D008A81AC /* WatchWorkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646A538B2D00B02D008A81AC /* WatchWorkingView.swift */; };
+		646A538E2D012093008A81AC /* FontDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1B7572CDDD9D800BA2AF1 /* FontDesignSystem.swift */; };
 		64D66A8B2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A8C2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8A2CF465AD00CDB1D9 /* Pretendard-SemiBold.otf */; };
 		64D66A902CF4A4E500CDB1D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D66A8F2CF4A4E500CDB1D9 /* Assets.xcassets */; };
@@ -874,6 +875,7 @@
 			files = (
 				001C9F842CCF81A1004EC4D2 /* WatchSessionManager.swift in Sources */,
 				646A538A2D00ACE1008A81AC /* WatchHomeView.swift in Sources */,
+				646A538E2D012093008A81AC /* FontDesignSystem.swift in Sources */,
 				646A538C2D00B02D008A81AC /* WatchWorkingView.swift in Sources */,
 				646A53882D00A4A8008A81AC /* SplashView.swift in Sources */,
 				001C9F5A2CCF7983004EC4D2 /* ContentView.swift in Sources */,

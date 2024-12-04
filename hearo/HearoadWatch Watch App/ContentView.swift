@@ -22,7 +22,7 @@ struct ContentView: View {
             .ignoresSafeArea(.all)
           VStack {
             Text(sessionManager.alertTextName())
-              .font(.title2)
+              .font(.watchAlert)
               .foregroundStyle(Color.white)
               .padding(.bottom, 10)
 
@@ -61,10 +61,8 @@ struct ContentView: View {
       sessionManager.resetAlert() // 알림 상태 초기화
     }
   }
-  
-  
-  
 }
+
 #Preview {
   ContentView()
 }

@@ -18,4 +18,5 @@ extension Font {
     static let DaynamicIsland = Font.custom("Pretendard-Medium", size: 12)
     static let hint = Font.custom("Pretendard-Light", size:16)
     
+  static let watchAlert = Font.custom("Pretendard-SemiBold", size: 30) // Medium
 }
