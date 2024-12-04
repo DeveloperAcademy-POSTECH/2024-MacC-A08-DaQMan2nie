@@ -9,10 +9,23 @@ import SwiftUI
 
 struct WatchHomeView: View {
     var body: some View {
-      Image("Watch_HomeView")
-        .resizable()
-        .scaledToFit()
-        .aspectRatio(contentMode: .fill)
+        ZStack {
+            Color("Radish")
+                .ignoresSafeArea(.all)
+                
+                Text("히어로드와 함께\n안전한 주행하세요!\n")
+                    .font(Font.custom("Pretendard", size: 22).weight(.medium))
+                    .foregroundColor(Color("SubFontColor"))
+                    .multilineTextAlignment(.center)
+                    .offset(y:-65)
+                
+                Image("HomeViewCircle")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 270, height: 270, alignment: .center)
+                    .offset(y:115)
+       }
+
     }
 }
 

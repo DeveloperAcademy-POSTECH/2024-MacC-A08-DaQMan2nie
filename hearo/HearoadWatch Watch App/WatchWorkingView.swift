@@ -9,7 +9,20 @@ import SwiftUI
 
 struct WatchWorkingView: View {
     var body: some View {
-        Text("WatchWorkingView")
+        ZStack{
+            Color("Radish")
+                .ignoresSafeArea(.all)
+            Text("소리 수집중")
+                .font(Font.custom("Pretendard", size: 26).weight(.medium))
+                .foregroundColor(Color("SubFontColor"))
+                .multilineTextAlignment(.center)
+                .offset(y:-90)
+            Image("WorkingViewCircle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 160, height: 160, alignment: .center)
+                .offset(y:10)
+        }
     }
 }
 
