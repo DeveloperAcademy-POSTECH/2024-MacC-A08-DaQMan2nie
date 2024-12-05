@@ -18,7 +18,7 @@ class FinishViewModel: ObservableObject {
 
     private func goToHomeWithDelay() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
             triggerSuccessHaptic()
             self?.appRootManager.currentRoot = .home
         }

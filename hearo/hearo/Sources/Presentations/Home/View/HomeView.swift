@@ -99,7 +99,7 @@ struct HomeView: View {
                                             // 화면 전환 딜레이 추가
                                             DispatchQueue.main.asyncAfter(deadline: .now() + transitionDelay) {
                                                 withAnimation(.easeIn(duration: 1.5)) {
-                                                    backgroundOpacity = 0.5
+                                                    backgroundOpacity = 1.0
                                                 }
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                                                     viewModel.startWorking()

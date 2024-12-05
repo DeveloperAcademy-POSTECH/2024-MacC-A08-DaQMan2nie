@@ -38,7 +38,7 @@ struct FinishView: View {
             
             Spacer().frame(height: 72)
             
-            LottieView(animationName: "check", animationScale: 1, loopMode: .loop)
+            LottieView(animationName: "check", animationScale: 1, loopMode: .playOnce)
                 .frame(width: 200, height: 200)
   //              .scaleEffect(0.8)
                 .offset(y: 0)
