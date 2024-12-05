@@ -93,7 +93,7 @@ struct OnboardingView: View {
                   .tag(0)
                   
                   VStack {
-                      LottieView(animationName: "watch", animationScale: 1, loopMode: .loop)
+                      LottieView(animationName: "watch 1", animationScale: 1, loopMode: .loop)
                           .frame(width: 250, height: 250)
                           .scaleEffect(1.1)
                           .offset(y: 40)
@@ -102,6 +102,10 @@ struct OnboardingView: View {
                   .tag(1)
                   
                   VStack {
+//                      LottieView(animationName: "watch 1", animationScale: 1, loopMode: .loop)
+//                          .frame(width: 250, height: 250)
+//                          .scaleEffect(1.1)
+//                          .offset(y: 40)
                       Image("safeinfo")
                           .resizable()
                           .scaledToFit()

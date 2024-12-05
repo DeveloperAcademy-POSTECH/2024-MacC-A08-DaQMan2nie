@@ -39,13 +39,16 @@ struct StartOnboardingView: View {
         
         
         
-        Image("OnboardingCircle")
-              .resizable()
-                .aspectRatio(contentMode: .fit)
-                  .frame(width: 400, height: 400)
+//        Image("OnboardingCircle")
+//              .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                  .frame(width: 400, height: 400)
           
-//          LottieView(animationName: "OnboardingCircle", animationScale: 1, loopMode: .loop)
-//              .frame(width: 220, height: 220)
+          LottieView(animationName: "OnboardindCircle", animationScale: 1, loopMode: .loop)
+              .frame(width: 300, height: 300)
+//              .scaleEffect(0.8)
+              .offset(y: 100)
+              
           
         Spacer()
       }

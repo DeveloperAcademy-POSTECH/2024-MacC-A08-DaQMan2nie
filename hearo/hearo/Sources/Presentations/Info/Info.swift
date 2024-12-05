@@ -74,7 +74,7 @@ struct Info: View {
                 Text("Copyright 2024. DaQman2ni in all rights reserved.")
                     .font(.footnote)
                     .foregroundColor(.gray)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 14)
             }
         }
         .navigationBarBackButtonHidden(true) // 기본 네비게이션 바 숨김
