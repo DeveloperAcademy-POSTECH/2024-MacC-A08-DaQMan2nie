@@ -38,11 +38,16 @@ struct FinishView: View {
             
             Spacer().frame(height: 72)
             
-            Image(systemName: "checkmark.circle.fill") // SF Symbols에서 원형 아이콘 사용
-                .resizable()
-                .frame(width: 121, height: 121)
-                .foregroundColor(Color("HPrimaryColor")) // 아이콘 색상 설정
-            
+            LottieView(animationName: "check", animationScale: 1, loopMode: .playOnce)
+                .frame(width: 200, height: 200)
+  //              .scaleEffect(0.8)
+                .offset(y: 0)
+//
+//            Image(systemName: "checkmark.circle.fill") // SF Symbols에서 원형 아이콘 사용
+//                .resizable()
+//                .frame(width: 121, height: 121)
+//                .foregroundColor(Color("HPrimaryColor")) // 아이콘 색상 설정
+//            
             Spacer().frame(height: 231)
             
             
@@ -53,4 +58,9 @@ struct FinishView: View {
         .edgesIgnoringSafeArea(.all)
 
     }
+}
+
+
+#Preview {
+    FinishView(viewModel: FinishViewModel(appRootManager: AppRootManager()))
 }
