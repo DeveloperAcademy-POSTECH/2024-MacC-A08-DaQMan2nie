@@ -19,9 +19,11 @@ struct SplashView: View {
             Image("HearoadLetters") // Hearoad 이미지 이름 (녹색 화면)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 100, height: 100)
+//                .frame(width: 100, height: 100)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .scaleEffect(1.4) // 20% 더 크게 확대
           }
+          
           .onAppear {
             // 2초 후 스플래시 화면 종료
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

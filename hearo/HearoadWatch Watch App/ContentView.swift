@@ -22,7 +22,7 @@ struct ContentView: View {
             .ignoresSafeArea(.all)
           VStack {
             Text(sessionManager.alertTextName())
-              .font(.watchAlert)
+                  .font(Font.custom("Pretendard", size: 26).weight(.medium))
               .foregroundStyle(Color.white)
               .padding(.bottom, 10)
 
