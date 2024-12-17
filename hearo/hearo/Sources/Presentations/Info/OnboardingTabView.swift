@@ -105,7 +105,8 @@ struct OnboardingTabView: View {
                             currentTab += 1
                         }
                     } else {
-                        presentationMode.wrappedValue.dismiss() 
+                        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }) {
                     Text(currentTab == 2 ? "돌아가기" : "확인") // 버튼 텍스트
